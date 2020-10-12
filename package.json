@@ -1,33 +1,42 @@
 {
-  "name": "amthleteapp",
+  "name": "a-m-thlete-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "app for tracking sports results",
   "main": "server.js",
-  "proxy": "http://localhost:3000",
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^1.18.7"
-  },
   "dependencies": {
-    "axios": "^0.18.1",
-    "core-js": "^3.6.5",
+    "dot-prop": "^5.3.0",
     "express": "^4.17.1",
-    "heroku": "^7.44.0",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.10.7",
-    "react": "^16.13.1",
+    "git": "^0.1.5",
+    "is-installed-globally": "^0.3.2",
+    "is-npm": "^4.0.0",
+    "is-obj": "^2.0.0",
+    "is-path-inside": "^3.0.2",
+    "is-typedarray": "^1.0.0",
+    "is-yarn-global": "^0.3.0",
+    "js-tokens": "^4.0.0",
+    "json-schema-traverse": "^0.4.1",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
     "skeleton": "^0.1.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetty88/a-m-thlete-app.git"
+  },
+  "keywords": [
+    "sports",
+    "tracking",
+    "app"
+  ],
+  "author": "Yvette Waller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vetty88/a-m-thlete-app/issues"
+  },
+  "homepage": "https://github.com/vetty88/a-m-thlete-app#readme"
 }

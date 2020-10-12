@@ -2,9 +2,10 @@ const router = require("express").Router();
 const competitionsController = require("../../controllers/competitionsController");
 
 // Matches with "/api/competitions"
-router
-``.route("/")
-  .get(competitionsController.findAll)
+                                  router
+.route("/")
+.get((req, res )=> {console.log("Inside route");})
+   .get(competitionsController.findAll)
   .post(competitionsController.create);
 
 // Matches with "/api/competitions/:id"

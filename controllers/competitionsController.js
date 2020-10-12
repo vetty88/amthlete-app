@@ -2,7 +2,8 @@ const db = require("../models");
 
 // Defining methods for the CompetitionsController
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function(req, res, next) {
+    console.log("controller");
     db.Competition
       .find(req.query)
       .sort({ date: -1 })
