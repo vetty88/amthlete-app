@@ -31,13 +31,13 @@ const Search = (props) => {
                 <button
                   className="savecompetition btn btn-light ml-auto mr-2"
                   id={competition.id} 
-                  onClick={(event) => props.handleSavedButton(event)}
+                  onClick={(event) => props.handlecompetitionsButton(event)}
                 > {competition.buttonText}
                 </button>
 
-                <a href="/saved">
-                <button className="viewSavedBtn btn btn-light ml-auto mr-3">
-                View Saved competitions
+                <a href="/competitions">
+                <button className="viewcompetitionsBtn btn btn-light ml-auto mr-3">
+                View competitions competitions
                 </button>
                 </a>
 

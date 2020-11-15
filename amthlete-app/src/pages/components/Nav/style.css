@@ -8,17 +8,17 @@
     cursor: default;
   }
   
-  #btnSaved,
+  #btncompetitions,
   #btnSearch {
     color: white;
   }
   
-  #btnSaved:hover,
+  #btncompetitions:hover,
   #btnSearch:hover {
     font-size: 1.05rem;
   }
   
-  #btnSaved:active,
+  #btncompetitions:active,
   #btnSearch:active {
     font-size: 1rem;
   }

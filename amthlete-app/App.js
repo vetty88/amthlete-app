@@ -12,8 +12,8 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={Search} />
-          <Route exact path="/saved" component={Save} />
-          <Route exact path="/saved/:id" component={Save} />
+          <Route exact path="/competitions" component={Save} />
+          <Route exact path="/competitions/:id" component={Save} />
           <Route component={NoMatch} /> 
         </Switch>
       </div>

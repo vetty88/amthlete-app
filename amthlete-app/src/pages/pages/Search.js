@@ -7,11 +7,11 @@ import Search from "../components/Search";
 import Nav from "../components/Nav";
 // import Footer from "../components/Footer"
 
-class Searchcompetitions extends Component {
+class SearchBooks extends Component {
   //initial state
   state = {
     search: "Pride & Prejudice",
-    competitions: [],
+    books: [],
     error: "",
     message: "",
   };
@@ -24,8 +24,8 @@ class Searchcompetitions extends Component {
   //function for submit button on search form
   handleFormSubmit = (event) => {
     event.preventDefault();
-    // once it clicks it connects to the google competition api with the search value
-    API.getGoogleSearchcompetitions(this.state.search)
+    // once it clicks it connects to the google book api with the search value
+    API.getGoogleSearchBooks(this.state.search)
       .then((res) => {
         if (res.data.items === "error") {
           throw new Error(res.data.items);
@@ -34,7 +34,7 @@ class Searchcompetitions extends Component {
           let results = res.data.items;
           //map through array
           results = results.map((result) => {
-            //store each competition in a new object
+            //store each book in a new object
             result = {
               key: result.id,
               id: result.id,
@@ -43,12 +43,12 @@ class Searchcompetitions extends Component {
               description: result.volumeInfo.description,
               image: result.volumeInfo.imageLinks.thumbnail,
               link: result.volumeInfo.infoLink,
-              buttonText: "Save competition"
+              buttonText: "Save Book"
             };
             return result;
           });
           // reset state
-          this.setState({ competitions: results, error: "" });
+          this.setState({ books: results, error: "" });
         }
       })
       .catch((err) => this.setState({ error: err.items }));
@@ -57,21 +57,21 @@ class Searchcompetitions extends Component {
   handleSavedButton = (event) => {
     // console.log(event)
     event.preventDefault();
-    console.log(this.state.competitions);
+    console.log(this.state.books);
     console.log(event.target.id);
-    let savedcompetitions = this.state.competitions.filter(
-      (competition) => competition.id === event.target.id
+    let savedBooks = this.state.books.filter(
+      (book) => book.id === event.target.id
     );
-    savedcompetitions = savedcompetitions[0];
-    console.log(savedcompetitions);
-    API.savecompetition(savedcompetitions)
-      .then(this.setState({ competitions: this.state.competitions.map(competition=>{
-        if (competition.id === event.target.id){
+    savedBooks = savedBooks[0];
+    console.log(savedBooks);
+    API.saveBook(savedBooks)
+      .then(this.setState({ books: this.state.books.map(book=>{
+        if (book.id === event.target.id){
           return {
-            ...competition, buttonText: "Saved!"
+            ...book, buttonText: "Saved!"
           }
         } else {
-          return competition;
+          return book;
         }
       })
      }))
@@ -95,7 +95,7 @@ class Searchcompetitions extends Component {
         <br></br>
         <Container>
           <Search
-            competitions={this.state.competitions}
+            books={this.state.books}
             handleSavedButton={this.handleSavedButton}
           />
         </Container>
@@ -105,4 +105,4 @@ class Searchcompetitions extends Component {
   }
 }
 
-export default Searchcompetitions;
+export default SearchBooks;

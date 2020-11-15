@@ -38,18 +38,18 @@
   font-size: 1rem;
 }
 
-.viewSavedBtn {
+.viewcompetitionsBtn {
   background-color: #C47E9E !important;
   color: white;
 }
 
-.viewSavedBtn:hover {
+.viewcompetitionsBtn:hover {
   background-color: #C47E9E !important;
   color: white;
   font-size: 1.05rem;
 }
 
-.viewSavedBtn:active {
+.viewcompetitionsBtn:active {
   background-color: #C47E9E !important;
   color: white !important;
   font-size: 1rem;

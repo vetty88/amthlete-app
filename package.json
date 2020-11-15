@@ -1,43 +1,39 @@
 {
   "name": "a-m-thlete-app",
   "version": "1.0.0",
-  "description": "app for tracking sports results",
+  "description": "",
   "main": "server.js",
-  "dependencies": {
-    "dot-prop": "^5.3.0",
-    "express": "^4.17.1",
-    "git": "^0.1.5",
-    "is-installed-globally": "^0.3.2",
-    "is-npm": "^4.0.0",
-    "is-obj": "^2.0.0",
-    "is-path-inside": "^3.0.2",
-    "is-typedarray": "^1.0.0",
-    "is-yarn-global": "^0.3.0",
-    "js-tokens": "^4.0.0",
-    "json-schema-traverse": "^0.4.1",
-    "logger": "0.0.1",
-    "mongoose": "^5.10.9",
-    "morgan": "^1.10.0",
-    "skeleton": "^0.1.2"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "test",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vetty88/a-m-thlete-app.git"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^1.18.7"
   },
-  "keywords": [
-    "sports",
-    "tracking",
-    "app"
-  ],
-  "author": "Yvette Waller",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vetty88/a-m-thlete-app/issues"
-  },
-  "homepage": "https://github.com/vetty88/a-m-thlete-app#readme"
+  "dependencies": {
+    "3": "^2.1.0",
+    "@sideway/address": "^4.1.0",
+    "axios": "^0.18.1",
+    "chokidar": "^3.4.3",
+    "core-js": "^3.7.0",
+    "dotenv": "^8.2.0",
+    "eslint-webpack-plugin": "^2.2.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.14",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0"
+  }
 }

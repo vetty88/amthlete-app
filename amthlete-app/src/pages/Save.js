@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import { Container } from "../components/Grid";
-import Saved from "../components/Saved";
+import competitions from "../components/competitions";
 import Nav from "../components/Nav";
 
 class Savecompetition extends Component {
   state = {
-    savedcompetitions: [],
+    competitionscompetitions: [],
   };
 
-  //get all competitions saved to the database
+  //get all competitions competitions to the database
   componentDidMount() {
     API.getcompetitions()
-      .then((res) => this.setState({ savedcompetitions: res.data }))
+      .then((res) => this.setState({ competitionscompetitions: res.data }))
       .catch((err) => console.log(err));
   }
 
@@ -31,8 +31,8 @@ class Savecompetition extends Component {
         <Jumbotron/>
 
         <Container>
-          <Saved
-            savedcompetitions={this.state.savedcompetitions}
+          <competitions
+            competitionscompetitions={this.state.competitionscompetitions}
             handleDeleteButton={this.handleDeleteButton}
           />
         </Container>

@@ -23,7 +23,7 @@ function Nav() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav d-flex  ml-auto mt-2 mt-lg-0">
-          {!window.location.href.includes("saved") ? (
+          {!window.location.href.includes("competitions") ? (
             ""
           ) : (
           <li className="nav-item" id="home">
@@ -32,12 +32,12 @@ function Nav() {
             </a>
           </li>
           )}
-           {window.location.href.includes("/saved") ? (
+           {window.location.href.includes("/competitions") ? (
             ""
           ) : (
           <li className="nav-item">
-            <a className="nav-link" href="/saved" id="btnSaved">
-              View Saved competitions
+            <a className="nav-link" href="/competitions" id="btncompetitions">
+              View competitions competitions
             </a>
           </li>
           )}

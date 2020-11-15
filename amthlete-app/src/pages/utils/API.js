@@ -18,7 +18,7 @@ export default {
     return axios.delete("/api/competitions/" + id);
   },
   // Saves a competition to the database
-  savecompetition: function(savedcompetitions) {
-    return axios.post("/api/competitions", savedcompetitions);
+  savecompetition: function(competitionscompetitions) {
+    return axios.post("/api/competitions", competitionscompetitions);
   }
 };
