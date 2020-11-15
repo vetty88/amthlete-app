@@ -14,9 +14,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/competitionlist";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/equestrianDB";
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/competitionlist",
+  process.env.MONGODB_URI || "mongodb://localhost/equestrianDB",
   {
     useCreateIndex: true,
     useNewUrlParser: true
