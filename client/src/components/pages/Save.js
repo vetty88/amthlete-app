@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import Jumbotron from "../components/Jumbotron";
-import { Container } from "../components/Grid";
-import Completed from "../components/Completed";
-import Nav from "../components/Nav";
+import API from "../../pages/utils/API";
+import Jumbotron from "../Jumbotron";
+import { Container } from "../Grid";
+import Completed from "../Completed";
+import Nav from "../Nav";
 
 class CompleteCompetition extends Component {
   state = {
