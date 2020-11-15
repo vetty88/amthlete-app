@@ -14,7 +14,6 @@ function App() {
           <Route exact path="/" component={Competitions} />
           <Route exact path="/competitions" component={Complete} />
           <Route exact path="/competitions/:id" component={Complete} />
-          <Route exact path="/detail/:id" component={Complete} />
           <Route component={NoMatch} /> 
         </Switch>
       </div>
