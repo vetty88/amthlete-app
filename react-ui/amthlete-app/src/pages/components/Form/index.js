@@ -15,7 +15,7 @@ const Form = (props) => {
           value={props.Competitions}
           type="text"
           name="Competitionscompetition"
-          placeholder="Pride & Prejudice"
+          placeholder="HRCAV"
           onChange={props.handleInputChange}
         />
       </div>

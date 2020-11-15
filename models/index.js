@@ -1,3 +1,3 @@
 module.exports = {
-  Competition: require("./competition")
+  Competition: require("./competition.js")
 };

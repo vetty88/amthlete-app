@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextArea, Form } from "../components/Form";
 
 function Competitions() {
   // Setting our component's initial state
@@ -59,7 +59,7 @@ function Competitions() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Competitions Should I Read?</h1>
+              <h1>What Competitions Should I Enter?</h1>
             </Jumbotron>
             <form>
               <Input
@@ -77,12 +77,12 @@ function Competitions() {
                 name="date"
                 placeholder="date (Optional)"
               />
-              <FormBtn
+              <Form
                 disabled={!(formObject.horse && formObject.eventName)}
                 onClick={handleFormSubmit}
               >
                 Submit Competition
-              </FormBtn>
+              </Form>
             </form>
           </Col>
           <Col size="md-6 sm-12">

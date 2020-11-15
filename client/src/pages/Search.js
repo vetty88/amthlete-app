@@ -3,29 +3,29 @@ import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import { Container, Row, Col } from "../components/Grid";
 import Form from "../components/Form";
-import Search from "../components/Search";
+import Competitions from "../components/Competitions";
 import Nav from "../components/Nav";
 // import Footer from "../components/Footer"
 
-class Searchcompetitions extends Component {
+class CompetitionsCompetitions extends Component {
   //initial state
   state = {
-    search: "Pride & Prejudice",
+    Competitions: "HRCAV",
     competitions: [],
     error: "",
     message: "",
   };
 
-  //function for search bar
+  //function for Competitions bar
   handleInputChange = (event) => {
-    this.setState({ search: event.target.value });
+    this.setState({ Competitions: event.target.value });
   };
 
-  //function for submit button on search form
+  //function for submit button on Competitions form
   handleFormSubmit = (event) => {
     event.preventDefault();
-    // once it clicks it connects to the google competition api with the search value
-    API.getequestrianDBcompetitions(this.state.search)
+    // once it clicks it connects to the google competition api with the Competitions value
+    API.getEquestrianDBCompetitions(this.state.Competitions)
       .then((res) => {
         if (res.data.items === "error") {
           throw new Error(res.data.items);
@@ -59,12 +59,12 @@ class Searchcompetitions extends Component {
     event.preventDefault();
     console.log(this.state.competitions);
     console.log(event.target.id);
-    let competitionscompetitions = this.state.competitions.filter(
+    let CompetitionsCompetitions = this.state.competitions.filter(
       (competition) => competition.id === event.target.id
     );
-    competitionscompetitions = competitionscompetitions[0];
-    console.log(competitionscompetitions);
-    API.Completecompetition(competitionscompetitions)
+    CompetitionsCompetitions = CompetitionsCompetitions[0];
+    console.log(CompetitionsCompetitions);
+    API.CompleteCompetition(CompetitionsCompetitions)
       .then(this.setState({ competitions: this.state.competitions.map(competition=>{
         if (competition.id === event.target.id){
           return {
@@ -94,7 +94,7 @@ class Searchcompetitions extends Component {
         </Container>
         <br></br>
         <Container>
-          <Search
+          <Competitions
             competitions={this.state.competitions}
             handlecompetitionsButton={this.handlecompetitionsButton}
           />
@@ -105,4 +105,4 @@ class Searchcompetitions extends Component {
   }
 }
 
-export default Searchcompetitions;
+export default CompetitionsCompetitions;

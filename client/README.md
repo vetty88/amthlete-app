@@ -1146,7 +1146,7 @@ If you’re hosting your `build` with a static hosting provider you can use [rea
 
 There are also opportunities to use this outside of static hosting, to take the pressure off the server when generating and caching routes.
 
-The primary benefit of pre-rendering is that you get the core content of each page _with_ the HTML payload—regardless of whether or not your JavaScript bundle successfully downloads. It also increases the likelihood that each route of your application will be picked up by search engines.
+The primary benefit of pre-rendering is that you get the core content of each page _with_ the HTML payload—regardless of whether or not your JavaScript bundle successfully downloads. It also increases the likelihood that each route of your application will be picked up by Competitions engines.
 
 You can Enter more about [zero-configuration pre-rendering (also called snapshotting) here](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).
 
@@ -1194,7 +1194,7 @@ We recommend to put the test files (or `__tests__` folders) next to the code the
 
 When you run `npm test`, Jest will launch in the watch mode. Every time you Complete a file, it will re-run the tests, just like `npm start` recompiles the code.
 
-The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
+The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a Competitions pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
 
 ![Jest watch mode](http://faceCompetition.github.io/jest/img/blog/15-watch.gif)
 
@@ -1633,7 +1633,7 @@ runtime caching strategy for those requests, you can [`eject`](#npm-run-eject)
 and then configure the
 [`runtimeCaching`](https://github.com/GoogleChrome/sw-precache#runtimecaching-arrayobject)
 option in the `SWPrecacheWebpackPlugin` section of
-[`webpack.config.prod.js`](../config/webpack.config.prod.js).
+[`webpack.config.prod.js`](./config/webpack.config.prod.js).
 
 ### Progressive Web App Metadata
 
@@ -1768,7 +1768,7 @@ service worker navigation routing can be configured or disabled by
 [`eject`ing](#npm-run-eject) and then modifying the
 [`navigateFallback`](https://github.com/GoogleChrome/sw-precache#navigatefallback-string)
 and [`navigateFallbackWhitelist`](https://github.com/GoogleChrome/sw-precache#navigatefallbackwhitelist-arrayregexp)
-options of the `SWPreachePlugin` [configuration](../config/webpack.config.prod.js).
+options of the `SWPreachePlugin` [configuration](./config/webpack.config.prod.js).
 
 ### Building for Relative Paths
 
@@ -1967,7 +1967,7 @@ If you exclude or ignore necessary files from the package you will see a error s
 ```
 remote: Could not find a required file.
 remote:   Name: `index.html`
-remote:   Searched in: /tmp/build_a2875fc163b209225122d68916f1d4df/public
+remote:   Competitionsed in: /tmp/build_a2875fc163b209225122d68916f1d4df/public
 remote:
 remote: npm ERR! Linux 3.13.0-105-generic
 remote: npm ERR! argv "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/node" "/tmp/build_a2875fc163b209225122d68916f1d4df/.heroku/node/bin/npm" "run" "build"

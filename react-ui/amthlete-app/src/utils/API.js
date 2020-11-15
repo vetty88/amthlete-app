@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
     // Get competition from google Competitions 
     getEquestrianDBCompetitions: function(query) {
-        return axios.get("mongodb://localhost/equestrianDB?q=" + query)
+        return axios.get("https://www.googleapis.com/competitions/v1/volumes?q=" + query)
     },
   // Gets all competitions
   getCompetitions: function() {

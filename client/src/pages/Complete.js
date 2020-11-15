@@ -2,24 +2,24 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import { Container } from "../components/Grid";
-import competitions from "../components/competitions";
+import Competitions from "../components/Competitions";
 import Nav from "../components/Nav";
 
-class Completecompetition extends Component {
+class CompleteCompetition extends Component {
   state = {
-    competitionscompetitions: [],
+    CompetitionsCompetitions: [],
   };
 
   //get all competitions competitions to the database
   componentDidMount() {
-    API.getcompetitions()
-      .then((res) => this.setState({ competitionscompetitions: res.data }))
+    API.getCompetitions()
+      .then((res) => this.setState({ CompetitionsCompetitions: res.data }))
       .catch((err) => console.log(err));
   }
 
   //delete competition by id
   handleDeleteButton = (id) => {
-    API.deletecompetition(id)
+    API.deleteCompetition(id)
       .then((res) => this.componentDidMount())
       .catch((err) => console.log(err));
   };
@@ -32,7 +32,7 @@ class Completecompetition extends Component {
 
         <Container>
           <competitions
-            competitionscompetitions={this.state.competitionscompetitions}
+            CompetitionsCompetitions={this.state.CompetitionsCompetitions}
             handleDeleteButton={this.handleDeleteButton}
           />
         </Container>
@@ -41,4 +41,4 @@ class Completecompetition extends Component {
   }
 }
 
-export default Completecompetition;
+export default CompleteCompetition;
