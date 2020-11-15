@@ -15,6 +15,7 @@
     "is-yarn-global": "^0.3.0",
     "js-tokens": "^4.0.0",
     "json-schema-traverse": "^0.4.1",
+    "logger": "0.0.1",
     "mongoose": "^5.10.9",
     "morgan": "^1.10.0",
     "skeleton": "^0.1.2"

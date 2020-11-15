@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #8a4384;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .navbar-brand {
+    color: white;
+    cursor: default;
+  }
+  
+  #btnSaved,
+  #btnSearch {
+    color: white;
+  }
+  
+  #btnSaved:hover,
+  #btnSearch:hover {
+    font-size: 1.05rem;
+  }
+  
+  #btnSaved:active,
+  #btnSearch:active {
+    font-size: 1rem;
+  }

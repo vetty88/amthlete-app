@@ -1,0 +1,38 @@
+form {
+    border-radius: 5px;
+    border: 2px solid #8a4384;
+  }
+  
+  .searchTitle {
+    margin-left: 2vw;;
+    margin-top: 2vh;
+    color: #8a4384;
+    text-align: center;
+  }
+  
+  .submitBtn {
+    background-color: #608773 !important;
+    color: white;
+  }
+  
+  .submitBtn:hover {
+    color: white;
+    font-size: 1.05rem;
+  }
+  
+  .submitBtn:active {
+    color: white !important;
+    font-size: 1rem;
+  }
+  
+  .input {
+    width: 90%;
+  }
+  
+  
+  @media (max-width: 991px) {
+    .searchTitle {
+      margin-left: 3.5vw !important;
+      margin-right: 3.5vw !important;
+    }
+  }
