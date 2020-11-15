@@ -14,16 +14,18 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("/client/build"));
 }
 
+// connect to the db
 
-// Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcompetinglist";
-{
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/reactcompetinglist',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
 );
+
 
 // Add routes, both API and view
 
