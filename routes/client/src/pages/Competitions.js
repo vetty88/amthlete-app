@@ -5,12 +5,12 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, Form } from "../components/Form";
+import { Input, TextArea, FormBtn } from "../components";
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setcompetitions] = useState([])
-  const [formObject, setFormObject] = useState({})
+  const [FormBtnObject, setFormBtnObject] = useState({})
 
   // Load all competitions and store them with setcompetitions
   useEffect(() => {
@@ -36,18 +36,18 @@ function Competitions() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormBtnObject({...FormBtnObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.CompleteCompetition method to Complete the competition data
+  // When the FormBtn is submitted, use the API.CompleteCompetition method to Complete the competition data
   // Then reload competitions from the database
-  function handleFormSubmit(event) {
+  function handleFormBtnSubmit(event) {
     event.preventDefault();
-    if (formObject.eventName && formObject.horse) {
+    if (FormBtnObject.eventName && FormBtnObject.horse) {
       API.CompleteCompetition({
-        eventName: formObject.eventName,
-        horse: formObject.horse,
-        date: formObject.date
+        eventName: FormBtnObject.eventName,
+        horse: FormBtnObject.horse,
+        date: FormBtnObject.date
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -61,7 +61,7 @@ function Competitions() {
             <Jumbotron>
               <h1>What competitions Should I Enter?</h1>
             </Jumbotron>
-            <form>
+            <FormBtn>
               <Input
                 onChange={handleInputChange}
                 name="eventName"
@@ -77,13 +77,13 @@ function Competitions() {
                 name="date"
                 placeholder="date (Optional)"
               />
-              <Form
-                disabled={!(formObject.horse && formObject.eventName)}
-                onClick={handleFormSubmit}
+              <FormBtn
+                disabled={!(FormBtnObject.horse && FormBtnObject.eventName)}
+                onClick={handleFormBtnSubmit}
               >
                 Submit competition
-              </Form>
-            </form>
+              </FormBtn>
+            </FormBtn>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>

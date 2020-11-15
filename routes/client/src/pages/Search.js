@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import API from "./src/pages/utils/API";
+import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import { Container, Row, Col } from "../components/Grid";
-import Form from "../components/Form";
+import FormBtn from "../components/FormBtn";
 import Competitions from "../components/Competitions";
 import Nav from "../components/Nav";
 // import Footer from "../components/Footer"
@@ -10,8 +10,8 @@ import Nav from "../components/Nav";
 class CompetitionsCompetitions extends Component {
   //initial state
   state = {
-    Competitions: "Pride & Prejudice",
-    Competitions: [],
+    Competitions: "HRCAV",
+    competitions: [],
     error: "",
     message: "",
   };
@@ -21,10 +21,10 @@ class CompetitionsCompetitions extends Component {
     this.setState({ Competitions: event.target.value });
   };
 
-  //function for submit button on Competitions form
-  handleFormSubmit = (event) => {
+  //function for submit button on Competitions FormBtn
+  handleFormBtnSubmit = (event) => {
     event.preventDefault();
-    // once it clicks it connects to the google Competition api with the Competitions value
+    // once it clicks it connects to the google competition api with the Competitions value
     API.getEquestrianDBCompetitions(this.state.Competitions)
       .then((res) => {
         if (res.data.items === "error") {
@@ -34,7 +34,7 @@ class CompetitionsCompetitions extends Component {
           let results = res.data.items;
           //map through array
           results = results.map((result) => {
-            //store each Competition in a new object
+            //store each competition in a new object
             result = {
               key: result.id,
               id: result.id,
@@ -43,35 +43,35 @@ class CompetitionsCompetitions extends Component {
               resultNotes: result.volumeInfo.resultNotes,
               image: result.volumeInfo.imageLinks.thumbnail,
               link: result.volumeInfo.infoLink,
-              buttonText: "Complete Competition"
+              buttonText: "Complete competition"
             };
             return result;
           });
           // reset state
-          this.setState({ Competitions: results, error: "" });
+          this.setState({ competitions: results, error: "" });
         }
       })
       .catch((err) => this.setState({ error: err.items }));
   };
 
-  handleCompletedButton = (event) => {
+  handlecompetitionsButton = (event) => {
     // console.log(event)
     event.preventDefault();
-    console.log(this.state.Competitions);
+    console.log(this.state.competitions);
     console.log(event.target.id);
-    let CompletedCompetitions = this.state.Competitions.filter(
-      (Competition) => Competition.id === event.target.id
+    let CompetitionsCompetitions = this.state.competitions.filter(
+      (competition) => competition.id === event.target.id
     );
-    CompletedCompetitions = CompletedCompetitions[0];
-    console.log(CompletedCompetitions);
-    API.CompleteCompetition(CompletedCompetitions)
-      .then(this.setState({ Competitions: this.state.Competitions.map(Competition=>{
-        if (Competition.id === event.target.id){
+    CompetitionsCompetitions = CompetitionsCompetitions[0];
+    console.log(CompetitionsCompetitions);
+    API.CompleteCompetition(CompetitionsCompetitions)
+      .then(this.setState({ competitions: this.state.competitions.map(competition=>{
+        if (competition.id === event.target.id){
           return {
-            ...Competition, buttonText: "Completed!"
+            ...competition, buttonText: "competitions!"
           }
         } else {
-          return Competition;
+          return competition;
         }
       })
      }))
@@ -85,8 +85,8 @@ class CompetitionsCompetitions extends Component {
         <Container>
           <Row>
             <Col size="12">
-              <Form
-                handleFormSubmit={this.handleFormSubmit}
+              <FormBtn
+                handleFormBtnSubmit={this.handleFormBtnSubmit}
                 handleInputChange={this.handleInputChange}
               />
             </Col>
@@ -95,8 +95,8 @@ class CompetitionsCompetitions extends Component {
         <br></br>
         <Container>
           <Competitions
-            Competitions={this.state.Competitions}
-            handleCompletedButton={this.handleCompletedButton}
+            competitions={this.state.competitions}
+            handlecompetitionsButton={this.handlecompetitionsButton}
           />
         </Container>
         {/* <Footer/> */}

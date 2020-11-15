@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Jumbotron from "../components/Jumbotron";
 import { Container, Row, Col } from "../components/Grid";
-import Form from "../components/Form";
+import FormBtn from "../components/FormBtn";
 import Competitions from "../components/Competitions";
 import Nav from "../components/Nav";
 // import Footer from "../components/Footer"
@@ -10,7 +10,7 @@ import Nav from "../components/Nav";
 class CompetitionsCompetitions extends Component {
   //initial state
   state = {
-    Competitions: "Pride & Prejudice",
+    Competitions: "Dressage Jackpot",
     competitions: [],
     error: "",
     message: "",
@@ -21,8 +21,8 @@ class CompetitionsCompetitions extends Component {
     this.setState({ Competitions: event.target.value });
   };
 
-  //function for submit button on Competitions form
-  handleFormSubmit = (event) => {
+  //function for submit button on Competitions FormBtn
+  handleFormBtnSubmit = (event) => {
     event.preventDefault();
     // once it clicks it connects to the google competition api with the Competitions value
     API.getEquestrianDBCompetitions(this.state.Competitions)
@@ -85,8 +85,8 @@ class CompetitionsCompetitions extends Component {
         <Container>
           <Row>
             <Col size="12">
-              <Form
-                handleFormSubmit={this.handleFormSubmit}
+              <FormBtn
+                handleFormBtnSubmit={this.handleFormBtnSubmit}
                 handleInputChange={this.handleInputChange}
               />
             </Col>
