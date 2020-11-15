@@ -25,7 +25,7 @@ class Searchcompetitions extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     // once it clicks it connects to the google competition api with the search value
-    API.getGoogleSearchcompetitions(this.state.search)
+    API.getequestrianDBcompetitions(this.state.search)
       .then((res) => {
         if (res.data.items === "error") {
           throw new Error(res.data.items);
@@ -38,12 +38,12 @@ class Searchcompetitions extends Component {
             result = {
               key: result.id,
               id: result.id,
-              title: result.volumeInfo.title,
-              author: result.volumeInfo.authors,
-              description: result.volumeInfo.description,
+              eventName: result.volumeInfo.eventName,
+              horse: result.volumeInfo.horses,
+              resultNotes: result.volumeInfo.resultNotes,
               image: result.volumeInfo.imageLinks.thumbnail,
               link: result.volumeInfo.infoLink,
-              buttonText: "Save competition"
+              buttonText: "Complete competition"
             };
             return result;
           });
@@ -64,7 +64,7 @@ class Searchcompetitions extends Component {
     );
     competitionscompetitions = competitionscompetitions[0];
     console.log(competitionscompetitions);
-    API.savecompetition(competitionscompetitions)
+    API.Completecompetition(competitionscompetitions)
       .then(this.setState({ competitions: this.state.competitions.map(competition=>{
         if (competition.id === event.target.id){
           return {

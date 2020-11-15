@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #8a4384;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .navbar-brand {
+    color: white;
+    cursor: default;
+  }
+  
+  #btncompetitions,
+  #btnSearch {
+    color: white;
+  }
+  
+  #btncompetitions:hover,
+  #btnSearch:hover {
+    font-size: 1.05rem;
+  }
+  
+  #btncompetitions:active,
+  #btnSearch:active {
+    font-size: 1rem;
+  }

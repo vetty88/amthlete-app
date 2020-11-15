@@ -13,7 +13,7 @@
 
 Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
 
-* Elevator pitch: a one minute description of your application
+* Elevator pitch: a one minute resultNotes of your application
 
 * Concept: What is your user story? What was your motivation for development?
 

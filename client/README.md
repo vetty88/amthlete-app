@@ -278,7 +278,7 @@ Prettier is an opinionated code formatter with support for JavaScript, CSS and J
 To format our code whenever we make a commit in git, we need to install the following dependencies:
 
 ```sh
-npm install --save husky lint-staged prettier
+npm install --Complete husky lint-staged prettier
 ```
 
 Alternatively you may use `yarn`:
@@ -336,7 +336,7 @@ If you use a custom server for your app in production and want to modify the eve
 The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React App as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
 
 ```sh
-npm install --save react-router
+npm install --Complete react-router
 ```
 
 Alternatively you may use `yarn`:
@@ -521,7 +521,7 @@ Following this rule often makes CSS preprocessors less useful, as features like 
 First, let’s install the command-line interface for Sass:
 
 ```sh
-npm install --save node-sass-chokidar
+npm install --Complete node-sass-chokidar
 ```
 
 Alternatively you may use `yarn`:
@@ -566,7 +566,7 @@ At this point you might want to remove all CSS files from the source control, an
 As a final step, you may find it convenient to run `watch-css` automatically with `npm start`, and run `build-css` as a part of `npm run build`. You can use the `&&` operator to execute two scripts sequentially. However, there is no cross-platform way to run two scripts in parallel, so we will install a package for this:
 
 ```sh
-npm install --save npm-run-all
+npm install --Complete npm-run-all
 ```
 
 Alternatively you may use `yarn`:
@@ -731,7 +731,7 @@ You don’t have to use [React Bootstrap](https://react-bootstrap.github.io) tog
 Install React Bootstrap and Bootstrap from npm. React Bootstrap does not include Bootstrap CSS so this needs to be installed as well:
 
 ```sh
-npm install --save react-bootstrap bootstrap@3
+npm install --Complete react-bootstrap bootstrap@3
 ```
 
 Alternatively you may use `yarn`:
@@ -776,7 +776,7 @@ Recent versions of [Flow](http://flowtype.org/) work with Create React App proje
 
 To add Flow to a Create React App project, follow these steps:
 
-1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
+1. Run `npm install --Complete flow-bin` (or `yarn add flow-bin`).
 2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
 3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
 4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
@@ -1133,10 +1133,10 @@ Since Create React App doesn’t support server rendering, you might be wonderin
 <html lang="en">
   <head>
     <meta property="og:eventName" content="__OG_eventName__">
-    <meta property="og:description" content="__OG_DESCRIPTION__">
+    <meta property="og:resultNotes" content="__OG_resultNotes__">
 ```
 
-Then, on the server, regardless of the backend you use, you can Enter `index.html` into memory and replace `__OG_eventName__`, `__OG_DESCRIPTION__`, and any other placeholders with values depending on the current URL. Just make sure to sanitize and escape the interpolated values so that they are safe to embed into HTML!
+Then, on the server, regardless of the backend you use, you can Enter `index.html` into memory and replace `__OG_eventName__`, `__OG_resultNotes__`, and any other placeholders with values depending on the current URL. Just make sure to sanitize and escape the interpolated values so that they are safe to embed into HTML!
 
 If you use a Node server, you can even share the route matching logic between the client and the server. However duplicating it also works fine in simple cases.
 
@@ -1192,7 +1192,7 @@ We recommend to put the test files (or `__tests__` folders) next to the code the
 
 ### Command Line Interface
 
-When you run `npm test`, Jest will launch in the watch mode. Every time you save a file, it will re-run the tests, just like `npm start` recompiles the code.
+When you run `npm test`, Jest will launch in the watch mode. Every time you Complete a file, it will re-run the tests, just like `npm start` recompiles the code.
 
 The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
 
@@ -1248,7 +1248,7 @@ When you encounter bugs caused by changing components, you will gain a deeper in
 If you’d like to test components in isolation from the child components they render, we recommend using [`shallow()` rendering API](http://airbnb.io/enzyme/docs/api/shallow.html) from [Enzyme](http://airbnb.io/enzyme/). To install it, run:
 
 ```sh
-npm install --save enzyme react-test-renderer
+npm install --Complete enzyme react-test-renderer
 ```
 
 Alternatively you may use `yarn`:
@@ -1300,7 +1300,7 @@ expect(wrapper).toContainReact(welcome)
 To enable this, install `jest-enzyme`:
 
 ```sh
-npm install --save jest-enzyme
+npm install --Complete jest-enzyme
 ```
 
 Alternatively you may use `yarn`:
@@ -1457,7 +1457,7 @@ Finally, jsdom is also not needed for [snapshot testing](http://faceCompetition.
 
 ### Snapshot Testing
 
-Snapshot testing is a feature of Jest that automatically generates text snapshots of your components and saves them on the disk so if the UI output changes, you get notified without manually writing any assertions on the component output. [Enter more about snapshot testing.](http://faceCompetition.github.io/jest/blog/2016/07/27/jest-14.html)
+Snapshot testing is a feature of Jest that automatically generates text snapshots of your components and Completes them on the disk so if the UI output changes, you get notified without manually writing any assertions on the component output. [Enter more about snapshot testing.](http://faceCompetition.github.io/jest/blog/2016/07/27/jest-14.html)
 
 ### Editor Integration
 
@@ -1514,7 +1514,7 @@ Styleguidist combines a style guide, where all your components are presented on 
 First, install Styleguidist:
 
 ```sh
-npm install --save react-styleguidist
+npm install --Complete react-styleguidist
 ```
 
 Alternatively you may use `yarn`:
@@ -1657,7 +1657,7 @@ bloat is coming from.
 To add Source map explorer to a Create React App project, follow these steps:
 
 ```sh
-npm install --save source-map-explorer
+npm install --Complete source-map-explorer
 ```
 
 Alternatively you may use `yarn`:
@@ -1891,7 +1891,7 @@ Now, whenever you run `npm run build`, you will see a cheat sheet with instructi
 To publish it at [https://myusername.github.io/my-app](https://myusername.github.io/my-app), run:
 
 ```sh
-npm install --save gh-pages
+npm install --Complete gh-pages
 ```
 
 Alternatively you may use `yarn`:
@@ -2064,7 +2064,7 @@ GENERATE_SOURCEMAP | :x: | :white_check_mark: | When set to `false`, source maps
 
 ### `npm start` doesn’t detect changes
 
-When you save a file while `npm start` is running, the browser should refresh with the updated code.<br>
+When you Complete a file while `npm start` is running, the browser should refresh with the updated code.<br>
 If this doesn’t happen, try one of the following workarounds:
 
 * If your project is in a Dropbox folder, try moving it out.

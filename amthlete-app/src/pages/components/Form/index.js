@@ -6,7 +6,7 @@ const Form = (props) => {
     <form>
       <div className="form-group row">
         <label className="competitionSearchLabel">
-          <h2 className="searchTitle ml-5">Enter a competition Title or Author Name</h2>
+          <h2 className="searcheventName ml-5">Enter a competition eventName or horse Name</h2>
         </label>
       </div>
       <div className="form-group row">

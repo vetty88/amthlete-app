@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
     // Get competition from google search 
-    getGoogleSearchcompetitions: function(query) {
+    getequestrianDBcompetitions: function(query) {
         return axios.get("https://www.googleapis.com/competitions/v1/volumes?q=" + query)
     },
   // Gets all competitions
@@ -17,8 +17,8 @@ export default {
   deletecompetition: function(id) {
     return axios.delete("/api/competitions/" + id);
   },
-  // Saves a competition to the database
-  savecompetition: function(competitionscompetitions) {
+  // Completes a competition to the database
+  Completecompetition: function(competitionscompetitions) {
     return axios.post("/api/competitions", competitionscompetitions);
   }
 };

@@ -3,7 +3,7 @@ form {
     border: 2px solid #8a4384;
   }
   
-  .searchTitle {
+  .searcheventName {
     margin-left: 2vw;;
     margin-top: 2vh;
     color: #8a4384;
@@ -31,7 +31,7 @@ form {
   
   
   @media (max-width: 991px) {
-    .searchTitle {
+    .searcheventName {
       margin-left: 3.5vw !important;
       margin-right: 3.5vw !important;
     }
