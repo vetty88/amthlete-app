@@ -1,8 +1,45 @@
 {
-  "name": "a-m-thlete-app",
-  "version": "1.0.0",
-  "resultNotes": "",
+  "name": "amthlete-app",
+  "version": "0.1.0",
   "main": "server.js",
+  "private": true,
+  "dependencies": {
+    "3": "^2.1.0",
+    "@angular/cli": "^10.2.0",
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.1",
+    "@testing-library/user-event": "^12.2.0",
+    "axios": "^0.21.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
+    "chokidar": "^3.4.3",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.12.1",
+    "express": "^4.17.1",
+    "gh": "^2.8.8",
+    "github": "^14.0.0",
+    "heroku": "^7.47.0",
+    "if-env": "^1.0.4",
+    "joi": "^17.3.0",
+    "jquery": "^3.5.1",
+    "jsx": "^0.9.89",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.13",
+    "pages": "0.0.16",
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.0",
+    "skeleton": "^0.1.2",
+    "sudo": "^1.0.3",
+    "typescript": "^4.0.5",
+    "web-vitals": "^0.2.4"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -13,27 +50,28 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "horse": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^1.19.4"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "dependencies": {
-    "3": "^2.1.0",
-    "@sideway/address": "^4.1.0",
-    "axios": "^0.18.1",
-    "chokidar": "^3.4.3",
-    "core-js": "^3.7.0",
-    "dotenv": "^8.2.0",
-    "eslint-webpack-plugin": "^2.2.1",
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "joi": "^17.3.0",
-    "mongoose": "^5.10.14",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.5",
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6",
+    "optimize-css-assets-webpack-plugin": "^5.0.4"
   }
 }
