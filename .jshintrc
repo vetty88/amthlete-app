@@ -1,3 +1,9 @@
 {
-    "esversion":9
+  "esversion":9,
+  "rules": {
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ]
+    }]
   }
+}

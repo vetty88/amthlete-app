@@ -2,7 +2,7 @@ const db = require("../models");
 
 // Defining methods for the CompetitionsController
 module.exports = {
-  findAll: function(req, res, next) {
+  findAll: function(req, res) {
     console.log("controller");
     db.Competition
       .find(req.query)

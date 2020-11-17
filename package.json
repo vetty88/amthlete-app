@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "NODE_PATH=./src react-scripts start",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -16,7 +16,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.1",
     "concurrently": "^5.3.0",
+    "image-webpack-loader": "^7.0.1",
     "nodemon": "^1.18.7"
   },
   "dependencies": {
@@ -24,17 +27,26 @@
     "@babel/core": "^7.12.3",
     "@sideway/address": "^4.1.0",
     "axios": "^0.18.1",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
     "chokidar": "^3.4.3",
     "core-js": "^3.7.0",
+    "cors": "^2.8.5",
+    "curl": "^0.1.4",
     "dotenv": "^8.2.0",
     "eslint-webpack-plugin": "^2.2.1",
     "express": "^4.17.1",
+    "git": "^0.1.5",
     "if-env": "^1.0.4",
     "joi": "^17.3.0",
-    "mongoose": "^5.10.14",
+    "mongoose": "^5.10.15",
+    "node": "^15.2.0",
+    "nodejs": "0.0.0",
+    "npm": "^6.14.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^4.0.0",
+    "typescript": "^4.0.5"
   }
 }
