@@ -21,8 +21,8 @@ class SearchCompetitions extends Component {
     this.setState({ search: event.target.value });
   };
 
-  //function for submit button on Competitions FormBtn
-  handleFormBtnSubmit = (event) => {
+  //function for submit button on Competitions form
+  handleformSubmit = (event) => {
     event.preventDefault();
     // once it clicks it connects to the Equestrian competition api with the Competitions value
     API.getEquestrianDBCompetitions(this.state.search)

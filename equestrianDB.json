@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f57"
+  },
+  "eventName": "TTT CT Sale",
+  "horse": "Tess",
+  "resultNotes": "Dressage penalties 35.17, %64.85, 5th place",
+  "date": 0.004952947003467063
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f58"
+  },
+  "eventName": "TTT HT Greenvale",
+  "horse": "Tess",
+  "resultNotes": "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th place",
+  "date": 0.0004952947003467063
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f59"
+  },
+  "eventName": "Rosedale Horse Trials (HRCAV)",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th place",
+  "date": 0.0009905894006934125
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f5a"
+  },
+  "eventName": "Rosedale Horse Trials (PC)",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
+  "date": 0.001337295690936107
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f5b"
+  },
+  "eventName": "Stony Creek Showjumping",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th place",
+  "date": 0.00033019646689780416
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f5c"
+  },
+  "eventName": "Nicholson Dressage Jackpot 4.3",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
+  "date": 0.0004950495049504951
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f5d"
+  },
+  "eventName": "Nicholson Dressage Jackpot 4.4",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties 35, %65, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
+  "date": 0.0004950495049504951
+},{
+  "_id": {
+    "$oid": "5fb37d395de44f4d608a4f5e"
+  },
+  "eventName": "Orbost Horse Trials (PC)",
+  "horse": "Squirrel",
+  "resultNotes": "Dressage penalties 19, %81, SJ Penalties: 0, XC Penalties: 20, 5th place",
+  "date": 0.004952947003467063
+}]

@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/FormBtn";
+import { Input, TextArea, form } from "../components/form";
 
 function Competitions() {
   // Setting our component's initial state
@@ -39,9 +39,9 @@ function Competitions() {
     setformObject({...formObject, [name]: value})
   };
 
-  // When the FormBtn is submitted, use the API.saveCompetition method to Complete the competition data
+  // When the form is submitted, use the API.saveCompetition method to Complete the competition data
   // Then reload competitions from the database
-  function handleFormBtnSubmit(event) {
+  function handleformSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
@@ -61,7 +61,7 @@ function Competitions() {
             <Jumbotron>
               <h1>What competitions Should I Enter?</h1>
             </Jumbotron>
-            <FormBtn>
+            <form>
               <Input
                 onChange={handleInputChange}
                 name="eventName"
@@ -77,13 +77,13 @@ function Competitions() {
                 name="date"
                 placeholder="Date (Optional)"
               />
-              <FormBtn
+              <form
                 disabled={!(formObject.horse && formObject.eventName)}
-                onClick={handleFormBtnSubmit}
+                onClick={handleformSubmit}
               >
                 Submit competition
-              </FormBtn>
-            </FormBtn>
+              </form>
+            </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
