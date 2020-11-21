@@ -25,7 +25,7 @@ class SearchCompetitions extends Component {
   handleformSubmit = (event) => {
     event.preventDefault();
     // once it clicks it connects to the Equestrian competition api with the Competitions value
-    API.getEquestrianDBCompetitions(this.state.search)
+    API.getSearchCompetitions(this.state.search)
       .then((res) => {
         if (res.data.items === "error") {
           throw new Error(res.data.items);

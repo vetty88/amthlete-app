@@ -2,13 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NoMatch from "./pages/NoMatch";
 import Save from "./pages/Save";
-import Search from "./pages/Search"
-import "./App.css"
+import Search from "./pages/Search";
+import "./App.css";
 
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div>
         <Switch>
           <Route exact path="/" component={Search} />
@@ -17,7 +17,7 @@ function App() {
           <Route component={NoMatch} /> 
         </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

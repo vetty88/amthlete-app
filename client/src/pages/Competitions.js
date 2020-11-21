@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, form } from "../components/form";
+import { Input, TextArea, FormBtn } from "../components/form";
 
 function Competitions() {
   // Setting our component's initial state
@@ -77,12 +77,12 @@ function Competitions() {
                 name="date"
                 placeholder="Date (Optional)"
               />
-              <form
+              <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
                 onClick={handleformSubmit}
               >
                 Submit competition
-              </form>
+              </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">

@@ -1,9 +1,10 @@
 import axios from "axios";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     // Get competition from Equestrian Competitions 
-    getEquestrianDBCompetitions: function(query) {
-        return axios.get("mongodb://localhost/equestrianDB?q=" + query)
+    getSearchCompetitions: function(query) {
+      return axios.get("mongodb+srv://vetty88:fXP1EMS6Ww0nANsY@cluster0.0kcvg.mongodb.net/equestrianDB?q=" + query);
     },
   // Gets all competitions
   getCompetitions: function() {
@@ -22,3 +23,4 @@ export default {
     return axios.post("/api/competitions", savedCompetitions);
   }
 };
+
