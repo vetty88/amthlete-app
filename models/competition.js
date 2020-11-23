@@ -5,6 +5,7 @@ const competitionSchema = new Schema({
   eventName: { type: String, required: true },
   horse: { type: String, required: true },
   resultNotes: String,
+  image: {type: String, trim: true, unique: true},
   date: { type: Date, default: Date.now }
 });
 
