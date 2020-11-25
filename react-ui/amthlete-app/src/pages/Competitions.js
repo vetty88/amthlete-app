@@ -45,9 +45,9 @@ function Competitions() {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
-        title: formObject.eventName,
-        author: formObject.horse,
-        synopsis: formObject.resultNotes
+        eventName: formObject.eventName,
+        horse: formObject.horse,
+        resultNotes: formObject.resultNotes
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -95,7 +95,7 @@ function Competitions() {
                   <ListItem key={competition._id}>
                     <Link to={"/competitions/" + competition._id}>
                       <strong>
-                        {competition.eventName} by {competition.horse}
+                        {competition.eventName} with {competition.horse}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
