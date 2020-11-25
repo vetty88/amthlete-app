@@ -1,23 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Competitions from "./pages/Competitions";
+import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Save from "./pages/Save";
-import Search from "./pages/Search";
-import "./App.css";
-
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div>
+        <Nav />
         <Switch>
-          <Route exact path="/" component={Search} />
-          <Route exact path="/saved" component={Save} />
-          <Route exact path="/saved/:id" component={Save} />
-          <Route component={NoMatch} /> 
+          <Route exact path={["/", "/competitions"]}>
+            <Competitions />
+          </Route>
+          <Route exact path="/competitions/:id">
+            <Detail />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

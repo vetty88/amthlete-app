@@ -1,13 +1,12 @@
 import React from "react";
-import "./style.css";
 
-function Jumbotron() {
+function Jumbotron({ children }) {
   return (
-    <div className="jumbotron text-center">
-      <h1>Equestrian Competition App</h1>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.Competitionpuppy.com/about/api/">
-        Powered by Amthlete
-      </a>
+    <div
+      style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
+      className="jumbotron"
+    >
+      {children}
     </div>
   );
 }

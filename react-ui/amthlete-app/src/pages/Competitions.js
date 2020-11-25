@@ -5,28 +5,28 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/form";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 function Competitions() {
   // Setting our component's initial state
-  const [competitions, setcompetitions] = useState([])
-  const [formObject, setformObject] = useState({})
+  const [competitions, setCompetitions] = useState([])
+  const [formObject, setFormObject] = useState({})
 
-  // Load all competitions and store them with setcompetitions
+  // Load all books and store them with setBooks
   useEffect(() => {
     loadCompetitions()
   }, [])
 
-  // Loads all competitions and sets them to competitions
+  // Loads all books and sets them to books
   function loadCompetitions() {
     API.getCompetitions()
       .then(res => 
-        setcompetitions(res.data)
+        setCompetitions(res.data)
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a competition from the database with a given id, then reloads competitions from the db
+  // Deletes a book from the database with a given id, then reloads books from the db
   function deleteCompetition(id) {
     API.deleteCompetition(id)
       .then(res => loadCompetitions())
@@ -36,18 +36,18 @@ function Competitions() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setformObject({...formObject, [name]: value})
+    setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveCompetition method to Complete the competition data
-  // Then reload competitions from the database
-  function handleformSubmit(event) {
+  // When the form is submitted, use the API.saveCompetition method to save the book data
+  // Then reload books from the database
+  function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
-        eventName: formObject.eventName,
-        horse: formObject.horse,
-        date: formObject.date
+        title: formObject.eventName,
+        author: formObject.horse,
+        synopsis: formObject.resultNotes
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -59,7 +59,7 @@ function Competitions() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What competitions Should I Enter? </h1>
+              <h1>What Competitions Should I Enter?</h1>
             </Jumbotron>
             <form>
               <Input
@@ -74,20 +74,20 @@ function Competitions() {
               />
               <TextArea
                 onChange={handleInputChange}
-                name="date"
-                placeholder="Date (Optional)"
+                name="resultNotes"
+                placeholder="ResultNotes (Optional)"
               />
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
-                onClick={handleformSubmit}
+                onClick={handleFormSubmit}
               >
-                Submit competition
+                Submit Competition
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>competitions On My List</h1>
+              <h1>Competitions On My List</h1>
             </Jumbotron>
             {competitions.length ? (
               <List>
