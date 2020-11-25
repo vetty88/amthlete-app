@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+Summary: As a {competitor}, I should be able to {record my sporting results}, so that I can {reflect and improve each season}
+Acceptance Criteria:
+* GIVEN: A {competitor} is {recording their sporting results} in the {A[m]thlete Tracker app}
+* WHEN: The app hits the {app interface entry} endpoint with a valid request, containing {sports results, images, recounts}
+* THEN: The app should receive a status {entry added!}
+* AND: In the response, the following information should be returned: {refresh page, display information input}
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Use
+MongoDB
+Express
+React
+Node JS
 
-## Available Scripts
 
-In the project directory, you can run:
+FEATURES
+Recording: Record your sporting activities
+Photos and Markers: mark sporting sites and add media such as photos and videos to your record/event
+Export Data: Export your results
+No Internet Access: Accessible without Internet
+No Advertising: No ads
+Privacy: user  privacy settings/ sharing of results with community
 
-### `yarn start`
+PILOT MODULES
+                Solo/Team       Team
+    FLAGSHIP    Equestrian - HRCAV and PC
+    SECOND REL                  Basketball
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+TO COME
+                Solo/Team
+                                Team
+    THIRD REL                   Netball [API Integration - Netball Victoria]
+    FOURTH REL                  Soccer
+    FIFTH REL                   AFL
+    SIXTH REL   SWIMMING
+    SEVENTH REL   TENNIS
+      EIGHT REL   ATHLETICS
+      9th           GYMNASTICS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  
+  DEV NOTES
 
-### `yarn test`
+  As an amateur athlete I want to track my results from playing numerous sports so that I can reflect on my season. I would also like to have a central area to share results with my team and have a chat about the game.  I would appreciate a community contributed calendar and results so that we can work together to record accurate events plans and outcomes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  TESTING NOTES
 
-### `yarn build`
+  CUSTOMER FEEDBACK
+  ARCHITECTUR DIAGRAMS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ERROR HANDLING
+    RESPONSE MATRICES
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CRUD
 
-### `yarn eject`
+WEESLD
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+MERN STACK
+CSS Framework other than Bootstrap
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+PSEUDOCODE
+Keywords
+IF
+WHILE
+AND
+EVEN
+VARIABLES
+AMOUNT
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Indentation (Nesting)
+End - END IF/ FINISH
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -3,11 +3,12 @@ import "./style.css";
 
 function Jumbotron() {
   return (
-    <div className="jumbotron text-center">
-      <h1>Equestrian Competition App</h1>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.Competitionpuppy.com/about/api/">
-        Powered by Amthlete
-      </a>
+    <div
+      style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
+      className="jumbotron"
+    >
+      <h1 className="text-white pt-5 jumboTitle">Equestrian Competitions</h1>
+      <h3 className="text-white pt-5 jumboText">Find and Save Competitions of Interest</h3>
     </div>
   );
 }

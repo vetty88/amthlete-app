@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
@@ -33,6 +33,7 @@
     "cors": "^2.8.5",
     "curl": "^0.1.4",
     "dotenv": "^8.2.0",
+    "eslint": "^7.14.0",
     "eslint-webpack-plugin": "^2.2.1",
     "express": "^4.17.1",
     "git": "^0.1.5",
