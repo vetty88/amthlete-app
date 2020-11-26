@@ -52,6 +52,7 @@
     "react-form": "^4.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.0",
+    "react-select": "^3.1.1",
     "skeleton": "^0.1.2",
     "typescript": "^4.0.5"
   }

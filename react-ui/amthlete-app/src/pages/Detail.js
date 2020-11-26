@@ -32,29 +32,29 @@ function Detail(props) {
             <article>
 	<h1>ResultNotes</h1>
 		<p>
-		{competition.eventName}
-              	</p>
-		<p>
-                	{competition.eventType}
-              	</p>
-		<p>
-                	{competition.horse}
-              	</p>
-		<p>
-		{competition.disciplines}
-              	</p>
-		<p>
-                	{competition.penalties}
-              	</p>
-		<p>
-                	{competition.place}
-              	</p>
-		<p>
-                	{competition.images}
-              	</p>
-		<p>
-                	{competition.resultNotes}
-              	</p>
+		  {competition.eventName}
+      </p>
+    <p>
+      {competition.eventType}
+      </p>
+    <p>
+      {competition.horse}
+      </p>
+    {/* <p>
+    {competition.disciplines}
+    </p> */}
+    <p>
+      {competition.penalties}
+      </p>
+    <p>
+      {competition.place}
+      </p>
+    <p>
+      {competition.images}
+      </p>
+    <p>
+      {competition.resultNotes}
+    </p>
 	
             </article>
           </Col>
