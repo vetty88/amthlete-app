@@ -30,10 +30,32 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>ResultNotes</h1>
-              <p>
-                {competition.resultNotes}
-              </p>
+	<h1>ResultNotes</h1>
+		<p>
+		  {competition.eventName}
+      </p>
+    <p>
+      {competition.eventType}
+      </p>
+    <p>
+      {competition.horse}
+      </p>
+    <p>
+    {competition.disciplines}
+    </p>
+    <p>
+      {competition.penalties}
+      </p>
+    <p>
+      {competition.place}
+      </p>
+    <p>
+      {competition.images}
+      </p>
+    <p>
+      {competition.resultNotes}
+    </p>
+	
             </article>
           </Col>
         </Row>

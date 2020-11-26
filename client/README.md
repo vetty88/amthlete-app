@@ -808,14 +808,14 @@ These environment variables can be useful for displaying information conditional
 deployed or consuming sensitive data that lives outside of version control.
 
 First, you need to have environment variables defined. For example, let’s say you wanted to consume a secret defined
-in the environment inside a `<form>`:
+in the environment inside a `<Form>`:
 
 ```jsx
 render() {
   return (
     <div>
       <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
-      <form>
+      <Form>
         <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
       </form>
     </div>
@@ -830,7 +830,7 @@ When you load the app in the browser and inspect the `<input>`, you will see its
 ```html
 <div>
   <small>You are running this application in <b>development</b> mode.</small>
-  <form>
+  <Form>
     <input type="hidden" value="abcdef" />
   </form>
 </div>
@@ -1476,7 +1476,7 @@ For an example, a simple button component could have following states:
 
 Usually, it’s hard to see these states without running a sample app or some examples.
 
-Create React App doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React App doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storycompetitions/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
 
 ![Storybook for React Demo](http://i.imgur.com/7CIAWpB.gif)
 
@@ -1503,9 +1503,9 @@ After that, follow the instructions on the screen.
 Learn more about React Storybook:
 
 * Screencast: [Getting Started with React Storybook](https://egghead.io/lessons/react-getting-started-with-react-storybook)
-* [GitHub Repo](https://github.com/storybooks/storybook)
+* [GitHub Repo](https://github.com/storycompetitions/storybook)
 * [Documentation](https://storybook.js.org/basics/introduction/)
-* [Snapshot Testing UI](https://github.com/storybooks/storybook/tree/master/addons/storyshots) with Storybook + addon/storyshot
+* [Snapshot Testing UI](https://github.com/storycompetitions/storybook/tree/master/addons/storyshots) with Storybook + addon/storyshot
 
 ### Getting Started with Styleguidist
 
