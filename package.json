@@ -33,7 +33,6 @@
     "cors": "^2.8.5",
     "curl": "^0.1.4",
     "dotenv": "^8.2.0",
-    "eslint": "^7.14.0",
     "eslint-webpack-plugin": "^2.2.1",
     "express": "^4.17.1",
     "g": "^2.0.1",

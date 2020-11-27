@@ -1,5 +1,4 @@
 import React from "react";
-import Select from 'react-select';
 
 // This file exports the Input, TextArea, and FormBtn components
 
