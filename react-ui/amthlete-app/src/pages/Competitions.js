@@ -7,7 +7,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 // import DatePicker from "react-date-picker";
-import Select from 'react-select'
+import Select from 'react-select';
 
 const eventTypeOptions = [
   { value: 'dressage', label: 'Dressage' }, 
@@ -27,7 +27,7 @@ function Competitions() {
   // Load all books and store them with setBooks
   useEffect(() => {
     loadCompetitions()
-  }, [])
+  }, []);
 
   // Loads all books and sets them to books
   function loadCompetitions() {
