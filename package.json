@@ -1,7 +1,7 @@
 {
-  "name": "amthlete-app",
+  "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "Summary: As a {competitor}, I should be able to {record my sporting results}, so that I can {reflect and improve each season}\r Acceptance Criteria:\r * GIVEN: A {competitor} is {recording their sporting results} in the {A[m]thlete Tracker app}\r * WHEN: The app hits the {app interface entry} endpoint with a valid request, containing {sports results, images, recounts}\r * THEN: The app should receive a status {entry added!}\r * AND: In the response, the following information should be returned: {refresh page, display information input}",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -13,8 +13,8 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Y Waller",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "concurrently": "^5.3.0",
@@ -54,5 +54,20 @@
     "react-select": "^3.1.1",
     "skeleton": "^0.1.2",
     "typescript": "^4.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetty88/amthlete-app.git"
+  },
+  "keywords": [
+    "equestrian",
+    "diary",
+    "tracker",
+    "react",
+    "express"
+  ],
+  "bugs": {
+    "url": "https://github.com/vetty88/amthlete-app/issues"
+  },
+  "homepage": "https://github.com/vetty88/amthlete-app#readme"
 }

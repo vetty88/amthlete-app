@@ -40,9 +40,7 @@ function Detail(props) {
     <p>
       {competition.horse}
       </p>
-    {/* <p>
-    {competition.disciplines}
-    </p> */}
+
     <p>
       {competition.penalties}
       </p>
