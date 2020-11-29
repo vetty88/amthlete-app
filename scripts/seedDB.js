@@ -19,7 +19,7 @@ const competitionSeed = [
     images: "",
     resultNotes:
       "Dressage penalties 35.17, %64.85, 5th place",
-    date: 30/03/2019
+    startDate: 30/03/2019
   },
   {
     eventName: "TTT HT Greenvale",
@@ -31,7 +31,7 @@ const competitionSeed = [
     images: "",
     resultNotes:
       "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th place",
-    date: 05/05/2019
+    startDate: 05/05/2019
   },
   {
   eventName: "Rosedale Horse Trials (HRCAV)",
@@ -43,7 +43,7 @@ const competitionSeed = [
   images: "",
   resultNotes:
     "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th place",
-  date: 20/10/2019
+  startDate: 20/10/2019
   },
   {
   eventName: "Rosedale Horse Trials (PC)",
@@ -55,14 +55,14 @@ const competitionSeed = [
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
-  date: 20/10/2019
+  startDate: 20/10/2019
   },
   {
     eventName: "Stony Creek Showjumping",
     horse: "Squirrel",
     resultNotes:
     "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th place",
-    date: 08/12/2019
+    startDate: 08/12/2019
   },
   {
     eventName: "Nicholson Dressage Jackpot 4.3",
@@ -73,7 +73,7 @@ const competitionSeed = [
     images: "",
     resultNotes:
     "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
-    date: 02/02/2020
+    startDate: 02/02/2020
   },
   {
     eventName: "Nicholson Dressage Jackpot 4.4",
@@ -84,14 +84,14 @@ const competitionSeed = [
     images: "",
     resultNotes:
     "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
-    date: 02/02/2020
+    startDate: 02/02/2020
   },
   {
     eventName: "Nicholson Dressage Jackpot 4.4",
     horse: "Squirrel",
     resultNotes:
     "Dressage penalties 35, %65, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
-    date: 02/02/2020
+    startDate: 02/02/2020
   },
   {
     eventName: "Orbost Horse Trials (PC)",
@@ -103,7 +103,7 @@ const competitionSeed = [
     images: "",
     resultNotes:
     "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
-    date: 30/03/2020
+    startDate: 30/03/2020
     },
     {
       eventName: "AHAA Virtual Show",
@@ -115,7 +115,7 @@ const competitionSeed = [
       images: "",
       resultNotes:
       "Champion partbred (led) Filly",
-      date: 01/08/2020
+      startDate: 01/08/2020
       },
       {
         eventName: "Eagle Point Riding Club Show (HRCAV)",
@@ -127,7 +127,7 @@ const competitionSeed = [
         images: "",
         resultNotes:
         "Champion Mount Most Suitable",
-        date: 01/08/2020
+        startDate: 01/08/2020
       },
   
   ];

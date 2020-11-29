@@ -10,7 +10,7 @@ const competitionSchema = new Schema({
   place: { type: String, required: false },
   images: { type: String, required: false },
   resultNotes: String,
-  date: { type: Date, default: Date.now }
+  startDate: { type: Date, default: Date.now }
 });
 
 const Competition = mongoose.model("Competition", competitionSchema);

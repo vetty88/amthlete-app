@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-// import DatePicker from "react-date-picker";
+import DatePicker from "react-date-picker";
 import Select from 'react-select';
 
 const eventTypeOptions = [
@@ -15,18 +15,18 @@ const eventTypeOptions = [
   { value: 'showing', label: 'Showing' },
   { value: 'horseTrials', label: 'Horse Trials' }, 
   { value: 'combinedTraining', label: 'Combined Training' }
-]
+];
 
 
 function Competitions() {
   // Setting our component's initial state
-  const [competitions, setCompetitions] = useState([])
-  const [formObject, setFormObject] = useState({})
-  
+  const [competitions, setCompetitions] = useState([]);
+  const [formObject, setFormObject] = useState({});
+  const [startDate, setStartDate] = useState(new Date());
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadCompetitions()
+    loadCompetitions();
   }, []);
 
   // Loads all books and sets them to books
@@ -36,7 +36,7 @@ function Competitions() {
         setCompetitions(res.data)
       )
       .catch(err => console.log(err));
-  };
+  }
 
   // Deletes a book from the database with a given id, then reloads books from the db
   function deleteCompetition(id) {
@@ -48,8 +48,8 @@ function Competitions() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
-  };
+    setFormObject({...formObject, [name]: value});
+  }
 
   // When the form is submitted, use the API.saveCompetition method to save the book data
   // Then reload books from the database
@@ -65,12 +65,12 @@ function Competitions() {
               place: formObject.place,
               images: formObject.images,
               resultNotes: formObject.resultNotes,
-              date: formObject.date
+              startDate: formObject.date
           })
           .then(res => loadCompetitions())
           .catch(err => console.log(err));
     }
-  };
+  }
 
     return (
       <Container fluid>
@@ -103,6 +103,8 @@ function Competitions() {
                 name="resultNotes"
                 placeholder="ResultNotes (Optional)"
               />
+
+              <DatePicker selected= {startDate} onChange={date => setStartDate (date)} />
                     
               <FormBtn
                 disabled={!(formObject.eventName && formObject.horse)}
