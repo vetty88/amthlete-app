@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 module.exports = {
  entry: './client/index.js',
  output: {
@@ -12,13 +12,9 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: 
-              ['@babel/core/preset-env',                           
-              '@babel/core/react',
-              {'plugins': ['@babel/plugin-proposal-class-properties']}]     
-          }
+          loader: 'babel-loader'
+          
+          
         }
       }
     ]

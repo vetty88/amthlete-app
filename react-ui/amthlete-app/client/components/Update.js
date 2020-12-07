@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-var querystring = require('querystring');
+const querystring = require('querystring');
 
 class Update extends React.Component {
   constructor() {

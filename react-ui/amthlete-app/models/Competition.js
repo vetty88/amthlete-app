@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var competitionSchema = new Schema({
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const competitionSchema = new Schema({
   resultNotes: String,
   eventName: String,
   eventType: String,
