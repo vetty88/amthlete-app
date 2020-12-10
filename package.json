@@ -1,75 +1,32 @@
 {
-  "name": "y",
+  "name": "amthlete-app",
   "version": "1.0.0",
-  "description": "Summary: As a {competitor}, I should be able to {record my sporting results}, so that I can {reflect and improve each season}\r Acceptance Criteria:\r * GIVEN: A {competitor} is {recording their sporting results} in the {A[m]thlete Tracker app}\r * WHEN: The app hits the {app interface entry} endpoint with a valid request, containing {sports results, images, recounts}\r * THEN: The app should receive a status {entry added!}\r * AND: In the response, the following information should be returned: {refresh page, display information input}",
+  "description": "equestrian competition tracker",
   "main": "server.js",
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
-  },
-  "author": "Y Waller",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/core": "^7.0.0-0",
-    "concurrently": "^5.3.0",
-    "image-webpack-loader": "^7.0.1",
-    "nodemon": "^1.19.4"
-  },
   "dependencies": {
-    "3": "^2.1.0",
-    "@babel/core": "^7.12.3",
-    "@sideway/address": "^4.1.0",
-    "axios": "^0.18.1",
-    "@babel/cli": "^6.26.0",
-    "body-parser": "^1.19.0",
-    "chokidar": "^3.4.3",
-    "core-js": "^3.7.0",
-    "cors": "^2.8.5",
-    "curl": "^0.1.4",
-    "dotenv": "^8.2.0",
-    "eslint-webpack-plugin": "^2.2.1",
     "express": "^4.17.1",
-    "g": "^2.0.1",
     "git": "^0.1.5",
-    "if-env": "^1.0.4",
-    "joi": "^17.3.0",
-    "jsx": "^0.9.89",
-    "mongo": "^0.1.0",
-    "mongoose": "^5.11.3",
-    "node": "^15.2.0",
-    "nodejs": "0.0.0",
-    "npm": "^6.14.8",
-    "react": "^17.0.1",
-    "react-bootstrap": "^1.4.0",
-    "react-date-picker": "^8.0.3",
-    "react-datepicker": "^3.3.0",
-    "react-dom": "^17.0.1",
-    "react-form": "^4.0.1",
-    "react-modal": "^3.12.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.0",
-    "react-select": "^3.1.1",
-    "skeleton": "^0.1.2",
-    "typescript": "^4.0.5"
+    "mongoose": "^5.11.5",
+    "node": "^15.3.0",
+    "npm": "^6.14.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vetty88/amthlete-app.git"
   },
   "keywords": [
+    "sports",
     "equestrian",
-    "diary",
-    "tracker",
     "react",
     "express"
   ],
+  "author": "Y Waller",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vetty88/amthlete-app/issues"
   },

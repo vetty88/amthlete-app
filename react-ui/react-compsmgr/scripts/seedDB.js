@@ -5,7 +5,7 @@ const db = require("../models");
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/reactcms',
+  process.env.MONGODB_URI || 'mongodb://localhost/equestriancompsdb',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -63,13 +63,7 @@ const competitionSeed = [
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
   date: '20/10/2019'
   },
-  {
-    eventName: "Stony Creek Showjumping",
-    horse: "Squirrel",
-    resultNotes:
-    "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th place",
-    date: '08/12/2019'
-  },
+  
   {
     eventName: "Nicholson Dressage Jackpot 4.3",
     eventType: "Dressage",

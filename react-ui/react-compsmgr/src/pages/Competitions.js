@@ -17,13 +17,12 @@ const eventTypeOptions = [
   { value: 'combinedTraining', label: 'Combined Training' }
 ];
 
-  // const [startDate, setStartDate] = useState(new Date());
-
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([]);
   const [formObject, setFormObject] = useState({});
+  
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -104,7 +103,7 @@ function Competitions() {
                 name="resultNotes"
                 placeholder="ResultNotes (Optional)"
               />
-
+                    
               <FormBtn
                 disabled={!(formObject.eventName && formObject.horse)}
                 onClick={handleFormSubmit}
