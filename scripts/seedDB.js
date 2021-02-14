@@ -1,17 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the PROJECTS collection and inserts the PROJECTS below
+// This file empties the Competitions collection and inserts the books below
 
-// Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/reactcms',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  }
+  process.env.MONGODB_URI ||
+  "mongodb://localhost/equestriancompsdb"
 );
 
 const competitionSeed = [
