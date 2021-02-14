@@ -2,6 +2,10 @@
   "name": "yarn-lock-bug",
   "version": "1.0.0",
   "description": "repro bug with yarn not creating lock file",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "main": "server.js",
   "scripts": {
     "go": "rimraf yarn.lock && rimraf node_modules && yarn install && node -e \"var fs = require('fs'); if (!fs.existsSync('yarn.lock')) { console.error('NO LOCK FILE FOUND!!!'); }\"",
