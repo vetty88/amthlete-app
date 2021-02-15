@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Competitions from "./pages/competitions";
 import Detail from "./pages/detail";
-import NoMatch from "./pages/NnoMatch";
+import NoMatch from "./pages/nomatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
