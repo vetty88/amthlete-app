@@ -9,7 +9,7 @@ const competitionSchema = new Schema({
   penalties: { type: String, required: false },
   place: { type: String, required: false },
   images: { type: String, required: false },
-  resultNotes: String,
+  resultNotes: {type: String},
   // startDate: { type: Date, default: Date.now }
 });
 

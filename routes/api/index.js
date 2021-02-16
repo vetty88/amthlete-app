@@ -1,7 +1,14 @@
+const path = require("path");
 const router = require("express").Router();
-const competitionRoutes = require("./competitions");
+const competitionsRoutes = require("./competitions");
 
-// Competition routes
-router.use("/competitions", competitionRoutes);
+// competitions routes match /api/competitions
+router.use("/competitions", competitionsRoutes);
 
-module.exports = router;
+
+// For anything else, render the html page
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../../client/build/index.html"));
+});
+
+module.exports = router
