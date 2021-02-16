@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-// import DatePicker from "react-date-picker";
 import Select from 'react-select';
 
 const eventTypeOptions = [

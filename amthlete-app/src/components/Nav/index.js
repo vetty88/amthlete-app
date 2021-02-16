@@ -10,4 +10,4 @@ function Nav() {
   );
 }
 
-export default Na
+export default Nav;

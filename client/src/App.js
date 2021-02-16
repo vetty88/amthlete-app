@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { ToastContainer } from "react-toastify";
 import { Route, Redirect, Switch } from "react-router-dom";
-import Competitions from "./pages/competitions";
-import Detail from "./pages/detail";
-import NoMatch from "./pages/nomatch";
+import Competitions from "./pages/Competitions";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
