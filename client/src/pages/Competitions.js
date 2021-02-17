@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-// import DatePicker from "react-date-picker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import Select from 'react-select';
 
 const eventTypeOptions = [
@@ -17,13 +19,12 @@ const eventTypeOptions = [
   { value: 'combinedTraining', label: 'Combined Training' }
 ];
 
-  // const [startDate, setStartDate] = useState(new Date());
-
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([]);
   const [formObject, setFormObject] = useState({});
+  const [startDate, setStartDate] = useState(new Date());
 
   // Load all books and store them with setBooks
   useEffect(() => {
@@ -39,7 +40,7 @@ function Competitions() {
       .catch(err => console.log(err));
   }
 
-  // Deletes a competition from the database with a given id, then reloads books from the db
+  // Deletes a book from the database with a given id, then reloads books from the db
   function deleteCompetition(id) {
     API.deleteCompetition(id)
       .then(res => loadCompetitions())
@@ -52,7 +53,7 @@ function Competitions() {
     setFormObject({...formObject, [name]: value});
   }
 
-  // When the form is submitted, use the API.saveCompetition method to save the competition data
+  // When the form is submitted, use the API.saveCompetition method to save the book data
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -61,12 +62,11 @@ function Competitions() {
               eventName: formObject.eventName,
               eventType: formObject.eventType,
               horse: formObject.horse,
-              disciplines: formObject.disciplines,
               penalties: formObject.penalties,
               place: formObject.place,
               images: formObject.images,
               resultNotes: formObject.resultNotes,
-              date: formObject.date
+              startDate: formObject.date
           })
           .then(res => loadCompetitions())
           .catch(err => console.log(err));
@@ -105,6 +105,8 @@ function Competitions() {
                 placeholder="ResultNotes (Optional)"
               />
 
+              <DatePicker selected= {startDate} onChange={date => setStartDate (date)} />
+                    
               <FormBtn
                 disabled={!(formObject.eventName && formObject.horse)}
                 onClick={handleFormSubmit}

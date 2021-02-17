@@ -8,6 +8,8 @@
     "@sentry/tracing": "^6.1.0",
     "axios": "^0.21.1",
     "joi-browser": "^13.4.0",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.16",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^5.2.0",
