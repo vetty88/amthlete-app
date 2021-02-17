@@ -21,7 +21,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/equestriancompsdb",
+  process.env.MONGODB_URI || "mongodb://localhost/equestriancompsdb?authSource=admin",
   {
     useCreateIndex: true,
     useNewUrlParser: true
