@@ -6,41 +6,27 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-import Select from 'react-select';
-
-const eventTypeOptions = [
-  { value: 'dressage', label: 'Dressage' }, 
-  { value:'showJumping', label: 'Show Jumping' },
-  { value: 'showing', label: 'Showing' },
-  { value: 'horseTrials', label: 'Horse Trials' }, 
-  { value: 'combinedTraining', label: 'Combined Training' }
-];
-
 
 function Competitions() {
   // Setting our component's initial state
-  const [competitions, setCompetitions] = useState([]);
-  const [formObject, setFormObject] = useState({});
-  const [startDate, setStartDate] = useState(new Date());
+  const [competitions, setCompetitions] = useState([])
+  const [formObject, setFormObject] = useState({})
 
-  // Load all books and store them with setBooks
+  // Load all competitions and store them with setCompetitions
   useEffect(() => {
-    loadCompetitions();
-  }, []);
+    loadCompetitions()
+  }, [])
 
-  // Loads all books and sets them to books
+  // Loads all competitions and sets them to competitions
   function loadCompetitions() {
     API.getCompetitions()
       .then(res => 
         setCompetitions(res.data)
       )
       .catch(err => console.log(err));
-  }
+  };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a book from the database with a given id, then reloads competitions from the db
   function deleteCompetition(id) {
     API.deleteCompetition(id)
       .then(res => loadCompetitions())
@@ -50,28 +36,23 @@ function Competitions() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value});
-  }
+    setFormObject({...formObject, [name]: value})
+  };
 
   // When the form is submitted, use the API.saveCompetition method to save the book data
-  // Then reload books from the database
+  // Then reload competitions from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-  if (formObject.eventName && formObject.horse) {
+    if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
-              eventName: formObject.eventName,
-              eventType: formObject.eventType,
-              horse: formObject.horse,
-              penalties: formObject.penalties,
-              place: formObject.place,
-              images: formObject.images,
-              resultNotes: formObject.resultNotes,
-              startDate: formObject.date
-          })
-          .then(res => loadCompetitions())
-          .catch(err => console.log(err));
+        eventName: formObject.eventName,
+        horse: formObject.horse,
+        resultNotes: formObject.resultNotes
+      })
+        .then(res => loadCompetitions())
+        .catch(err => console.log(err));
     }
-  }
+  };
 
     return (
       <Container fluid>
@@ -86,15 +67,7 @@ function Competitions() {
                 name="eventName"
                 placeholder="EventName (required)"
               />
-
-            Event Type:
-            <Select 
-             onClick={handleInputChange}
-             name="eventType"
-             placeholder="EventType (required)"
-              options={eventTypeOptions} />
-   
-             <Input
+              <Input
                 onChange={handleInputChange}
                 name="horse"
                 placeholder="Horse (required)"
@@ -102,13 +75,10 @@ function Competitions() {
               <TextArea
                 onChange={handleInputChange}
                 name="resultNotes"
-                placeholder="ResultNotes (Optional)"
+                placeholder="Result Notes (Optional)"
               />
-
-              <DatePicker selected= {startDate} onChange={date => setStartDate (date)} />
-                    
               <FormBtn
-                disabled={!(formObject.eventName && formObject.horse)}
+                disabled={!(formObject.horse && formObject.eventName)}
                 onClick={handleFormSubmit}
               >
                 Submit Competition
@@ -121,11 +91,11 @@ function Competitions() {
             </Jumbotron>
             {competitions.length ? (
               <List>
-                {competitions.map(competition => (
+                {competitions.map(book => (
                   <ListItem key={competition._id}>
                     <Link to={"/competitions/" + competition._id}>
                       <strong>
-                        {competition.eventName} with {competition.horse}
+                        {competition.eventName} by {competition.horse}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
@@ -140,7 +110,6 @@ function Competitions() {
       </Container>
     );
   }
-  // end Competitions function
 
 
 export default Competitions;

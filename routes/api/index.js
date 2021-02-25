@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const competitionsRoutes = require("./competitions");
+const bookRoutes = require("./competitions");
 
-// competitions routes match /api/competitions
-router.use("/competitions", competitionsRoutes);
+// Competition routes
+router.use("/competitions", bookRoutes);
 
-module.exports = router
+module.exports = router;

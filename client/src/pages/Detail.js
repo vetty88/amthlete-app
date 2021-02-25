@@ -5,8 +5,10 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
 function Detail(props) {
-  const [competition, setCompetition] = useState({})
+  const [book, setCompetition] = useState({})
 
+  // When this component mounts, grab the book with the _id of props.match.params.id
+  // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
   const {id} = useParams()
   useEffect(() => {
     API.getCompetition(id)
@@ -20,7 +22,7 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {competition.eventName} with {competition.horse}
+                {competition.eventName} by {competition.horse}
               </h1>
             </Jumbotron>
           </Col>
@@ -28,29 +30,10 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-	<h1>ResultNotes</h1>
-		<p>
-		  {competition.eventName}
-      </p>
-    <p>
-      {competition.eventType}
-      </p>
-    <p>
-      {competition.horse}
-      </p>
-    <p>
-      {competition.penalties}
-      </p>
-    <p>
-      {competition.place}
-      </p>
-    <p>
-      {competition.images}
-      </p>
-    <p>
-      {competition.resultNotes}
-    </p>
-	
+              <h1>Result Notes</h1>
+              <p>
+                {book.resultNotes}
+              </p>
             </article>
           </Col>
         </Row>

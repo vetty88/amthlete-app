@@ -3,12 +3,9 @@ const Schema = mongoose.Schema;
 
 const competitionSchema = new Schema({
   eventName: { type: String, required: true },
-  eventType: { type: String, required: true },
   horse: { type: String, required: true },
-  penalties: { type: String, required: false },
-  place: { type: String, required: false },
-  images: { type: String, required: false },
   resultNotes: String,
+  date: { type: Date, default: Date.now }
 });
 
 const Competition = mongoose.model("Competition", competitionSchema);

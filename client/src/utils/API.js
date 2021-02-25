@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all competitions
   getCompetitions: function() {
-    return axios.get("/api//competitions");
+    return axios.get("/api/competitions");
   },
   // Gets the book with the given id
   getCompetition: function(id) {
@@ -13,7 +13,7 @@ export default {
   deleteCompetition: function(id) {
     return axios.delete("/api/competitions/" + id);
   },
-  // Saves a competition to the database
+  // Saves a book to the database
   saveCompetition: function(competitionData) {
     return axios.post("/api/competitions", competitionData);
   }
