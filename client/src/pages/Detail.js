@@ -5,7 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
 function Detail(props) {
-  const [book, setCompetition] = useState({})
+  const [competition, setCompetition] = useState({})
 
   // When this component mounts, grab the book with the _id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
@@ -32,7 +32,7 @@ function Detail(props) {
             <article>
               <h1>Result Notes</h1>
               <p>
-                {book.resultNotes}
+                {competition.ResultNotes}
               </p>
             </article>
           </Col>

@@ -91,7 +91,7 @@ function Competitions() {
             </Jumbotron>
             {competitions.length ? (
               <List>
-                {competitions.map(book => (
+                {competitions.map(competition => (
                   <ListItem key={competition._id}>
                     <Link to={"/competitions/" + competition._id}>
                       <strong>
