@@ -1,104 +1,4 @@
-// import React, {
-//   useState,
-//   useEffect
-// } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
-// import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
-// import {
-//   Link
-// } from "react-router-dom";
-// import {
-//   Col,
-//   Row,
-//   Container
-// } from "../components/Grid";
-// import {
-//   List,
-//   ListItem
-// } from "../components/List";
-// import {
-//   Input,
-//   TextArea,
-//   FormBtn
-// } from "../components/Form";
-// import DatePicker from "react-date-picker";
-// import Select from 'react-select';
-// const eventTypeOptions = [{
-//       value: 'dressage',
-//       label: 'Dressage'
-//   },
-//   {
-//       value: 'showJumping',
-//       label: 'Show Jumping'
-//   },
-//   {
-//       value: 'showing',
-//       label: 'Showing'
-//   },
-//   {
-//       value: 'horseTrials',
-//       label: 'Horse Trials'
-//   },
-//   {
-//       value: 'combinedTraining',
-//       label: 'Combined Training'
-//   }
-// ];
-// function Competitions() {
-//   // Setting our component's initial state
-//   const [competitions, setCompetitions] = useState([]);
-//   const [formObject, setFormObject] = useState({});
-//   const [startDate, setStartDate] = useState(new Date());
-//   // Load all books and store them with setBooks
-//   useEffect(() => {
-//       loadCompetitions();
-//   }, []);
-//   // Loads all books and sets them to books
-//   function loadCompetitions() {
-//       API.getCompetitions()
-//           .then(res =>
-//               setCompetitions(res.data)
-//           )
-//           .catch(err => console.log(err));
-//   }
-//   // Deletes a book from the database with a given id, then reloads books from the db
-//   function deleteCompetition(id) {
-//       API.deleteCompetition(id)
-//           .then(res => loadCompetitions())
-//           .catch(err => console.log(err));
-//   }
-//   // Handles updating component state when the user types into the input field
-//   function handleInputChange(event) {
-//       const {
-//           name,
-//           value
-//       } = event.target;
-//       setFormObject({
-//           ...formObject,
-//           [name]: value
-//       });
-//   }
-//   // When the form is submitted, use the API.saveCompetition method to save the book data
-//   // Then reload books from the database
-//   function handleFormSubmit(event) {
-//       event.preventDefault();
-//       if (formObject.eventName && formObject.horse) {
-//           API.saveCompetition({
-//                   eventName: formObject.eventName,
-//                   eventType: formObject.eventType,
-//                   horse: formObject.horse,
-//                   disciplines: formObject.disciplines,
-//                   penalties: formObject.penalties,
-//                   place: formObject.place,
-//                   images: formObject.images,
-//                   resultNotes: formObject.resultNotes,
-//                   startDate: formObject.date
-//               })
-//               .then(res => loadCompetitions())
-//               .catch(err => console.log(err));
-//       }
-//   }
+;//   }
 //   return ( <
 //       Container fluid >
 //       <
@@ -217,11 +117,37 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import DatePicker from "react-date-picker";
+import Select from 'react-select';
+
+
+const eventTypeOptions = [{
+  value: 'dressage',
+  label: 'Dressage'
+},
+{
+  value: 'showJumping',
+  label: 'Show Jumping'
+},
+{
+  value: 'showing',
+  label: 'Showing'
+},
+{
+  value: 'horseTrials',
+  label: 'Horse Trials'
+},
+{
+  value: 'combinedTraining',
+  label: 'Combined Training'
+}
+];
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [startDate, setStartDate] = useState(new Date());
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -257,8 +183,13 @@ function Competitions() {
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
         eventName: formObject.eventName,
-        horse: formObject.horse,
-        resultNotes: formObject.resultNotes
+          eventType: formObject.eventType,
+          horse: formObject.horse,
+          penalties: formObject.penalties,
+          place: formObject.place,
+          images: formObject.images,
+          resultNotes: formObject.resultNotes,
+          startDate: formObject.date
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
