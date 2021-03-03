@@ -1,114 +1,3 @@
-;//   }
-//   return ( <
-//       Container fluid >
-//       <
-//       Row >
-//       <
-//       Col size = "md-6" >
-//       <
-//       Jumbotron >
-//       <
-//       h1 > What Competitions Should I Enter ? < /h1> <
-//       /Jumbotron> <
-//       form >
-//       <
-//       Input onChange = {
-//           handleInputChange
-//       }
-//       name = "eventName"
-//       placeholder = "EventName (required)" /
-//       >
-//       Event Type :
-//       <
-//       Select onClick = {
-//           handleInputChange
-//       }
-//       name = "eventType"
-//       placeholder = "EventType (required)"
-//       options = {
-//           eventTypeOptions
-//       }
-//       />
-//       <
-//       Input onChange = {
-//           handleInputChange
-//       }
-//       name = "horse"
-//       placeholder = "Horse (required)" /
-//       >
-//       <
-//       TextArea onChange = {
-//           handleInputChange
-//       }
-//       name = "resultNotes"
-//       placeholder = "ResultNotes (Optional)" /
-//       >
-//       <
-//       DatePicker selected = {
-//           startDate
-//       }
-//       onChange = {
-//           date => setStartDate(date)
-//       }
-//       />
-//       <
-//       FormBtn disabled = {
-//           !(formObject.eventName && formObject.horse)
-//       }
-//       onClick = {
-//           handleFormSubmit
-//       } >
-//       Submit Competition <
-//       /FormBtn> <
-//       /form> <
-//       /Col> <
-//       Col size = "md-6 sm-12" >
-//       <
-//       Jumbotron >
-//       <
-//       h1 > Competitions On My List < /h1> <
-//       /Jumbotron> {
-//           competitions.length ? ( <
-//               List > {
-//                   competitions.map(competition => ( <
-//                       ListItem key = {
-//                           competition._id
-//                       } >
-//                       <
-//                       Link to = {
-//                           "/competitions/" + competition._id
-//                       } >
-//                       <
-//                       strong > {
-//                           competition.eventName
-//                       }
-//                       with {
-//                           competition.horse
-//                       } <
-//                       /strong> <
-//                       /Link> <
-//                       DeleteBtn onClick = {
-//                           () => deleteCompetition(competition._id)
-//                       }
-//                       /> <
-//                       /ListItem>
-//                   ))
-//               } <
-//               /List>
-//           ) : ( <
-//               h3 > No Results to Display < /h3>
-//           )
-//       } <
-//       /Col> <
-//       /Row> <
-//       /Container>
-//   );
-// }
-// // end Competitions function
-// export default Competitions;
-
-
-
 import React, { useState, useEffect } from "react";
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
@@ -117,7 +6,8 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import DatePicker from "react-date-picker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
 
 
@@ -182,7 +72,7 @@ function Competitions() {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
-        eventName: formObject.eventName,
+          eventName: formObject.eventName,
           eventType: formObject.eventType,
           horse: formObject.horse,
           penalties: formObject.penalties,
@@ -209,6 +99,13 @@ function Competitions() {
                 name="eventName"
                 placeholder="EventName (required)"
               />
+
+              <Select 
+                onClick = {handleInputChange}
+                name = "eventType"
+                placeholder = "EventType (required)"
+                options = {eventTypeOptions}
+              />
               <Input
                 onChange={handleInputChange}
                 name="horse"
@@ -218,6 +115,11 @@ function Competitions() {
                 onChange={handleInputChange}
                 name="resultNotes"
                 placeholder="Result Notes (Optional)"
+              />
+              <DatePicker
+                dateFormat="dd/mm/yyyy"
+                selected= {startDate}
+                onChange = {date => setStartDate(date)}
               />
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
@@ -237,7 +139,7 @@ function Competitions() {
                   <ListItem key={competition._id}>
                     <Link to={"/competitions/" + competition._id}>
                       <strong>
-                        {competition.eventName} by {competition.horse}
+                        {competition.eventName} with {competition.horse}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
