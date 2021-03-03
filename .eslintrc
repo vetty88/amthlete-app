@@ -1,3 +1,6 @@
 "rules": {
-    "import/no-named-as-default": 0
+    "import/no-named-as-default": 0,
+    "no-script-url": 0,
+    "default-case": 0,
+    "no-unreachable": 0
 }
