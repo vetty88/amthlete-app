@@ -9,6 +9,8 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
+import Iframe from "react-iframe"
+import { roundToNearestMinutesWithOptions } from "date-fns/fp";
 
 
 const eventTypeOptions = [{
@@ -150,6 +152,11 @@ function Competitions() {
               <h3>No Results to Display</h3>
             )}
           </Col>
+        </Row>
+        <roundToNearestMinutesWithOptions>
+        <Iframe>
+        <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=bdab3054-5ba1-47e5-b482-45e5e859c862&autoRefresh=3600&theme=light"></iframe>
+        </Iframe>
         </Row>
       </Container>
     );
