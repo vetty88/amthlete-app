@@ -11,9 +11,9 @@ function Detail(props) {
 
   // When this component mounts, grab the book with the _id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {_id} = useParams()
   useEffect(() => {
-    API.getCompetition(id)
+    API.getCompetition(_id)
       .then(res => setCompetition(res.data))
       .catch(err => console.log(err));
   }, [])
@@ -52,9 +52,6 @@ function Detail(props) {
               <p>
               Placing:  {competition.place}
               </p>
-              {/* <p>
-              Images:  {competition.images}
-              </p> */}
               <p>
               Notes:  {competition.resultNotes}
               </p>

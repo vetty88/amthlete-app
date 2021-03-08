@@ -9,8 +9,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from 'react-select';
-import Iframe from "react-iframe"
-import { roundToNearestMinutesWithOptions } from "date-fns/fp";
+import Iframe from "react-iframe";
 
 
 const eventTypeOptions = [{
@@ -55,9 +54,9 @@ function Competitions() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads competitions from the db
-  function deleteCompetition(id) {
-    API.deleteCompetition(id)
+  // Deletes a book from the database with a given _id, then reloads competitions from the db
+  function deleteCompetition(_id) {
+    API.deleteCompetition(_id)
       .then(res => loadCompetitions())
       .catch(err => console.log(err));
   }
@@ -153,9 +152,8 @@ function Competitions() {
             )}
           </Col>
         </Row>
-        <roundToNearestMinutesWithOptions>
-        <Iframe>
-        <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=bdab3054-5ba1-47e5-b482-45e5e859c862&autoRefresh=3600&theme=light"></iframe>
+        <Row>
+        <Iframe src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=bdab3054-5ba1-47e5-b482-45e5e859c862&autoRefresh=3600&theme=light">
         </Iframe>
         </Row>
       </Container>
