@@ -5,13 +5,13 @@ export default {
   getCompetitions: function() {
     return axios.get("/api/competitions");
   },
-  // Gets the book with the given _id
-  getCompetition: function(_id) {
-    return axios.get("/api/competitions/" + _id);
+  // Gets the book with the given id
+  getCompetition: function(id) {
+    return axios.get("/api/competitions/" + id);
   },
-  // Deletes the book with the given _id
-  deleteCompetition: function(_id) {
-    return axios.delete("/api/competitions/" + _id);
+  // Deletes the book with the given id
+  deleteCompetition: function(id) {
+    return axios.delete("/api/competitions/" + id);
   },
   // Saves a book to the database
   saveCompetition: function(competitionData) {
