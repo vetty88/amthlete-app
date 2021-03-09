@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const bookRoutes = require("./competitions");
+const competitionRoutes = require("./competitions");
 
 // Competition routes
-router.use("/competitions", bookRoutes);
+router.use("/competitions", competitionRoutes);
 
 module.exports = router;
