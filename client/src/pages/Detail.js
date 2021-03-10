@@ -9,8 +9,6 @@ import Moment from "react-moment";
 function Detail(props) {
   const [competition, setCompetition] = useState({})
 
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
   const {id} = useParams()
   useEffect(() => {
     API.getCompetition(id)
@@ -33,16 +31,10 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Event Details</h1>
-              <p>
-              Event:  {competition.eventName}
-              </p>
-              <p>
-              Date:  <Moment format="DD/MM/YYYY">{competition.date}</Moment>
-              </p>
-              <p>
-              Type:  {competition.eventType}
-              </p>
+              <h1> Event Details </h1>
+              <h2> Event:  {competition.eventName} </h2>
+              <h3> Date:  <Moment format="DD/MM/YYYY">{competition.date}</Moment> </h3>
+              <h4> Type:  {competition.eventType} </h4>
               <p>
               Horse:  {competition.horse}
               </p>

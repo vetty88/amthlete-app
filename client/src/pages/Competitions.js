@@ -76,7 +76,6 @@ function Competitions() {
           eventType: formObject.eventType,
           horse: formObject.horse,
           penalties: formObject.penalties,
-          place: formObject.place,
           images: formObject.images,
           resultNotes: formObject.resultNotes,
           startDate: formObject.date

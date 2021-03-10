@@ -857,7 +857,7 @@ When you compile the app with `yarn run build`, the minification step will strip
 You can also access the environment variables starting with `REACT_APP_` in the `public/index.html`. For example:
 
 ```html
-<eventName>%REACT_APP_WEBSITE_NAME%</eventName>
+<title>%REACT_APP_WEBSITE_NAME%</title>
 ```
 
 Note that the caveats from the above section apply:
