@@ -7,9 +7,11 @@ import Moment from "react-moment";
 
 
 function Detail(props) {
-  const [competition, setCompetition] = useState({})
+  let [competition, setCompetition] = useState({})
 
-  const {id} = useParams()
+  // When this component mounts, grab the competition with the _id of props.match.params.id
+  // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
+  let {id} = useParams()
   useEffect(() => {
     API.getCompetition(id)
       .then(res => setCompetition(res.data))

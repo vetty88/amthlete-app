@@ -77,8 +77,14 @@ function Competitions() {
           horse: formObject.horse,
           penalties: formObject.penalties,
           images: formObject.images,
-          resultNotes: formObject.resultNotes,
-          startDate: formObject.date
+          _resultNotes: formObject.resultNotes,
+          get resultNotes() {
+            return this._resultNotes;
+          },
+          set resultNotes(value) {
+            this._resultNotes = value;
+          },
+          date: formObject.date
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -125,7 +131,7 @@ function Competitions() {
                 onClick={handleFormSubmit}
               >
                 Submit Competition
-              </FormBtn>
+                </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
@@ -138,7 +144,7 @@ function Competitions() {
                   <ListItem key={competition._id}>
                     <Link to={"/competitions/" + competition._id}>
                       <strong>
-                        {competition.eventName} with {competition.horse}
+                        {competition.eventName} by {competition.horse}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteCompetition(competition._id)} />

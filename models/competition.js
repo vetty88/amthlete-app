@@ -7,7 +7,7 @@ const competitionSchema = new Schema({
   eventType: String,
   penalties: String,
   resultNotes: String,
-  startDate: { type: Date, default: Date.now }
+  date: { type: Date}
 });
 
 const Competition = mongoose.model("Competition", competitionSchema);
