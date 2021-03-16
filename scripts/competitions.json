@@ -1,6 +1,6 @@
 [
   {
-    "_id": "60487b8ad4bb39174046d057",
+    "id": "60487b8ad4bb39174046d057",
     "eventName": "TTT CT Sale",
     "eventType": "Combined Training",
     "horse": "Tess",
@@ -11,7 +11,7 @@
     "date": "2019-03-30T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d058",
+    "id": "60487b8ad4bb39174046d058",
     "eventName": "TTT HT Greenvale",
     "eventType": "Horse Trials",
     "horse": "Tess",
@@ -22,7 +22,7 @@
     "date": "2019-05-05T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d059",
+    "id": "60487b8ad4bb39174046d059",
     "eventName": "Rosedale Horse Trials (HRCAV)",
     "eventType": "Horse Trials",
     "horse": "Squirrel",
@@ -33,7 +33,7 @@
     "date": "2019-10-20T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05a",
+    "id": "60487b8ad4bb39174046d05a",
     "eventName": "Rosedale Horse Trials (PC)",
     "eventType": "Horse Trials",
     "horse": "Squirrel",
@@ -44,7 +44,7 @@
     "date": "2019-10-13T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05b",
+    "id": "60487b8ad4bb39174046d05b",
     "eventName": "Stony Creek Showjumping",
     "eventType": "Show Jumping",
     "horse": "Squirrel",
@@ -54,7 +54,7 @@
     "date": "2019-12-08T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05c",
+    "id": "60487b8ad4bb39174046d05c",
     "eventName": "Nicholson Dressage Jackpot 4.3",
     "eventType": "Dressage",
     "horse": "Squirrel",
@@ -65,7 +65,7 @@
     "date": "2020-02-02T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05d",
+    "id": "60487b8ad4bb39174046d05d",
     "eventName": "Nicholson Dressage Jackpot 4.4",
     "eventType": "Dressage",
     "horse": "Squirrel",
@@ -76,7 +76,7 @@
     "date": "2020-02-02T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05e",
+    "id": "60487b8ad4bb39174046d05e",
     "eventName": "Orbost Horse Trials (PC)",
     "eventType": "Horse Trials",
     "horse": "Squirrel",
@@ -87,7 +87,7 @@
     "date": "2020-03-10T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d05f",
+    "id": "60487b8ad4bb39174046d05f",
     "eventName": "AHAA Virtual Show",
     "eventType": "Showing",
     "horse": "Ardilla",
@@ -98,7 +98,7 @@
     "date": "2020-08-01T06:01:17.171Z"
   },
   {
-    "_id": "60487b8ad4bb39174046d060",
+    "id": "60487b8ad4bb39174046d060",
     "eventName": "Eagle Point Riding Club Show (HRCAV)",
     "eventType": "Showing",
     "horse": "Squirrel",

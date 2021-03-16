@@ -77,13 +77,7 @@ function Competitions() {
           horse: formObject.horse,
           penalties: formObject.penalties,
           images: formObject.images,
-          _resultNotes: formObject.resultNotes,
-          get resultNotes() {
-            return this._resultNotes;
-          },
-          set resultNotes(value) {
-            this._resultNotes = value;
-          },
+          resultNotes: formObject.resultNotes,
           date: formObject.date
       })
         .then(res => loadCompetitions())
@@ -142,12 +136,12 @@ function Competitions() {
               <List>
                 {competitions.map(competition => (
                   <ListItem key={competition._id}>
-                    <Link to={"/competitions/" + competition._id}>
+                    <Link to={"/competitions/" + competition.id}>
                       <strong>
                         {competition.eventName} by {competition.horse}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
+                    <DeleteBtn onClick={() => deleteCompetition(competition.id)} />
                   </ListItem>
                 ))}
               </List>
