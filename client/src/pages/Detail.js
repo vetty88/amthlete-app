@@ -3,21 +3,18 @@ import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import Moment from "react-moment";
-
 
 function Detail(props) {
-  let [competition, setCompetition] = useState({})
+  const [competition, setCompetition] = useState({})
 
-  // When this component mounts, grab the competition with the id of props.match.params.id
+  // When this component mounts, grab the competition with the _id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
-  let id = useParams()
+  const {id} = useParams()
   useEffect(() => {
     API.getCompetition(id)
       .then(res => setCompetition(res.data))
       .catch(err => console.log(err));
   }, [])
- 
 
   return (
       <Container fluid>
@@ -25,7 +22,7 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {competition.eventName} with {competition.horse}
+                {competition.eventName} by {competition.horse}
               </h1>
             </Jumbotron>
           </Col>
@@ -33,14 +30,10 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1> Event Details </h1>
-              <h2> Event:  {competition.eventName} </h2>
-              <h3> Date:  <Moment format="DD/MM/YYYY">{competition.date}</Moment> </h3>
-              <h4> Type:  {competition.eventType} </h4>
-              <p> Horse:  {competition.horse} </p>
-              <p> Penalties:  {competition.penalties} </p>
-              <p> Placing:  {competition.place} </p>
-              <p> Notes:  {competition.resultNotes} </p>
+              <h1>Result Notes</h1>
+              <p>
+                {competition.resultNotes}
+              </p>
             </article>
           </Col>
         </Row>

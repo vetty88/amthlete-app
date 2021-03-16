@@ -6,38 +6,11 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import Select from 'react-select';
-
-
-const eventTypeOptions = [{
-  value: 'dressage',
-  label: 'Dressage'
-},
-{
-  value: 'showJumping',
-  label: 'Show Jumping'
-},
-{
-  value: 'showing',
-  label: 'Showing'
-},
-{
-  value: 'horseTrials',
-  label: 'Horse Trials'
-},
-{
-  value: 'combinedTraining',
-  label: 'Combined Training'
-}
-];
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})
-  const [startDate, setStartDate] = useState(new Date());
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -53,7 +26,7 @@ function Competitions() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads competitions from the db
+  // Deletes a competition from the database with a given id, then reloads competitions from the db
   function deleteCompetition(id) {
     API.deleteCompetition(id)
       .then(res => loadCompetitions())
@@ -66,19 +39,15 @@ function Competitions() {
     setFormObject({...formObject, [name]: value})
   };
 
-  // When the form is submitted, use the API.saveCompetition method to save the book data
+  // When the form is submitted, use the API.saveCompetition method to save the competition data
   // Then reload competitions from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
       API.saveCompetition({
-          eventName: formObject.eventName,
-          eventType: formObject.eventType,
-          horse: formObject.horse,
-          penalties: formObject.penalties,
-          images: formObject.images,
-          resultNotes: formObject.resultNotes,
-          date: formObject.date
+        eventName: formObject.eventName,
+        horse: formObject.horse,
+        resultNotes: formObject.resultNotes
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -98,13 +67,6 @@ function Competitions() {
                 name="eventName"
                 placeholder="EventName (required)"
               />
-
-              <Select 
-                onClick = {handleInputChange}
-                name = "eventType"
-                placeholder = "EventType (required)"
-                options = {eventTypeOptions}
-              />
               <Input
                 onChange={handleInputChange}
                 name="horse"
@@ -115,17 +77,12 @@ function Competitions() {
                 name="resultNotes"
                 placeholder="Result Notes (Optional)"
               />
-              <DatePicker
-                dateFormat="dd/mm/yyyy"
-                selected= {startDate}
-                onChange = {date => setStartDate(date)}
-              />
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
                 onClick={handleFormSubmit}
               >
                 Submit Competition
-                </FormBtn>
+              </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
@@ -136,12 +93,12 @@ function Competitions() {
               <List>
                 {competitions.map(competition => (
                   <ListItem key={competition._id}>
-                    <Link to={"/competitions/" + competition.id}>
+                    <Link to={"/competitions/" + competition._id}>
                       <strong>
                         {competition.eventName} by {competition.horse}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteCompetition(competition.id)} />
+                    <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
                   </ListItem>
                 ))}
               </List>
