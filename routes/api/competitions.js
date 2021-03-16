@@ -6,9 +6,9 @@ router.route("/")
   .get(competitionsController.findAll)
   .post(competitionsController.create);
 
-// Matches with "/api/competitions/${id}"
+// Matches with "/api/competitions/:id"
 router
-  .route("/${id}")
+  .route("/:id")
   .get(competitionsController.findById)
   .put(competitionsController.update)
   .delete(competitionsController.remove);

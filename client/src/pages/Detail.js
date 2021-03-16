@@ -11,7 +11,7 @@ function Detail(props) {
 
   // When this component mounts, grab the competition with the id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
-  let {id} = useParams()
+  let id = useParams()
   useEffect(() => {
     API.getCompetition(id)
       .then(res => setCompetition(res.data))
@@ -37,19 +37,10 @@ function Detail(props) {
               <h2> Event:  {competition.eventName} </h2>
               <h3> Date:  <Moment format="DD/MM/YYYY">{competition.date}</Moment> </h3>
               <h4> Type:  {competition.eventType} </h4>
-              <p>
-              Horse:  {competition.horse}
-              </p>
-              <p>
-              Penalties:  {competition.penalties}
-              </p>
-              <p>
-              Placing:  {competition.place}
-              </p>
-             
-              <p>
-              Notes:  {competition.resultNotes}
-              </p>
+              <p> Horse:  {competition.horse} </p>
+              <p> Penalties:  {competition.penalties} </p>
+              <p> Placing:  {competition.place} </p>
+              <p> Notes:  {competition.resultNotes} </p>
             </article>
           </Col>
         </Row>
