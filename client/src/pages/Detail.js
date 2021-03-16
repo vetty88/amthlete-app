@@ -22,7 +22,7 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {competition.eventName} by {competition.horse}
+                {competition.eventName} with {competition.horse}
               </h1>
             </Jumbotron>
           </Col>
@@ -30,7 +30,11 @@ function Detail(props) {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Result Notes</h1>
+              Event:
+              <p>
+                {competition.eventType}
+              </p>
+              Results:
               <p>
                 {competition.resultNotes}
               </p>
