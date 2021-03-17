@@ -53,7 +53,7 @@ const competitionSeed = [
   date: new Date("2019-10-13T06:01:17.171Z")
   },
   {
-  eventName: "Stony Creek Showjumping",
+  eventName: "Stony Creek Show Jumping",
   eventType: "Show Jumping",
   horse: "Squirrel",
   penalties: "100",

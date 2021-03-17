@@ -15,10 +15,10 @@ export function SelectEvents(props) {
     <div className="form-group">
         Event Types:
         <select id="eventTypeOptions" className="form-control" {...props}>
-          <option value="dressage">Dressage</option>
-          <option value="horseTrials">Horse Trials</option>
-          <option value="showing">Showing</option>
-          <option value="showJumping">Show Jumping</option> 
+          <option value="Dressage">Dressage</option>
+          <option value="Horse Trials">Horse Trials</option>
+          <option value="Showing">Showing</option>
+          <option value="Show Jumping">Show Jumping</option> 
         </select>
       </div> 
   );
