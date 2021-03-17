@@ -5,17 +5,8 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import Select from 'react-select';
+import { Input, SelectEvents, TextArea, FormBtn } from "../components/Form";
 
-
-const eventTypeOptions = [
-  {value: 'dressage', label: 'Dressage'},
-  {value: 'showJumping', label: 'Show Jumping'},
-  {value: 'showing', label: 'Showing'},
-  {value: 'horseTrials', label: 'Horse Trials'},
-  {value: 'combinedTraining', label: 'Combined Training'}
-];
 
 function Competitions() {
   // Setting our component's initial state
@@ -83,11 +74,10 @@ function Competitions() {
                 name="horse"
                 placeholder="Horse (required)"
               />
-              <Select 
+              <SelectEvents 
                 onClick = {handleInputChange}
                 name = "eventType"
                 placeholder = "EventType (required)"
-                options = {eventTypeOptions}
               />
               <TextArea
                 onChange={handleInputChange}

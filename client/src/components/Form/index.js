@@ -10,6 +10,20 @@ export function Input(props) {
   );
 }
 
+export function SelectEvents(props) {
+  return (
+    <div className="form-group">
+        Event Types:
+        <select id="eventTypeOptions" className="form-control" {...props}>
+          <option value="dressage">Dressage</option>
+          <option value="horseTrials">Horse Trials</option>
+          <option value="showing">Showing</option>
+          <option value="showJumping">Show Jumping</option> 
+        </select>
+      </div> 
+  );
+}
+
 export function TextArea(props) {
   return (
     <div className="form-group">
