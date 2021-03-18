@@ -5,7 +5,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, SelectEvents, TextArea, FormBtn } from "../components/Form";
+import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../components/Form";
 
 
 function Competitions() {
@@ -49,7 +49,8 @@ function Competitions() {
         eventName: formObject.eventName,
         horse: formObject.horse,
         eventType: formObject.eventType,
-        resultNotes: formObject.resultNotes
+        resultNotes: formObject.resultNotes,
+        date: new Date(formObject.date),
       })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
@@ -68,21 +69,28 @@ function Competitions() {
                 onChange={handleInputChange}
                 name="eventName"
                 placeholder="EventName (required)"
-              />              
+              />      
+             <SelectEvents 
+                onClick = {handleInputChange}
+                name = "eventType"
+                placeholder = "EventType (required)"
+              />
+
               <Input
                 onChange={handleInputChange}
                 name="horse"
                 placeholder="Horse (required)"
               />
-              <SelectEvents 
-                onClick = {handleInputChange}
-                name = "eventType"
-                placeholder = "EventType (required)"
-              />
+              
               <TextArea
                 onChange={handleInputChange}
                 name="resultNotes"
                 placeholder="Result Notes (Optional)"
+              />
+              <DateSelector
+              onChange={ handleInputChange}
+              name="date"
+              dateformat="dd/mm/yyyy"
               />
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}

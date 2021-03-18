@@ -23,14 +23,16 @@ function Detail(props) {
             <Jumbotron>
               <h1>
                 {competition.eventName} ({competition.eventType}) with {competition.horse}
+                
               </h1>
+              <h2>{competition.date}</h2>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              Event:
+              Event Type:
               <p>
                 {competition.eventType}
               </p>

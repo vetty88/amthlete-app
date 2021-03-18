@@ -1,6 +1,22 @@
-import React from "react";
+import React, {useState} from 'react';
+import DatePicker from 'react-datepicker';
+ 
+import "react-datepicker/dist/react-datepicker.css";
 
-// This file exports the Input, TextArea, and FormBtn components
+
+
+export function DateSelector (props) 
+{
+  let [date, setDate] = useState(new Date()); 
+  return (  
+    <div className="form-group">
+        Date:
+        <div id="dateSelect" className="form-control" {...props}> 
+          <DatePicker  showPopperArrow={false}  placeholderText="Select Date" selected={date} onChange={date => setDate(date)} />  
+        </div>
+    </div>  
+  )  
+  }      
 
 export function Input(props) {
   return (
