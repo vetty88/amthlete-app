@@ -1,22 +1,14 @@
 import React, {useState} from 'react';
 import DatePicker from 'react-datepicker';
- 
 import "react-datepicker/dist/react-datepicker.css";
 
 
-
-export function DateSelector (props) 
-{
-  let [date, setDate] = useState(new Date()); 
-  return (  
-    <div className="form-group">
-        Date:
-        <div id="dateSelect" className="form-control" {...props}> 
-          <DatePicker  showPopperArrow={false}  placeholderText="Select Date" selected={date} onChange={date => setDate(date)} />  
-        </div>
-    </div>  
-  )  
-  }      
+export function DateSelector (props) {
+  const [startDate, setStartDate] = useState(new Date());
+  return (
+    <DatePicker id="date" className="form-control" {...props} selected={startDate} onChange={date => setStartDate(date)} />
+  );
+};
 
 export function Input(props) {
   return (

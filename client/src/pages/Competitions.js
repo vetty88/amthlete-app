@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../components/Form";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [startDate, setStartDate] = useState(new Date());
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -71,7 +73,7 @@ function Competitions() {
                 placeholder="EventName (required)"
               />      
              <SelectEvents 
-                onClick = {handleInputChange}
+                onChange = {handleInputChange}
                 name = "eventType"
                 placeholder = "EventType (required)"
               />
@@ -88,9 +90,10 @@ function Competitions() {
                 placeholder="Result Notes (Optional)"
               />
               <DateSelector
-              onChange={ handleInputChange}
-              name="date"
-              dateformat="dd/mm/yyyy"
+                selected={startDate} 
+                onChange={date => setStartDate(date)}
+                name="date"
+                placeholder="Date"
               />
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
