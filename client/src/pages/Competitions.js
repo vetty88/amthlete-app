@@ -92,7 +92,6 @@ function Competitions() {
               <DateSelector
                 onChange={handleInputChange}
                 name="date"
-                placeholder="Comp Date"
               />
 
               <FormBtn
