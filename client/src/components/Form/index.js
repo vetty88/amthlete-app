@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-
+import React from 'react';
+import DayPickerInput from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
 export function DateSelector (props) {
-  const [startDate, setStartDate] = useState(new Date());
   return (
-    <DatePicker id="date" className="form-control" {...props} selected={startDate} onChange={date => setStartDate(date)} />
+    <div className="form-group">
+      <input className="form-control" {...props}/>
+      <p>Please type a day:</p>
+      <DayPickerInput onDayChange={day => console.log(day)} />
+    </div>
   );
-};
+}
 
+
+  
 export function Input(props) {
   return (
     <div className="form-group">

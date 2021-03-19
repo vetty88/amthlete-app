@@ -6,14 +6,13 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../components/Form";
-import "react-datepicker/dist/react-datepicker.css";
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
-  const [formObject, setFormObject] = useState({})
-  const [startDate, setStartDate] = useState(new Date());
+  const [formObject, setFormObject] = useState({})  
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -89,12 +88,13 @@ function Competitions() {
                 name="resultNotes"
                 placeholder="Result Notes (Optional)"
               />
+    
               <DateSelector
-                selected={startDate} 
-                onChange={date => setStartDate(date)}
+                onChange={handleInputChange}
                 name="date"
-                placeholder="Date"
+                placeholder="Comp Date"
               />
+
               <FormBtn
                 disabled={!(formObject.horse && formObject.eventName)}
                 onClick={handleFormSubmit}
@@ -128,6 +128,5 @@ function Competitions() {
       </Container>
     );
   }
-
 
 export default Competitions;
