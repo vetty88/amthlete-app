@@ -15,9 +15,9 @@ const competitionSeed = [
   eventType: "Combined Training",
   horse: "Tess",
   penalties: "35",
-  place: "5",
+  placing: "5",
   images: "",
-  resultNotes: "Dressage penalties 35.17, %64.85, 5th place",
+  resultNotes: "Dressage penalties 35.17, %64.85, 5th placing",
   date: new Date("2019-03-30T06:01:17.171Z")
   },
   {
@@ -25,9 +25,9 @@ const competitionSeed = [
   eventType: "Horse Trials",
   horse: "Tess",
   penalties: "46",
-  place: "5",
+  placing: "5",
   images: "",
-  resultNotes: "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th place",
+  resultNotes: "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th placing",
   date: new Date("2019-05-05T06:01:17.171Z")
   },
   {
@@ -35,10 +35,10 @@ const competitionSeed = [
   eventType: "Horse Trials",
   horse: "Squirrel",
   penalties: "24",
-  place: "6",
+  placing: "6",
   images: "",
   resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th place",
+  "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th placing",
   date: new Date("2019-10-20T06:01:17.171Z")
   },
   {
@@ -46,10 +46,10 @@ const competitionSeed = [
   eventType: "Horse Trials",
   horse: "Squirrel",
   penalties: "28",
-  place: "2",
+  placing: "2",
   images: "",
   resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
+  "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
   date: new Date("2019-10-13T06:01:17.171Z")
   },
   {
@@ -57,9 +57,9 @@ const competitionSeed = [
   eventType: "Show Jumping",
   horse: "Squirrel",
   penalties: "100",
-  place: "6",
+  placing: "6",
   resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th place",
+  "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th placing",
   date: new Date("2019-12-08T06:01:17.171Z")
   },
   {
@@ -67,10 +67,10 @@ const competitionSeed = [
   eventType: "Dressage",
   horse: "Squirrel",
   penalties: "35",
-  place: "11",
+  placing: "11",
   images: "",
   resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
+  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",
   date: new Date("2020-02-02T06:01:17.171Z")
   },
   {
@@ -78,10 +78,10 @@ const competitionSeed = [
   eventType: "Dressage",
   horse: "Squirrel",
   penalties: "35",
-  place: "11",
+  placing: "11",
   images: "",
   resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil place",
+  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",
   date: new Date("2020-02-02T06:01:17.171Z")
   },
   {
@@ -89,10 +89,10 @@ const competitionSeed = [
   eventType: "Horse Trials",
   horse: "Squirrel",
   penalties: "39",
-  place: "5",
+  placing: "5",
   images: "",
   resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd place",
+  "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
   date: new Date("2020-03-10T06:01:17.171Z")
   },
   {
@@ -100,7 +100,7 @@ const competitionSeed = [
   eventType: "Showing",
   horse: "Ardilla",
   penalties: "0",
-  place: "1",
+  placing: "1",
   images: "",
   resultNotes:
   "Champion partbred (led) Filly",
@@ -111,7 +111,7 @@ const competitionSeed = [
   eventType: "Showing",
   horse: "Squirrel",
   penalties: "0",
-  place: "1",
+  placing: "1",
   images: "",
   resultNotes:
   "Champion Mount Most Suitable",

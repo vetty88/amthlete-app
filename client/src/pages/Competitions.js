@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+import DeleteBtn from "./../components/DeleteBtn";
+import Jumbotron from "./../components/Jumbotron";
+import API from "./../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
-import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../components/Form";
+import { Col, Row, Container } from "./../components/Grid";
+import { List, ListItem } from "./../components/List";
+import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "./../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
-
 
 function Competitions() {
   // Setting our component's initial state
@@ -50,6 +49,8 @@ function Competitions() {
         eventName: formObject.eventName,
         horse: formObject.horse,
         eventType: formObject.eventType,
+        placing: formObject.placing,
+        penalties: formObject.penalties,
         resultNotes: formObject.resultNotes,
         date: new Date(formObject.date),
       })
@@ -82,16 +83,30 @@ function Competitions() {
                 name="horse"
                 placeholder="Horse (required)"
               />
+
+              <Input
+                onChange={handleInputChange}
+                name="placing"
+                placeholder="Placing (required)"
+              />
+
+              <Input
+                onChange={handleInputChange}
+                name="penalties"
+                placeholder="Penalties (required)"
+              />
               
               <TextArea
                 onChange={handleInputChange}
                 name="resultNotes"
                 placeholder="Result Notes (Optional)"
+                
               />
     
               <DateSelector
                 onChange={handleInputChange}
                 name="date"
+                placeholder="Comp Date Enter as YYYY-M-DD, default time to 13:00 to save correct date"
               />
 
               <FormBtn

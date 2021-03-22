@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+import { Col, Row, Container } from "./../components/Grid";
+import Jumbotron from "./../components/Jumbotron";
+import API from "./../utils/API";
 
 function Detail(props) {
   const [competition, setCompetition] = useState({})
@@ -22,10 +22,14 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {competition.eventName} ({competition.eventType}) with {competition.horse}
+                Event Name: {competition.eventName} with 
+                Horse: {competition.horse}
                 
               </h1>
-              <h2>{competition.date}</h2>
+              <h2>Date: {competition.date}</h2>
+              <h3>Placing: {competition.placing}</h3>
+              <h4>Penalties: {competition.penalties}</h4>
+           
             </Jumbotron>
           </Col>
         </Row>

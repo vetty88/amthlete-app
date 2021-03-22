@@ -1,18 +1,17 @@
 import React from 'react';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
+// import * as NumericInput from "./react-numeric-input";
+// import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 
-export function DateSelector (props) {
+export function DateSelector(props) {
   return (
     <div className="form-group">
-      <input className="form-control" {...props}/>
-      <p>Please type a day:</p>
-      <DayPickerInput onDayChange={day => console.log(day)} />
-    </div>
+      {/* <DayPickerInput onDayChange={day => console.log(day)} id="day" input className="form-control" {...props} /> */}
+    <input className="form-control" {...props} />
+  </div>
+   
   );
 }
-
-
   
 export function Input(props) {
   return (
