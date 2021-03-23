@@ -32,7 +32,7 @@ import CardFooter from "../../components/Card/CardFooter.js";
 import { bugs, website, server } from "../../variables/general.js";
 
 import {
-  dailySalesChart,
+  dailyCompetitionsChart,
   emailsSubscriptionChart,
   completedTasksChart
 } from "../../variables/charts.js";
@@ -127,14 +127,14 @@ export default function Dashboard() {
             <CardHeader color="success">
               <ChartistGraph
                 className="ct-chart"
-                data={dailySalesChart.data}
+                data={dailyCompetitionsChart.data}
                 type="Line"
-                options={dailySalesChart.options}
-                listener={dailySalesChart.animation}
+                options={dailyCompetitionsChart.options}
+                listener={dailyCompetitionsChart.animation}
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Daily Sales</h4>
+              <h4 className={classes.cardTitle}>Daily Competitions</h4>
               <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory} /> 55%
@@ -240,7 +240,7 @@ export default function Dashboard() {
         <GridItem xs={12} sm={12} md={6}>
           <Card>
             <CardHeader color="warning">
-              <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
+              <h4 className={classes.cardTitleWhite}>Horses Stats</h4>
               <p className={classes.cardCategoryWhite}>
                 New employees on 15th September, 2016
               </p>

@@ -34,7 +34,7 @@ import CardFooter from "../../components/Card/CardFooter.js";
 import SnackbarContent from "../../components/Snackbar/SnackbarContent.js";
 
 import {
-  dailySalesChart,
+  dailyCompetitionsChart,
   emailsSubscriptionChart,
   completedTasksChart
 } from "../../variables/charts.js";
@@ -147,10 +147,10 @@ export default function RTLPage() {
             <CardHeader color="success">
               <ChartistGraph
                 className="ct-chart"
-                data={dailySalesChart.data}
+                data={dailyCompetitionsChart.data}
                 type="Line"
-                options={dailySalesChart.options}
-                listener={dailySalesChart.animation}
+                options={dailyCompetitionsChart.options}
+                listener={dailyCompetitionsChart.animation}
               />
             </CardHeader>
             <CardBody>

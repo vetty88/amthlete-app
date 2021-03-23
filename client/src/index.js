@@ -21,10 +21,12 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 // core components
-import Admin from "./layouts/Admin";
-import RTL from "./layouts/RTL";
+import Admin from "../src/layouts/Admin.js";
+import RTL from "../src/layouts/RTL.js";
+import Competitions from "../src/layouts/Competitions.js";
+import Detail from "../src/layouts/Detail.js";
 
-import "./assets/css/material-dashboard-react.css?v=1.9.0";
+import "../src/assets/css/material-dashboard-react.css";
 
 const hist = createBrowserHistory();
 
@@ -33,6 +35,9 @@ ReactDOM.render(
     <Switch>
       <Route path="/admin" component={Admin} />
       <Route path="/rtl" component={RTL} />
+      <Route exact path="/competitions" component={Competitions} />
+      <Route path="/competitions/:id" component={Detail}/>
+            {Detail}
       <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </Router>,

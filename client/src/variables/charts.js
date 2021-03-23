@@ -12,10 +12,10 @@ var delays2 = 80,
   durations2 = 500;
 
 // ##############################
-// // // Daily Sales
+// // // Daily Competitions
 // #############################
 
-const dailySalesChart = {
+const dailyCompetitionsChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
     series: [[12, 17, 7, 17, 23, 18, 38]]
@@ -184,7 +184,7 @@ const completedTasksChart = {
 };
 
 module.exports = {
-  dailySalesChart,
+  dailyCompetitionsChart,
   emailsSubscriptionChart,
   completedTasksChart
 };
