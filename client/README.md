@@ -18,7 +18,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
 - [Debugging in the Editor](#debugging-in-the-editor)
 - [Formatting Code Automatically](#formatting-code-automatically)
-- [Changing the Page `<eventName>`](#changing-the-page-eventName)
+- [Changing the Page `<title>`](#changing-the-page-title)
 - [Installing a Dependency](#installing-a-dependency)
 - [Importing a Component](#importing-a-component)
 - [Code Splitting](#code-splitting)
@@ -321,15 +321,15 @@ Now, whenever you make a commit, Prettier will format the changed files automati
 
 Next you might want to integrate Prettier in your favorite editor. Read the section on [Editor Integration](https://github.com/prettier/prettier#editor-integration) on the Prettier GitHub page.
 
-## Changing the Page `<eventName>`
+## Changing the Page `<title>`
 
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<eventName>` tag in it to change the eventName from “React App” to anything else.
+You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React App” to anything else.
 
 Note that normally you wouldn’t edit files in the `public` folder very often. For example, [adding a stylesheet](#adding-a-stylesheet) is done without touching the HTML.
 
-If you need to dynamically update the page eventName based on the content, you can use the browser [`document.eventName`](https://developer.mozilla.org/en-US/docs/Web/API/Document/eventName) API. For more complex scenarios when you want to change the eventName from React components, you can use [React Helmet](https://github.com/nfl/react-helmet), a third party library.
+If you need to dynamically update the page title based on the content, you can use the browser [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) API. For more complex scenarios when you want to change the title from React components, you can use [React Helmet](https://github.com/nfl/react-helmet), a third party library.
 
-If you use a custom server for your app in production and want to modify the eventName before it gets sent to the browser, you can follow advice in [this section](#generating-dynamic-meta-tags-on-the-server). Alternatively, you can pre-build each page as a static HTML file which then loads the JavaScript bundle, which is covered [here](#pre-rendering-into-static-html-files).
+If you use a custom server for your app in production and want to modify the title before it gets sent to the browser, you can follow advice in [this section](#generating-dynamic-meta-tags-on-the-server). Alternatively, you can pre-build each page as a static HTML file which then loads the JavaScript bundle, which is covered [here](#pre-rendering-into-static-html-files).
 
 ## Installing a Dependency
 
@@ -652,7 +652,7 @@ An alternative way of handling static assets is described in the next section.
 
 ### Changing the HTML
 
-The `public` folder contains the HTML file so you can tweak it, for example, to [set the page eventName](#changing-the-page-eventName).
+The `public` folder contains the HTML file so you can tweak it, for example, to [set the page title](#changing-the-page-title).
 The `<script>` tag with the compiled code will be added to it automatically during the build process.
 
 ### Adding Assets Outside of the Module System
@@ -674,7 +674,7 @@ If you put a file into the `public` folder, it will **not** be processed by Webp
 Inside `index.html`, you can use it like this:
 
 ```html
-<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">
 ```
 
 Only files inside the `public` folder will be accessible by `%PUBLIC_URL%` prefix. If you need to use a file from `src` or `node_modules`, you’ll have to copy it there to explicitly specify your intention to make this file a part of the build.
@@ -1132,7 +1132,7 @@ Since Create React App doesn’t support server rendering, you might be wonderin
 <!doctype html>
 <html lang="en">
   <head>
-    <meta property="og:eventName" content="__OG_TITLE__">
+    <meta property="og:title" content="__OG_TITLE__">
     <meta property="og:description" content="__OG_DESCRIPTION__">
 ```
 
