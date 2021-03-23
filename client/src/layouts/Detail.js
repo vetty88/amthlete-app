@@ -5,13 +5,13 @@ import Jumbotron from "./../components/Jumbotron";
 import API from "./../utils/API";
 
 function Detail(props) {
-  const [competition, setCompetition] = useState({})
+  const [competitions, setCompetition] = useState({})
 
   // When this component mounts, grab the competition with the _id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {ids} = useParams()
   useEffect(() => {
-    API.getCompetition(id)
+    API.getCompetition(ids)
       .then(res => setCompetition(res.data))
       .catch(err => console.log(err));
   }, [])
@@ -22,11 +22,11 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                Event Name: {competition.eventName} with 
-                Horse: {competition.horse}
+                Event Name: {competitions} with 
+                Horse: {competitions.horses}
                 
               </h1>
-              <h2>Date: {competition.date}</h2>
+              <h2>Date: {competitions.date}</h2>
               <h3>Placing: {competition.placing}</h3>
               <h4>Penalties: {competition.penalties}</h4>
            

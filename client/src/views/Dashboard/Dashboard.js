@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -17,6 +19,7 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
+
 import GridItem from "../../components/Grid/GridItem";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import Table from "../../components/Table/Table.js";
@@ -28,8 +31,8 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
+import API from "../../utils/API";
 
-import { bugs, website, server } from "../../variables/general.js";
 
 import {
   dailyCompetitionsChart,
@@ -39,22 +42,38 @@ import {
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
 
-const useStyles = makeStyles(styles);
-
 export default function Dashboard() {
+  const useStyles = makeStyles(styles);
   const classes = useStyles();
-  return (
+  const [competitions, setCompetitions] = useState([])
+  const [formObject, setFormObject] = useState({})  
+
+  // Load all competitions and store them with setCompetitions
+  useEffect(() => {
+    loadCompetitions()
+  }, [])
+
+  // Loads all competitions and sets them to competitions
+  function loadCompetitions() {
+    API.getCompetitions()
+      .then(res => 
+        setCompetitions(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+  return(
     <div>
-      <GridContainer>
-        <GridItem xs={12} sm={6} md={3}>
+    <GridContainer>
+      <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
+              <p className={classes.cardCategory}>Total Comps</p>
               <h3 className={classes.cardTitle}>
-                49/50 <small>GB</small>
+              {competitions.length} <small>competitions</small>
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -208,7 +227,6 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[0, 3]}
                     tasksIndexes={[0, 1, 2, 3]}
-                    tasks={bugs}
                   />
                 )
               },
@@ -219,7 +237,6 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[0]}
                     tasksIndexes={[0, 1]}
-                    tasks={website}
                   />
                 )
               },
@@ -230,7 +247,6 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[1]}
                     tasksIndexes={[0, 1, 2]}
-                    tasks={server}
                   />
                 )
               }
@@ -261,5 +277,5 @@ export default function Dashboard() {
         </GridItem>
       </GridContainer>
     </div>
-  );
+  )
 }

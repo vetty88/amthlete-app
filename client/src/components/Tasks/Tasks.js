@@ -54,7 +54,7 @@ export default function Tasks(props) {
                 }}
               />
             </TableCell>
-            <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
+            <TableCell className={tableCellClasses}></TableCell>
             <TableCell className={classes.tableActions}>
               <Tooltip
                 id="tooltip-top"
