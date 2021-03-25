@@ -118,17 +118,12 @@ export default function Dashboard() {
               <List>
                 {competitions.map(competition => (
                   <ListItem key={competition._id}>
-                    <Link to={"/competitions/" + competition._id}>
-                      <strong>
-                        {competition.eventName} with {competition.horse}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
+                        {competition.date} / {competition.eventName} / {competition.horse}
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>No Results</h3>
             )}
            </CardFooter>
           </Card>
