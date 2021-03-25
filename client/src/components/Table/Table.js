@@ -46,6 +46,21 @@ export default function CustomTable() {
               key={competition.id} >
               {competition.eventName}
               </TableCell>
+              <TableCell
+              className={classes.tableCell + " " + classes.tableHeadCell}
+              key={competition.id} >
+              {competition.horse}
+              </TableCell>
+              <TableCell
+              className={classes.tableCell + " " + classes.tableHeadCell}
+              key={competition.id} >
+              {competition.date}
+              </TableCell>
+              <TableCell
+              className={classes.tableCell + " " + classes.tableHeadCell}
+              key={competition.id} >
+              {competition.placing}
+              </TableCell>
                 </TableRow>
           ))}
         </TableHead> 
