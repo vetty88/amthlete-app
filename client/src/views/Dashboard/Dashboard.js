@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-
+import React, {useEffect, useState} from "react";
+import { Link, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
+// @material-ui/core components
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -19,38 +20,46 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-
-import GridItem from "../../components/Grid/GridItem";
+import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import Table from "../../components/Table/Table.js";
 import Tasks from "../../components/Tasks/Tasks.js";
 import CustomTabs from "../../components/CustomTabs/CustomTabs.js";
+import Jumbotron from "../../components/Jumbotron";
+import DeleteBtn from "../../components/DeleteBtn";
+import { Col, Row, Container } from "../../components/Grid";
 import Danger from "../../components/Typography/Danger.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
+import { List, ListItem } from "../../components/List";
 import API from "../../utils/API";
 
+import { bugs, website, server } from "../../variables/general.js";
 
 import {
-  dailyCompetitionsChart,
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "../../variables/charts.js";
+  dailyCompsChart,
+  compsSubscriptionChart,
+  completedCompsChart
+} from "../../variables/charts";
 
-import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle";
+import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
+
+
+const useStyles = makeStyles(styles);
 
 export default function Dashboard() {
-  const useStyles = makeStyles(styles);
   const classes = useStyles();
+  // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
-  const [formObject, setFormObject] = useState({})  
+  const [competition, setCompetition] = useState([])
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
     loadCompetitions()
+    getCompetition()
   }, [])
 
   // Loads all competitions and sets them to competitions
@@ -62,11 +71,22 @@ export default function Dashboard() {
       .catch(err => console.log(err));
   };
 
-  return(
-    <div>
-    <GridContainer>
+  function getCompetition(id) {
+    API.getCompetition(id)
+    .then(res => 
+      setCompetition(res.data)
+    )
+    .catch(err => console.log(err));
+};
+
+ 
+    return (
+      <div>
+        <GridContainer>
+
       <GridItem xs={12} sm={6} md={3}>
           <Card>
+            
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
@@ -78,33 +98,42 @@ export default function Dashboard() {
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
-                <Danger>
-                  <Warning />
-                </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
-                  Get more space
-                </a>
+
               </div>
             </CardFooter>
           </Card>
         </GridItem>
+
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="success">
-                <Store />
+            <CardHeader color="warning" stats icon>
+              <CardIcon color="warning">
+                <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Revenue</p>
-              <h3 className={classes.cardTitle}>$34,245</h3>
-            </CardHeader>
+              <p className={classes.cardCategory}>Competitions List</p>
+              <h3 className={classes.cardTitle}></h3>
+              </CardHeader>
             <CardFooter stats>
-              <div className={classes.stats}>
-                <DateRange />
-                Last 24 Hours
-              </div>
-            </CardFooter>
+            {competitions.length ? (
+              <List>
+                {competitions.map(competition => (
+                  <ListItem key={competition._id}>
+                    <Link to={"/competitions/" + competition._id}>
+                      <strong>
+                        {competition.eventName} with {competition.horse}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+           </CardFooter>
           </Card>
         </GridItem>
+
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="danger" stats icon>
@@ -146,14 +175,14 @@ export default function Dashboard() {
             <CardHeader color="success">
               <ChartistGraph
                 className="ct-chart"
-                data={dailyCompetitionsChart.data}
-                type="Line"
-                options={dailyCompetitionsChart.options}
-                listener={dailyCompetitionsChart.animation}
+                  data={dailyCompsChart.data}
+                  type="Line"
+                  options={dailyCompsChart.options}
+                  listener={dailyCompsChart.animation}
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Daily Competitions</h4>
+              <h4 className={classes.cardTitle}>Daily Sales</h4>
               <p className={classes.cardCategory}>
                 <span className={classes.successText}>
                   <ArrowUpward className={classes.upArrowCardCategory} /> 55%
@@ -173,11 +202,11 @@ export default function Dashboard() {
             <CardHeader color="warning">
               <ChartistGraph
                 className="ct-chart"
-                data={emailsSubscriptionChart.data}
+                data={compsSubscriptionChart.data}
                 type="Bar"
-                options={emailsSubscriptionChart.options}
-                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                listener={emailsSubscriptionChart.animation}
+                options={compsSubscriptionChart.options}
+                responsiveOptions={compsSubscriptionChart.responsiveOptions}
+                listener={compsSubscriptionChart.animation}
               />
             </CardHeader>
             <CardBody>
@@ -196,10 +225,10 @@ export default function Dashboard() {
             <CardHeader color="danger">
               <ChartistGraph
                 className="ct-chart"
-                data={completedTasksChart.data}
+                data={completedCompsChart.data}
                 type="Line"
-                options={completedTasksChart.options}
-                listener={completedTasksChart.animation}
+                options={completedCompsChart.options}
+                listener={completedCompsChart.animation}
               />
             </CardHeader>
             <CardBody>
@@ -227,6 +256,7 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[0, 3]}
                     tasksIndexes={[0, 1, 2, 3]}
+                    tasks={bugs}
                   />
                 )
               },
@@ -237,6 +267,7 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[0]}
                     tasksIndexes={[0, 1]}
+                    tasks={website}
                   />
                 )
               },
@@ -247,16 +278,18 @@ export default function Dashboard() {
                   <Tasks
                     checkedIndexes={[1]}
                     tasksIndexes={[0, 1, 2]}
+                    tasks={server}
                   />
                 )
               }
             ]}
           />
         </GridItem>
+
         <GridItem xs={12} sm={12} md={6}>
           <Card>
             <CardHeader color="warning">
-              <h4 className={classes.cardTitleWhite}>Horses Stats</h4>
+              <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
               <p className={classes.cardCategoryWhite}>
                 New employees on 15th September, 2016
               </p>
@@ -264,7 +297,7 @@ export default function Dashboard() {
             <CardBody>
               <Table
                 tableHeaderColor="warning"
-                tableHead={["ID", "Name", "Salary", "Country"]}
+                tableHead={["ID", "Name", "Salary", "Horse"]}
                 tableData={[
                   ["1", "Dakota Rice", "$36,738", "Niger"],
                   ["2", "Minerva Hooper", "$23,789", "Curaçao"],
@@ -275,7 +308,8 @@ export default function Dashboard() {
             </CardBody>
           </Card>
         </GridItem>
-      </GridContainer>
+        
+        </GridContainer>
     </div>
-  )
+  );
 }

@@ -9,9 +9,9 @@ function Detail(props) {
 
   // When this component mounts, grab the competition with the _id of props.match.params.id
   // e.g. localhost:3000/competitions/599dcb67f0f16317844583fc
-  const {ids} = useParams()
+  const {id} = useParams()
   useEffect(() => {
-    API.getCompetition(ids)
+    API.getCompetition(id)
       .then(res => setCompetition(res.data))
       .catch(err => console.log(err));
   }, [])
@@ -22,8 +22,8 @@ function Detail(props) {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                Event Name: {competitions} with 
-                Horse: {competitions.horses}
+                Event Name: {competition} with 
+                Horse: {competition.horse}
                 
               </h1>
               <h2>Date: {competitions.date}</h2>

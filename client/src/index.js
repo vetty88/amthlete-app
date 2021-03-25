@@ -39,6 +39,7 @@ ReactDOM.render(
       <Route path="/competitions/:id" component={Detail}/>
             {Detail}
       <Redirect from="/" to="/admin/dashboard" />
+      <Redirect from="/mongo" to="/mongoChart" />
     </Switch>
   </Router>,
   document.getElementById("root")

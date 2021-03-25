@@ -1,7 +1,10 @@
 // ##############################
 // // // javascript library for creating charts
 // #############################
+// import React, {useEffect, useState} from "react";
 var Chartist = require("chartist");
+
+
 
 // ##############################
 // // // variables used to create animation on charts
@@ -15,10 +18,10 @@ var delays2 = 80,
 // // // Daily Competitions
 // #############################
 
-const dailyCompetitionsChart = {
+const dailyCompsChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[12, 17, 7, 17, 23, 18, 38]]
+    series: [[1, 2, 3, 4, 5, 6, 7]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
@@ -69,7 +72,7 @@ const dailyCompetitionsChart = {
 // // // Email Subscriptions
 // #############################
 
-const emailsSubscriptionChart = {
+const compsSubscriptionChart = {
   data: {
     labels: [
       "Jan",
@@ -134,7 +137,7 @@ const emailsSubscriptionChart = {
 // // // Completed Tasks
 // #############################
 
-const completedTasksChart = {
+const completedCompsChart = {
   data: {
     labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
     series: [[230, 750, 450, 300, 280, 240, 200, 190]]
@@ -184,7 +187,7 @@ const completedTasksChart = {
 };
 
 module.exports = {
-  dailyCompetitionsChart,
-  emailsSubscriptionChart,
-  completedTasksChart
+  dailyCompsChart,
+  compsSubscriptionChart,
+  completedCompsChart,
 };

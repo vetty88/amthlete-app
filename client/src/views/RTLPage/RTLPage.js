@@ -34,9 +34,9 @@ import CardFooter from "../../components/Card/CardFooter.js";
 import SnackbarContent from "../../components/Snackbar/SnackbarContent.js";
 
 import {
-  dailyCompetitionsChart,
-  emailsSubscriptionChart,
-  completedTasksChart
+  dailyCompsChart,
+  compsSubscriptionChart,
+  completedCompsChart
 } from "../../variables/charts.js";
 
 import styles from "../../assets/jss/material-dashboard-react/views/rtlStyle.js";
@@ -147,10 +147,10 @@ export default function RTLPage() {
             <CardHeader color="success">
               <ChartistGraph
                 className="ct-chart"
-                data={dailyCompetitionsChart.data}
+                data={dailyCompsChart.data}
                 type="Line"
-                options={dailyCompetitionsChart.options}
-                listener={dailyCompetitionsChart.animation}
+                options={dailyCompsChart.options}
+                listener={dailyCompsChart.animation}
               />
             </CardHeader>
             <CardBody>
@@ -174,11 +174,11 @@ export default function RTLPage() {
             <CardHeader color="warning">
               <ChartistGraph
                 className="ct-chart"
-                data={emailsSubscriptionChart.data}
+                data={compsSubscriptionChart.data}
                 type="Bar"
-                options={emailsSubscriptionChart.options}
-                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                listener={emailsSubscriptionChart.animation}
+                options={compsSubscriptionChart.options}
+                responsiveOptions={compsSubscriptionChart.responsiveOptions}
+                listener={compsSubscriptionChart.animation}
               />
             </CardHeader>
             <CardBody>
@@ -197,10 +197,10 @@ export default function RTLPage() {
             <CardHeader color="danger">
               <ChartistGraph
                 className="ct-chart"
-                data={completedTasksChart.data}
+                data={completedCompsChart.data}
                 type="Line"
-                options={completedTasksChart.options}
-                listener={completedTasksChart.animation}
+                options={completedCompsChart.options}
+                listener={completedCompsChart.animation}
               />
             </CardHeader>
             <CardBody>

@@ -112,8 +112,8 @@ export default function UserProfile() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
-                    labelText="Country"
-                    id="country"
+                    labelText="Horse"
+                    id="horse"
                     formControlProps={{
                       fullWidth: true
                     }}
