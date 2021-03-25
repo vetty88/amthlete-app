@@ -38,31 +38,34 @@ export default function CustomTable() {
       <Table className={classes.table}>
       {competitions.length ? (
         <TableHead>
-          <h1>CUSTOM TABLE</h1>
-          {competitions.map((competition, key) => {
-          <TableRow key={competition._id}>
+          <h4>CUSTOM TABLE 1</h4>
+          {competitions.map(competition => (
+          <TableRow key={competition.id}>
               <TableCell
               className={classes.tableCell + " " + classes.tableHeadCell}
-              key={key} >
-              {competition}
+              key={competition.id} >
+              {competition.eventName}
               </TableCell>
                 </TableRow>
-          })}
+          ))}
         </TableHead> 
-      ) : null}
+      ) : (null
+      )}
 
         <TableBody>
         {competitions.length ? (
           <TableHead>
-            {competitions.map((competition, key) => {
-            <TableRow key={competition._id}>         
-                <TableCell className={classes.tableCell} key={key}>
-                {competition}
+            <h4>CUSTOM TABLE 2</h4>
+            {competitions.map(competition => (
+            <TableRow key={competition.id}>         
+                <TableCell className={classes.tableCell} key={competition.id}>
+                {competition.horse}
                 </TableCell>
             </TableRow>
-          })}
+            ))}
           </TableHead>  
-        ) : null}
+              ) : (null
+                )}
         </TableBody>
       </Table>
     </div>
@@ -71,6 +74,6 @@ export default function CustomTable() {
 
 
 
-CustomTable.competitionTypes = {
-  tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
-};
+// CustomTable.competitionTypes = {
+//   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
+// };
