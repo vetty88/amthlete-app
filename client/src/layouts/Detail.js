@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Moment from "react-moment";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
@@ -26,7 +27,7 @@ function Detail(props) {
                 Horse: {competition.horse}
                 
               </h1>
-              <h2>Date: {competition.date}</h2>
+              <h2>Date:   <Moment format="DD-MM-YYYY">{competition.date}</Moment></h2>
               <h3>Placing: {competition.placing}</h3>
               <h4>Penalties: {competition.penalties}</h4>
            

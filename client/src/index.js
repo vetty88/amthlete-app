@@ -18,11 +18,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 
 // core components
 import Admin from "../src/layouts/Admin.js";
-import RTL from "../src/layouts/RTL.js";
 import Competitions from "../src/layouts/Competitions.js";
 import Detail from "../src/layouts/Detail.js";
 
@@ -34,12 +33,8 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/admin" component={Admin} />
-      <Route path="/rtl" component={RTL} />
       <Route exact path="/competitions" component={Competitions} />
       <Route path="/competitions/:id" component={Detail}/>
-            {Detail}
-      <Redirect from="/" to="/admin/dashboard" />
-      <Redirect from="/mongo" to="/mongoChart" />
     </Switch>
   </Router>,
   document.getElementById("root")

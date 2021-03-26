@@ -11,9 +11,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
-// core components
-import AdminNavbarLinks from "../Navbars/AdminNavbarLinks";
-import RTLNavbarLinks from "../Navbars/RTLNavbarLinks.js";
+
+
 
 import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
@@ -114,10 +113,7 @@ export default function Sidebar(props) {
           }}
         >
           {brand}
-          <div className={classes.sidebarWrapper}>
-            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-            {links}
-          </div>
+
           {image !== undefined ? (
             <div
               className={classes.background}

@@ -96,22 +96,3 @@ async function renderChart() {
 }
 
 renderChart().catch(e => window.alert(e.message));
-// import API from "../../utils/API";
-
-// const [competitions, setCompetitions] = useState([]) 
-
-//   // Load all competitions and store them with setCompetitions
-//   useEffect(() => {
-//     loadCompetitions()
-//   }, [])
-
-//   // Loads all competitions and sets them to competitions
-//   function loadCompetitions() {
-//     API.getCompetitions()
-//       .then(res => 
-//         setCompetitions(res.data)
-//       )
-//       .catch(err => console.log(err));
-//   };
-
-//   console.log(competitions.length);

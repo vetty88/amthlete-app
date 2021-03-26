@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>  
+</head>
+<title>React Equestrian Competitions - MongoChart</title>
+<main>
+
+  <div id="nav">
+    <label
+      ><span>REFRESH CHART </span>
+      <button id="refresh">⟳</button>
+    </label>
+    <label
+      ><span>REFRESH INTERVAL </span>
+      <select id="refresh-interval">
+        <option value="0">None</option>
+        <option value="10">10 Seconds</option>
+        <option value="60"><span>1 Minute</span></option>
+        <option value="1000">10 Minutes</option>
+        <option value="6000"><span>1 Hour</span></option>
+      </select>
+    </label>
+    <label
+      ><span>FILTER BY HORSE </span>
+      <select id="horse-filter">
+        <option value="">--All--</option>
+        <option value="Ardilla">Ardilla</option>
+        <option value="Squirrel">Squirrel</option>
+        <option value="Tess">Tess</option>
+        <option value="Test">Test</option>
+        <option value="Testing">Testing</option>
+        <option value="NIL">NIL</option>
+        <option value="NIL2">NIL2</option>
+      </select>
+    </label>
+    <label class="theme-label"
+      ><span>THEME </span>
+      <label class="switch">
+        <input id="themeSwitch" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <span id="themeEmoji" class="theme-label"></span>
+    </label>
+  </div>
+  <div class="body-content">
+    <div id="chart"></div>
+    <div class="chartInfo">
+      <h3 class="chart-title">CHART DATA</h3>
+      <table>
+        <tr>
+          <th>Current Refresh Interval</th>
+          <td id="currentRefreshInterval">None</td>
+        </tr>
+        <tr>
+          <th>Current Theme</th>
+          <td id="currentTheme">light</td>
+        </tr>
+        <tr>
+          <th>Current Filter</th>
+          <td id="currentFilter">None</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</main>
+<script src="../src/variables/mongoChart.js"></script>
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+
+  
+</body>
+
+</html>

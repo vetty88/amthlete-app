@@ -33,8 +33,6 @@ import Icons from "./views/Icons/Icons";
 import Maps from "./views/Maps/Maps";
 import NotificationsPage from "./views/Notifications/Notifications";
 import UpgradeToPro from "./views/UpgradeToPro/UpgradeToPro";
-// core components/views for RTL layout
-import RTLPage from "./views/RTLPage/RTLPage";
 
 const dashboardRoutes = [
   {
@@ -93,14 +91,7 @@ const dashboardRoutes = [
     component: NotificationsPage,
     layout: "/admin"
   },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
-  },
+
   {
     path: "/upgrade-to-pro",
     name: "Upgrade To PRO",

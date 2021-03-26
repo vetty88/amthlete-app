@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import DataGrid from "react-data-grid";
 // core components
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -8,6 +9,8 @@ import Table from "../../components/Table/Table.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
+import DataTable from "react-data-table-component";
+
 
 import DeleteBtn from "../../components/DeleteBtn";
 
@@ -113,15 +116,17 @@ export default function TableList() {
       ))}
     }}
 
+
     return (
       <GridContainer>   
+       
 
   <GridItem xs={12} sm={12} md={12}>
     <Card>
       <CardHeader color="primary">
       <h4 className={classes.cardTitleWhite}>Competitions On My List</h4>
       <p className={classes.cardCategoryWhite}>
-      Here is a subtitle for this table
+      Competitions Table
       </p>
       </CardHeader>
       <CardBody>
@@ -146,6 +151,8 @@ export default function TableList() {
       </CardBody>
     </Card>
   </GridItem>
+
+
 
       <GridItem xs={12} sm={12} md={12}>
         <Card plain>
@@ -185,24 +192,7 @@ export default function TableList() {
           </CardBody>
         </Card>
       </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
-            </h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
-          </CardHeader>
-          <CardBody>
-            <Table
-          onLoad={displayCompsTable}
-          className="comp-">      
-          </Table>
-          </CardBody>
-        </Card>
-      </GridItem>
+
  
     </GridContainer>
   );

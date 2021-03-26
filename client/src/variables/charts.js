@@ -4,24 +4,38 @@
 // import React, {useEffect, useState} from "react";
 var Chartist = require("chartist");
 
+import id from "date-fns/esm/locale/id/index";
+import API from "../utils/API";
 
+function chartData() {
+  // Setting our component's initial state
+  const [competitions, setCompetitions] = useState([])
 
-// ##############################
-// // // variables used to create animation on charts
-// #############################
-var delays = 80,
-  durations = 500;
-var delays2 = 80,
-  durations2 = 500;
+  // Load all competitions and store them with setCompetitions
+  useEffect(() => {
+    loadCompetitions()
+    fetchCompetition(id)
+  }, [])
 
+  // Loads all competitions and sets them to competitions
+  function loadCompetitions() {
+    API.getCompetitions()
+      .then(res => 
+        setCompetitions(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+}
+  
 // ##############################
 // // // Daily Competitions
 // #############################
 
 const dailyCompsChart = {
   data: {
-    labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[1, 2, 3, 4, 5, 6, 7]]
+    data: chartData,
+    labels: ["Event Type", "Horse"],
+    series: ["eventType", "horse" ],
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
@@ -186,8 +200,9 @@ const completedCompsChart = {
   }
 };
 
-module.exports = {
-  dailyCompsChart,
-  compsSubscriptionChart,
-  completedCompsChart,
-};
+
+// module.exports = {
+//   dailyCompsChart,
+//   compsSubscriptionChart,
+//   completedCompsChart,
+// };
