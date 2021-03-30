@@ -9,6 +9,8 @@ import { List, ListItem } from "../components/List";
 import { Input, DateSelector, SelectEvents, SelectHorse, TextArea, FormBtn } from "../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
+
+
 function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])

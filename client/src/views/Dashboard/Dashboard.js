@@ -37,12 +37,14 @@ import CardIcon from "../../components/Card/CardIcon.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import { List, ListItem } from "../../components/List";
+import { Input, DateSelector, SelectEvents, SelectHorse, TextArea, FormBtn } from "../../components/Form";
 import API from "../../utils/API";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 
 const useStyles = makeStyles(styles);
+const horseNames = ["Tess", "Ardilla", "Squirrel"];
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -179,11 +181,23 @@ export default function Dashboard() {
               <CardIcon color="info">
                 <Accessibility />
               </CardIcon>
-              <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <p className={classes.cardCategory}>Horses</p>
+         
+              <h3 className={classes.cardTitle}></h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
+              {horseNames.length ? (
+              <List>
+                {horseNames.map(horseName => (
+                  <ListItem key={horseName.id}>
+                          {horseName}
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results</h3>
+            )}
                 <Update />
                 Just Updated
               </div>
