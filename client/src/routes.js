@@ -5,10 +5,10 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+* Copyright 2020 REACT EQUESTRIAN (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
 
-* Coded by Creative Tim
+* Coded by REACT EQUESTRIAN
 
 =========================================================
 
@@ -18,27 +18,16 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard";
 import CompProfile from "./views/CompProfile/CompProfile";
 import TableList from "./views/TableList/TableList";
-import Typography from "./views/Typography/Typography";
-import Icons from "./views/Icons/Icons";
-import Maps from "./views/Maps/Maps";
-import NotificationsPage from "./views/Notifications/Notifications";
-import UpgradeToPro from "./views/UpgradeToPro/UpgradeToPro";
 
 const dashboardRoutes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
+    rtlName: "Dashboard",
     icon: Dashboard,
     component: DashboardPage,
     layout: "/admin"
@@ -46,7 +35,7 @@ const dashboardRoutes = [
   {
     path: "/comp",
     name: "Comp Profile",
-    rtlName: "ملف تعريفي للمستخدم",
+    rtlName: "Comp Profile",
     icon: Person,
     component: CompProfile,
     layout: "/admin"
@@ -54,50 +43,9 @@ const dashboardRoutes = [
   {
     path: "/table",
     name: "Table List",
-    rtlName: "قائمة الجدول",
+    rtlName: "Table List",
     icon: "content_paste",
     component: TableList,
-    layout: "/admin"
-  },
-  {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: LibraryBooks,
-    component: Typography,
-    layout: "/admin"
-  },
-  {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
-    layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin"
-  },
-
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
     layout: "/admin"
   }
 ];

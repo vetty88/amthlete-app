@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { Col, Row, Container } from "../../components/Grid";
 // core components
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -92,112 +93,121 @@ export default function Competitions() {
   };
   const classes = useStyles();
   return (
-    <div>
+  <div>
+    <Row>
+    <GridContainer>
+    <Col size="md-12">
+      <form>
+      <Card>
+      <CardHeader color="primary">
+      <GridItem xs={12} sm={12} md={4}>
+      <h4 className={classes.cardTitleWhite}>Add Competition</h4>
+      <p className={classes.cardCategoryWhite}>Add a New Comp! </p>
+      </GridItem>
+      </CardHeader>
+      <CardBody>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={8}>
-          <form>
-            <Card>
-              <CardHeader color="primary">
-                  <h4 className={classes.cardTitleWhite}>Add Competition</h4>
-                  <p className={classes.cardCategoryWhite}>Add a New Comp! </p>
-              </CardHeader>
-                <CardBody>
-                  <GridContainer>
-                    <GridItem xs={12} sm={12} md={5}>
-                    <Input
-                    labelText="Event Name"
-                    id="event-name"
-                    onChange={handleInputChange}
-                    name="eventName"
-                    placeholder="Event Name (required)"
-                    />
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={3}>
-                    <SelectEvents 
-                    labelText="Competition Type (Discipline)"
-                    id="event-type"
-                    onChange = {handleInputChange}
-                    name = "eventType"
-                    placeholder = "EventType (required)"
-                    />  
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <SelectHorse
-                    labelText="Horse Name"
-                    id="horse"
-                    onChange={handleInputChange}
-                    name="horse"
-                    placeholder="Horse (required)"
-                    />                
-                    </GridItem>
-                  </GridContainer>
-                  <GridContainer>
-                    <GridItem xs={12} sm={12} md={6}>
-                    <SelectPlacing
-                    labelText="Placing"
-                    id="placing"
-                    onChange={handleInputChange}
-                    name="placing"
-                    placeholder="Placing (required)"
-                    />
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={6}>
-                    <Input
-                    labelText="Penalties"
-                    id="penalties"
-                    onChange={handleInputChange}
-                    name="penalties"
-                    placeholder="Penalties (required)"
-                    />
-                    </GridItem>
-                  </GridContainer>
-                  <GridContainer>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <TextArea
-                    labelText="Result Notes"
-                    id="result-notes"
-                    onChange={handleInputChange}
-                    name="resultNotes"
-                    placeholder="Result Notes (Optional)"
-                    />
-                    </GridItem>
-                    <GridItem xs={12} sm={12} md={4}>
-                    <DateSelector
-                    labelText="Date"
-                    id="comp-date"
-                    onChange={handleInputChange}
-                    name="date"
-                    placeholder="Comp Date YYYY-M-DD default time to 13:00 to save correct date"
-                    />
-                    </GridItem>
-                  </GridContainer>              
-                  <CardFooter>
-                    <FormBtn color="primary"
-                    disabled={!(formObject.horse && formObject.eventName)}
-                    onClick={handleFormSubmit}>
-                    Submit Competition
-                    </FormBtn>
-                  </CardFooter>
-                </CardBody>
-            </Card>
-          </form> 
-
-        {competitions.length ? (
-          <List>
-            {competitions.map(competition => (
-              <ListItem key={competition._id}>
-                <Link to={"/competitions/" + competition._id}>
-                <strong> {competition.eventName} with {competition.horse} </strong>
-                </Link>
-              <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
-              </ListItem>
-            ))}
-          </List>
-        ) : (
-        <h3>No Results to Display</h3>
-        )}
-        </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+      <Input
+      labelText="Event Name"
+      id="event-name"
+      onChange={handleInputChange}
+      name="eventName"
+      placeholder="Event Name (required)"
+      />
+      </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+      <SelectEvents 
+      labelText="Competition Type (Discipline)"
+      id="event-type"
+      onChange = {handleInputChange}
+      name = "eventType"
+      placeholder = "EventType (required)"
+      />  
+      </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+      <SelectHorse
+      labelText="Horse Name"
+      id="horse"
+      onChange={handleInputChange}
+      name="horse"
+      placeholder="Horse (required)"
+      />                
+      </GridItem>
       </GridContainer>
-    </div>
+      <GridContainer>
+      <GridItem xs={12} sm={12} md={6}>
+      <SelectPlacing
+      labelText="Placing"
+      id="placing"
+      onChange={handleInputChange}
+      name="placing"
+      placeholder="Placing (required)"
+      />
+      </GridItem>
+      <GridItem xs={12} sm={12} md={6}>
+      <Input
+      labelText="Penalties"
+      id="penalties"
+      onChange={handleInputChange}
+      name="penalties"
+      placeholder="Penalties (required)"
+      />
+      </GridItem>
+      </GridContainer>
+      <GridContainer>
+      <GridItem xs={12} sm={12} md={6}>
+      <TextArea
+      labelText="Result Notes"
+      id="result-notes"
+      onChange={handleInputChange}
+      name="resultNotes"
+      placeholder="Result Notes (Optional)"
+      />
+      </GridItem>
+      <GridItem xs={12} sm={12} md={6}>
+      <DateSelector
+      labelText="Date"
+      id="comp-date"
+      onChange={handleInputChange}
+      name="date"
+      placeholder="Comp Date YYYY-M-DD default time to 13:00 to save correct date"
+      />
+      </GridItem>
+      </GridContainer>              
+      <CardFooter>
+      <FormBtn color="primary"
+      disabled={!(formObject.horse && formObject.eventName)}
+      onClick={handleFormSubmit}>
+      Submit Competition
+      </FormBtn>
+      </CardFooter>
+      </CardBody>
+      </Card>
+      </form> 
+    </Col>
+
+    <Col size="md-12">
+      <GridItem xs={12} sm={12} md={6}>
+      {competitions.length ? (
+      <List>
+      {competitions.map(competition => (
+      <ListItem key={competition._id}>
+      <Link to={"/competitions/" + competition._id}>
+      <strong> {competition.eventName} with {competition.horse} </strong>
+      </Link>
+      <DeleteBtn onClick={() => deleteCompetition(competition._id)} />
+      </ListItem>
+      ))}
+      </List>
+      ) : (
+      <h3>No Results to Display</h3>
+      )}
+      </GridItem>     
+
+    </Col>
+    </GridContainer>
+    </Row>
+  </div>
   );
 }
