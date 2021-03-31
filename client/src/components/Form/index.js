@@ -48,6 +48,27 @@ export function SelectHorse(props) {
   );
 }
 
+export function SelectPlacing(props) {
+  return (
+    <div className="form-group">
+       Placing (record to 10th, after that select NIL):
+        <select id="selectPlacingOptions" className="form-control" {...props}>
+          <option value="1">1st</option>
+          <option value="2">2nd</option>
+          <option value="3">3rd</option>
+          <option value="4">4th</option>
+          <option value="5">5th</option>
+          <option value="6">6th</option>
+          <option value="7">7th</option>
+          <option value="8">8th</option>
+          <option value="9">9th</option>
+          <option value="10">10th</option>
+          <option value="NIL">11th+</option>
+        </select>
+      </div> 
+  );
+}
+
 export function TextArea(props) {
   return (
     <div className="form-group">

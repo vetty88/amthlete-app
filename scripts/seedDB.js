@@ -67,7 +67,7 @@ const competitionSeed = [
   eventType: "Dressage",
   horse: "Squirrel",
   penalties: "35",
-  placing: "11",
+  placing: "NIL",
   images: "",
   resultNotes:
   "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",
@@ -78,7 +78,7 @@ const competitionSeed = [
   eventType: "Dressage",
   horse: "Squirrel",
   penalties: "35",
-  placing: "11",
+  placing: "NIL",
   images: "",
   resultNotes:
   "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",

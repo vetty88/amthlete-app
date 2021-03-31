@@ -6,7 +6,7 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, DateSelector, SelectEvents, SelectHorse, TextArea, FormBtn } from "../components/Form";
+import { Input, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 
@@ -87,7 +87,7 @@ function Competitions() {
                 placeholder="Horse (required)"
               />
 
-              <Input
+              <SelectPlacing
                 onChange={handleInputChange}
                 name="placing"
                 placeholder="Placing (required)"

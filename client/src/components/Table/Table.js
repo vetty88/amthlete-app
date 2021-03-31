@@ -40,7 +40,7 @@ export default function CustomTable() {
       <Table className={classes.table}>
       {competitions.length ? (
         <TableHead>
-          <h4>CUSTOM TABLE 1</h4>
+          <h4>COMPETITIONS LIST</h4>
           {competitions.map(competition => (
           <TableRow key={competition.id}
           dateFormat="DD/MM/YYYY">
@@ -69,25 +69,7 @@ export default function CustomTable() {
         </TableHead> 
       ) : (null
       )}
-        <TableBody>
-        {competitions.length ? (
-          <TableHead>
-            <h4>CUSTOM TABLE 2</h4>
-    
-            <TableRow >         
-                <TableCell className="some class">
-                <SelectHorse>
- 
-                </SelectHorse>
- 
-                </TableCell>
-                
-            </TableRow>
 
-          </TableHead>  
-              ) : (null
-                )}
-        </TableBody>
       </Table>
     </div>
     );
