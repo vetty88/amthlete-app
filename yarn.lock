@@ -15346,6 +15346,13 @@ react-chartist@0.14.3:
   dependencies:
     prop-types "^15.5.8"
 
+react-chartist@^0.14.4:
+  version "0.14.4"
+  resolved "https://registry.yarnpkg.com/react-chartist/-/react-chartist-0.14.4.tgz#a70bdc78a92a7208973cab4253e177e99dc7bd29"
+  integrity sha512-1riwO5CjT5IdrilCM788waUYpIdl8Y4vsIc6Y5bbR3PIX46NYYtcq5bcaBEkIZfKEThuoJDEV6FU1rDmfbogsg==
+  dependencies:
+    prop-types "^15.5.8"
+
 react-chartjs-2@^2.7.4:
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-2.11.1.tgz#a78d0df05fc8bc8ffcd4c4ab5b89a25dd2ca3278"

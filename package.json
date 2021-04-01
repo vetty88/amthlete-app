@@ -86,6 +86,7 @@
     "react-addons-shallow-compare": "^15.6.0",
     "react-anime": "^2.2.0",
     "react-bootstrap": "^0.32.4",
+    "react-chartist": "^0.14.4",
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^2.7.4",
     "react-data-grid": "^7.0.0-canary.38",

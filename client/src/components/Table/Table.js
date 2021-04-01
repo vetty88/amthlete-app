@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import PropTypes from "prop-types";
 import Moment from "react-moment";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
 // core components
 import styles from "../../assets/jss/material-dashboard-react/components/tableStyle.js";
 import API from "../../utils/API";
-import { SelectHorse } from "../Form/index.js";
 
 const useStyles = makeStyles(styles);
 
