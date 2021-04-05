@@ -18,16 +18,16 @@ import styles from "../../assets/jss/material-dashboard-react/components/sidebar
 
 const useStyles = makeStyles(styles);
 
-export default function SideBar(props) {
+export default function Sidebar(props) {
   const classes = useStyles();
-  // verifies if routeName is the one active (in browser input)
-  function activeRoute(routeName) {
-    return window.location.href.indexOf(routeName) > -1 ? true : false;
+  // verifies if dashboardRouteName is the one active (in browser input)
+  function activeDashboardRoute(dashboardRouteName) {
+    return window.location.href.indexOf(dashboardRouteName) > -1 ? true : false;
   }
-  const { color, logo, image, logoText, routes } = props;
+  const { color, logo, image, logoText, dashboardRoutes } = props;
   var links = (
     <List className={classes.list}>
-      {routes.map((prop, key) => {
+      {dashboardRoutes.map((prop, key) => {
         var activePro = " ";
         var listItemClasses;
         if (prop.path === "/upgrade-to-pro") {
@@ -37,11 +37,11 @@ export default function SideBar(props) {
           });
         } else {
           listItemClasses = classNames({
-            [" " + classes[color]]: activeRoute(prop.layout + prop.path)
+            [" " + classes[color]]: activeDashboardRoute(prop.layout + prop.path)
           });
         }
         const whiteFontClasses = classNames({
-          [" " + classes.whiteFont]: activeRoute(prop.layout + prop.path)
+          [" " + classes.whiteFont]: activeDashboardRoute(prop.layout + prop.path)
         });
         return (
           <NavLink
@@ -147,13 +147,13 @@ export default function SideBar(props) {
   );
 }
 
-SideBar.propTypes = {
+Sidebar.propTypes = {
   rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   logo: PropTypes.string,
   image: PropTypes.string,
   logoText: PropTypes.string,
-  routes: PropTypes.arrayOf(PropTypes.object),
+  dashboardRoutes: PropTypes.arrayOf(PropTypes.object),
   open: PropTypes.bool
 };

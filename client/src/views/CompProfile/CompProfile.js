@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { Col, Row, Container } from "../../components/Grid";
+
 // core components
 import GridItem from "../../components/Grid/GridItem.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
@@ -17,6 +17,7 @@ import API from "../../utils/API";
 
 // import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../../components/List";
+import { Col, Row } from "../../components/Grid";
 import { Input, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
@@ -105,76 +106,77 @@ export default function Competitions() {
       <p className={classes.cardCategoryWhite}>Add a New Comp! </p>
       </GridItem>
       </CardHeader>
-      <CardBody>
-      <GridContainer>
-      <GridItem xs={12} sm={12} md={4}>
-      <Input
-      labelText="Event Name"
-      id="event-name"
-      onChange={handleInputChange}
-      name="eventName"
-      placeholder="Event Name (required)"
-      />
-      </GridItem>
-      <GridItem xs={12} sm={12} md={4}>
-      <SelectEvents 
-      labelText="Competition Type (Discipline)"
-      id="event-type"
-      onChange = {handleInputChange}
-      name = "eventType"
-      placeholder = "EventType (required)"
-      />  
-      </GridItem>
-      <GridItem xs={12} sm={12} md={4}>
-      <SelectHorse
-      labelText="Horse Name"
-      id="horse"
-      onChange={handleInputChange}
-      name="horse"
-      placeholder="Horse (required)"
-      />                
-      </GridItem>
-      </GridContainer>
-      <GridContainer>
-      <GridItem xs={12} sm={12} md={6}>
-      <SelectPlacing
-      labelText="Placing"
-      id="placing"
-      onChange={handleInputChange}
-      name="placing"
-      placeholder="Placing (required)"
-      />
-      </GridItem>
-      <GridItem xs={12} sm={12} md={6}>
-      <Input
-      labelText="Penalties"
-      id="penalties"
-      onChange={handleInputChange}
-      name="penalties"
-      placeholder="Penalties (required)"
-      />
-      </GridItem>
-      </GridContainer>
-      <GridContainer>
-      <GridItem xs={12} sm={12} md={6}>
-      <TextArea
-      labelText="Result Notes"
-      id="result-notes"
-      onChange={handleInputChange}
-      name="resultNotes"
-      placeholder="Result Notes (Optional)"
-      />
-      </GridItem>
-      <GridItem xs={12} sm={12} md={6}>
-      <DateSelector
-      labelText="Date"
-      id="comp-date"
-      onChange={handleInputChange}
-      name="date"
-      placeholder="Comp Date YYYY-M-DD default time to 13:00 to save correct date"
-      />
-      </GridItem>
-      </GridContainer>              
+        <CardBody>
+        <GridContainer>
+        <GridItem xs={12} sm={12} md={4}>
+        <Input
+        labelText="Event Name"
+        id="event-name"
+        onChange={handleInputChange}
+        name="eventName"
+        placeholder="Event Name (required)"
+        />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+        <SelectEvents 
+        labelText="Competition Type (Discipline)"
+        id="event-type"
+        onChange = {handleInputChange}
+        name = "eventType"
+        placeholder = "EventType (required)"
+        />  
+        </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+        <SelectHorse
+        labelText="Horse Name"
+        id="horse"
+        onChange={handleInputChange}
+        name="horse"
+        placeholder="Horse (required)"
+        />                
+        </GridItem>
+        </GridContainer>
+        <GridContainer>
+        <GridItem xs={12} sm={12} md={6}>
+        <SelectPlacing
+        labelText="Placing"
+        id="placing"
+        onChange={handleInputChange}
+        name="placing"
+        placeholder="Placing (required)"
+        />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={6}>
+        <Input
+        labelText="Penalties"
+        id="penalties"
+        onChange={handleInputChange}
+        name="penalties"
+        placeholder="Penalties (required)"
+        />
+        </GridItem>
+        </GridContainer>
+        <GridContainer>
+        <GridItem xs={12} sm={12} md={6}>
+        <TextArea
+        labelText="Result Notes"
+        id="result-notes"
+        onChange={handleInputChange}
+        name="resultNotes"
+        placeholder="Result Notes (Optional)"
+        />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={6}>
+        <DateSelector
+        labelText="Date"
+        id="comp-date"
+        onChange={handleInputChange}
+        name="date"
+        placeholder="Comp Date YYYY-M-DD default time to 13:00 to save correct date"
+        />
+        </GridItem>
+        </GridContainer>              
+        </CardBody>
       <CardFooter>
       <FormBtn color="primary"
       disabled={!(formObject.horse && formObject.eventName)}
@@ -182,7 +184,6 @@ export default function Competitions() {
       Submit Competition
       </FormBtn>
       </CardFooter>
-      </CardBody>
       </Card>
       </form> 
     </Col>

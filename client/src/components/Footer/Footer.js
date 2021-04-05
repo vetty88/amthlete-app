@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import PropTypes from "prop-types";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
@@ -29,18 +28,18 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a href="/admin/table" className={classes.block}>
-               Tables
+                Tables
               </a>
             </ListItem>
 
           </List>
         </div>
-        <p className={classes.right}>
+        <div className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
             <p>Equestrian Competition Tracker - Y Waller</p>
           </span>
-        </p>
+        </div>
       </div>
     </footer>
   );
