@@ -5,7 +5,7 @@ import Person from "@material-ui/icons/Person";
 import DashboardPage from "./views/Dashboard/Dashboard";
 import CompProfile from "./views/CompProfile/CompProfile";
 import TableList from "./views/TableList/TableList";
-import CustomCharts from "./views/Charts/Charts"
+import CustomCompCharts from "./views/Charts/Charts"
 
 const dashboardRoutes = [
   {
@@ -37,7 +37,7 @@ const dashboardRoutes = [
     name: "Charts",
     rtlName: "Charts",
     icon: "content_paste",
-    component: CustomCharts,
+    component: CustomCompCharts,
     layout: "/admin"
   }
 ];
