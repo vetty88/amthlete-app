@@ -210,6 +210,43 @@ export default function Dashboard() {
         </GridItem>
         
       </GridContainer>
+      <GridContainer>
+      <GridItem xs={12} sm={10} md={10}>
+                <Card>
+                <CardHeader></CardHeader>
+                    <CardBody>
+                        <div id="chart">
+                        <iframe styles="background: #21313C;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="600" height="600" src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=bdab3054-5ba1-47e5-b482-45e5e859c862&theme=light"></iframe>
+                        </div>
+                    </CardBody>
+                    <CardFooter></CardFooter>
+                </Card>
+            </GridItem> 
+
+            <GridItem xs={12} sm={10} md={10}>
+                <Card>
+                    <CardHeader></CardHeader>
+                    <CardBody>
+                        <div id="chart">
+                        <iframe styles="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="800" height="600" src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=d2f1e98d-9b13-4e08-9ce8-d01c7a8869f0&theme=light"></iframe> 
+                        </div>
+                    </CardBody>
+                    <CardFooter></CardFooter>
+                </Card>
+            </GridItem>
+
+            <GridItem xs={12} sm={10} md={10}>
+                <Card>
+                    <CardHeader></CardHeader>
+                    <CardBody>
+                        <div id="chart">
+                        <iframe styles="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="800" height="600" src="https://charts.mongodb.com/charts-project-0-ifizl/embed/charts?id=ef7be6d4-9043-4ed2-90c4-ac8576aae118&theme=light"></iframe>
+                        </div>
+                    </CardBody>
+                    <CardFooter></CardFooter>
+                </Card>
+            </GridItem> 
+      </GridContainer>
       
       <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
