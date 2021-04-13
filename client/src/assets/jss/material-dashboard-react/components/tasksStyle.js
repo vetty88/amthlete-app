@@ -3,9 +3,9 @@ import {
   primaryColor,
   dangerColor,
   grayColor
-} from "../../material-dashboard-react.js";
+} from '../../material-dashboard-react.js';;
 import tooltipStyle from "../../material-dashboard-react/tooltipStyle.js";
-import checkboxAdnRadioStyle from "../../material-dashboard-react/checkboxAdnRadioStyle.js";
+import checkboxAdnRadioStyle from "../../material-dashboard-react/checkboxAdnRadioStyle";
 const tasksStyle = {
   ...tooltipStyle,
   ...checkboxAdnRadioStyle,

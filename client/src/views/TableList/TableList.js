@@ -158,10 +158,10 @@ export default function TableList() {
         <Card plain>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
+              Competitions Table (All)
             </h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Competition Details
             </p>
           </CardHeader>
           <CardBody>

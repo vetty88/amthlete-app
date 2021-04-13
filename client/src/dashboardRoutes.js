@@ -3,7 +3,7 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard";
-import CompProfile from "./views/CompProfile/CompProfile";
+import AddComp from "./views/AddComp/AddComp";
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
 
@@ -18,10 +18,10 @@ const dashboardRoutes = [
   },
   {
     path: "/comp",
-    name: "Comp Profile",
-    rtlName: "Comp Profile",
+    name: "Add Competition",
+    rtlName: "Add Competition",
     icon: Person,
-    component: CompProfile,
+    component: AddComp,
     layout: "/admin"
   },
   {

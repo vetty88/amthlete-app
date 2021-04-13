@@ -35,11 +35,12 @@ export function SelectEvents(props) {
   );
 }
 
+
 export function SelectHorse(props) {
   return (
     <div className="form-group">
        Horses:
-        <select id="eventTypeOptions" className="form-control" {...props}>
+        <select id="horseOptions" className="form-control" {...props}>
           <option value="Squirrel">Squirrel</option>
           <option value="Tess">Tess</option>
           <option value="Ardilla">Ardilla</option>
@@ -47,6 +48,7 @@ export function SelectHorse(props) {
       </div> 
   );
 }
+
 
 export function SelectPlacing(props) {
   return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,8 +20,35 @@ import { List, ListItem } from "../../components/List";
 import { Col, Row } from "../../components/Grid";
 import { Input, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import AsyncCreatableSelect from 'react-select/async-creatable';
+
+import { horses } from '../../data';
+import { CreatableSelect } from '@atlaskit/select';
 
 export default function Competitions() {
+  interface State {
+  inputValue: string;
+}
+
+class WithPromises extends Component<{}, State> {
+  state = { inputValue: '' };
+
+  handleInputChange = (newValue: string) => {
+    const inputValue = newValue.replace(/\W/g, '');
+    this.setState({ inputValue });
+    return inputValue;
+  };
+}
+
+  const filterHorses = (inputValue: string) =>
+  horses.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
+
+const promiseOptions = (inputValue: string) =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      resolve(filterHorses(inputValue));
+    }, 500);
+  });
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})  
@@ -127,13 +154,13 @@ export default function Competitions() {
         />  
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-        <SelectHorse
-        labelText="Horse Name"
-        id="horse"
-        onChange={handleInputChange}
-        name="horse"
-        placeholder="Horse (required)"
-        />                
+        <CreatableSelect
+          labelText="Horse, Select or Create New"
+          id="horse" 
+          cacheOptions defaultOptions loadOptions={promiseOptions} 
+          name="horse"
+          placeholder="Horse (required)" 
+        />           
         </GridItem>
         </GridContainer>
         <GridContainer>

@@ -2,7 +2,7 @@ import {
   primaryColor,
   blackColor,
   hexToRgb
-} from "../material-dashboard-react";
+} from '../material-dashboard-react.js';
 
 const checkboxAdnRadioStyle = {
   root: {
