@@ -28,24 +28,22 @@ import GridContainer from "../../components/Grid/GridContainer.js";
 import Table from "../../components/Table/Table.js";
 import Tasks from "../../components/Tasks/Tasks.js";
 import CustomTabs from "../../components/CustomTabs/CustomTabs.js";
-import Jumbotron from "../../components/Jumbotron";
-import DeleteBtn from "../../components/DeleteBtn";
-import { Col, Row, Container } from "../../components/Grid";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
+import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
+import { Col, Row, Container } from "../../components/Grid/";
 import Danger from "../../components/Typography/Danger.js";
 import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
-import { List, ListItem } from "../../components/List";
-import { Input, DateSelector, SelectEvents, SelectHorse, TextArea, FormBtn } from "../../components/Form";
+import { List, ListItem } from "../../components/List/List";
 import API from "../../utils/API";
 
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 
 const useStyles = makeStyles(styles);
-const horseNames = ["Tess", "Ardilla", "Squirrel"];
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -76,12 +74,43 @@ export default function Dashboard() {
     .catch(err => console.log(err));
 };
 
+// Setting our component's initial state
+  const [horses, setHorses] = useState([])
+  const [horse, setHorse] = useState([])
+
+  // Load all competitions and store them with setCompetitions
+  useEffect(() => {
+    loadHorses()
+    getHorse()
+  }, [])
+
+  // Loads all competitions and sets them to competitions
+  function loadHorses() {
+    API.getHorses()
+      .then(res => 
+        setHorses(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
+  function getHorse(uniqueName) {
+    API.getHorse(uniqueName)
+    .then(res => 
+      setHorse(res.data)
+    )
+    .catch(err => console.log(err));
+};
+
+// function avgEventType(competitions) {
+//     return competitions.reduce((eventType) => (eventType)) / competitions.length;
+// }
+
  
     return (
       <div>
         <GridContainer>
 
-      <GridItem xs={12} sm={6} md={3}>
+      <GridItem xs={12} sm={6} md={4}>
           <Card>
             
             <CardHeader color="warning" stats icon>
@@ -92,6 +121,10 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>
               {competitions.length} <small>competitions</small>
               </h3>
+              <p className={classes.cardCategory}>Total Horses</p>
+              <h3 className={classes.cardTitle}>
+              {horses.length} <small>horses</small>
+              </h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -100,7 +133,7 @@ export default function Dashboard() {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
+        <GridItem xs={12} sm={6} md={4}>
           <Card>
             <CardHeader color="info" stats icon>
               <CardIcon color="info">
@@ -114,11 +147,11 @@ export default function Dashboard() {
           
             </CardBody>
             <CardFooter stats>
-            {horseNames.length ? (
+            {horses.length ? (
               <List>
-            {horseNames.map(horseName => (
-                  <ListItem key={horseName.id}>
-                          {horseName}
+            {horses.map(horse => (
+                  <ListItem key={horse.uniqueName}>
+                          {horse.uniqueName}
                   </ListItem>
                 ))}
               </List>
@@ -129,37 +162,8 @@ export default function Dashboard() {
             </CardFooter>
           </Card>
         </GridItem>
-        </GridContainer>
 
-        <GridContainer>
-
-              <GridItem xs={12} sm={6} md={3}>
-          <Card>
-          <CardHeader color="warning" stats icon>
-              <CardIcon color="warning">
-                <Icon>content_copy</Icon>
-              </CardIcon>
-              <p className={classes.cardCategory}>Last 5: Horses List</p>
-              <h3 className={classes.cardTitle}></h3>
-              </CardHeader>
-            <CardFooter stats>
-            {competitions.length ? (
-              <List>
-                {competitions.slice(0, 5).map(competition => (
-                  <ListItem key={competition._id}>
-                          {competition.horse}
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results</h3>
-            )}
-            
-           </CardFooter>
-          </Card>
-        </GridItem>
-
-        <GridItem xs={12} sm={6} md={3}>
+        <GridItem xs={12} sm={6} md={4}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
@@ -173,7 +177,7 @@ export default function Dashboard() {
               <List>
                 {competitions.slice(0, 5).map(competition => (
                   <ListItem key={competition._id}>
-                          {competition.eventName}
+                          {competition.eventName} with {competition.horse}
                   </ListItem>
                 ))}
               </List>
@@ -184,30 +188,22 @@ export default function Dashboard() {
           </Card>
         </GridItem>
 
-        <GridItem xs={12} sm={6} md={3}>
+        {/* <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Last 5: Event Types</p>
+              <p className={classes.cardCategory}>Most POPULAR Event Type</p>
               <h3 className={classes.cardTitle}></h3>
               </CardHeader>
             <CardFooter stats>
-            {competitions.length ? (
-              <List>
-                {competitions.slice(0, 5).map(competition => (
-                  <ListItem key={competition._id}>
-                          {competition.eventType}
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results</h3>
-            )}
+            <h1> 
+            {competition.avgeventType}
+            </h1> 
            </CardFooter>
           </Card>
-        </GridItem>
+        </GridItem> */}
         
       </GridContainer>
       <GridContainer>

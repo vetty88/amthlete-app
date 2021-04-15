@@ -124,7 +124,49 @@ db.Competition
 .remove({})
 .then(() => db.Competition.collection.insertMany(competitionSeed))
 .then(data => {
-console.log(data.result.n + " records inserted!");
+console.log(data.result.n + " competition records inserted!");
+process.exit(0);
+})
+.catch(err => {
+console.error(err);
+process.exit(1);
+});
+
+mongoose.connect(
+  process.env.MONGODB_URI ||
+  "mongodb://localhost/equestriancompsdb"
+);
+
+const horseSeed = [
+  {
+  uniqueName: "Squirrel",
+  birthYear: "2003",
+  breed: "Clydie x Australian Stock Horse",
+  height: "15HH",
+  colour: "Brown",
+  },
+   {
+  uniqueName: "Tess",
+  birthYear: "1994",
+  breed: "Australian Stock Horse",
+  height: "16HH",
+  colour: "Bay",
+  },
+   {
+  uniqueName: "Ardilla",
+  birthYear: "2018",
+  breed: "Andalusian x Clydiex",
+  height: "15.1HH",
+  colour: "Brown",
+  },
+
+  ];
+
+db.Horse
+.remove({})
+.then(() => db.Horse.collection.insertMany(horseSeed))
+.then(data => {
+console.log(data.result.n + " horse records inserted!");
 process.exit(0);
 })
 .catch(err => {

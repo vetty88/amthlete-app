@@ -11,18 +11,16 @@ import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
-import DeleteBtn from "../../components/DeleteBtn";
+import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
 
 import API from "../../utils/API";
 
 // import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Col, Row } from "../../components/Grid";
-import { TextInput, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Form";
+import { List, ListItem } from "../../components/List/List";
+import { Col, Row } from "../../components/Grid/index";
+import { TextInput, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Forms/CompForm";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import AsyncCreatableSelect from 'react-select/async-creatable';
-
-import { horseOptions } from '../../data';
 import { AsyncSelect } from '@atlaskit/select';
 
 export default function Competitions() {

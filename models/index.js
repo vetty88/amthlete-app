@@ -1,3 +1,4 @@
 module.exports = {
-  Competition: require("./competition")
+  Competition: require("./competition"),
+  Horse: require("./horse")
 };

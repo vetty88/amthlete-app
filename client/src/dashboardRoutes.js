@@ -4,6 +4,7 @@ import Person from "@material-ui/icons/Person";
 // core components/views for Admin layout
 import DashboardPage from "./views/Dashboard/Dashboard";
 import AddComp from "./views/AddComp/AddComp";
+import AddHorse from "./views/AddHorse/AddHorse";
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
 
@@ -22,6 +23,14 @@ const dashboardRoutes = [
     rtlName: "Add Competition",
     icon: Person,
     component: AddComp,
+    layout: "/admin"
+  },
+   {
+    path: "/horse",
+    name: "Add Horse",
+    rtlName: "Add Horse",
+    icon: Person,
+    component: AddHorse,
     layout: "/admin"
   },
   {

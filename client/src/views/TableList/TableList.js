@@ -12,14 +12,14 @@ import CardBody from "../../components/Card/CardBody.js";
 import DataTable from "react-data-table-component";
 
 
-import DeleteBtn from "../../components/DeleteBtn";
+import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
 
-import Jumbotron from "../../components/Jumbotron";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../../components/Form";
+import { Col, Row, Container } from "../../components/Grid/index";
+import { List, ListItem } from "../../components/List/List";
+import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../../components/Forms/CompForm";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 export default function TableList() {
