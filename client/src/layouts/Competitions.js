@@ -21,7 +21,7 @@ import { Input, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import AsyncCreatableSelect from 'react-select/async-creatable';
 
-import { horses } from '../data';
+import { horseOptions } from '../data';
 import { AsyncSelect } from '@atlaskit/select';
 
 export default function Competitions() {
@@ -29,25 +29,6 @@ export default function Competitions() {
   inputValue: string;
 }
 
-class WithPromises extends Component<{}, State> {
-  state = { inputValue: '' };
-
-  handleInputChange = (newValue: string) => {
-    const inputValue = newValue.replace(/\W/g, '');
-    this.setState({ inputValue });
-    return inputValue;
-  };
-}
-
-  const filterHorses = (inputValue: string) =>
-  horses.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
-
-const promiseOptions = (inputValue: string) =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve(filterHorses(inputValue));
-    }, 1000);
-  });
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})  
@@ -96,7 +77,7 @@ const promiseOptions = (inputValue: string) =>
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
-    const { name, value } = event.target;
+    const { name, value, text } = event.target;
     setFormObject({...formObject, [name]: value})
   };
 
@@ -153,8 +134,8 @@ const promiseOptions = (inputValue: string) =>
         />  
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-        <AsyncSelect 
-          cacheOptions defaultOptions loadOptions={promiseOptions} 
+        <SelectHorse 
+          onChange={({ target: { value } }) => callback(value)}
           name="horse"
           placeholder="Horse (required)" 
         />           

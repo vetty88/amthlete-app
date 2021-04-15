@@ -1,6 +1,6 @@
 import Select, {yarOptionTypeBase } from 'react-select';
 
-export const horses: OptionTypeBase = [
+export const horseOptions: OptionTypeBase = [
   { label: 'Tess', value: 'Tess'},
   { label: 'Squirrel', value: 'Squirrel' },
   { label: 'Ardilla', value: 'Ardilla' },

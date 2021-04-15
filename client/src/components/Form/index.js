@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 // import * as NumericInput from "./react-numeric-input";
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import API from "../../utils/API";
 
 export function DateSelector(props) {
   return (
@@ -13,7 +14,7 @@ export function DateSelector(props) {
   );
 }
   
-export function Input(props) {
+export function TextInput(props) {
   return (
     <div className="form-group">
       <input className="form-control" {...props} />
@@ -35,20 +36,46 @@ export function SelectEvents(props) {
   );
 }
 
-
 export function SelectHorse(props) {
-  return (
-    <div className="form-group">
-       Horses:
-        <select id="horseOptions" className="form-control" {...props}>
-          <option value="Squirrel">Squirrel</option>
-          <option value="Tess">Tess</option>
-          <option value="Ardilla">Ardilla</option>
-        </select>
-      </div> 
-  );
-}
+const [competitions, setCompetitions] = useState([]);
+const [competition, setCompetition] = useState([]);
 
+// Load all competitions and store them with setCompetitions
+  useEffect(() => {
+  loadCompetitions()
+  getCompetition()
+}, [])
+
+// Loads all competitions and sets them to competitions
+function loadCompetitions() {
+  API.getCompetitions()
+    .then(res => 
+    setCompetitions(res.data)
+    )
+    .catch(err => console.log(err));
+    };
+
+function getCompetition(id) {
+  API.getCompetition(id)
+  .then(res => 
+  setCompetition(res.data)
+  )
+  .catch(err => console.log(err));
+  };
+
+return (   
+  <div className="form-group">
+    Horses:
+  <select id="horseOptions" className="form-control" {...props}>
+    {competitions.map(competition => (
+      <option key={competition.horse}>
+      {competition.horse}
+       </option>
+    ))}
+  </select>
+  </div> 
+
+)};
 
 export function SelectPlacing(props) {
   return (

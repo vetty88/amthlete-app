@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
+import { Button, Select, Input } from 'semantic-ui-react'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -10,45 +11,25 @@ import Card from "../../components/Card/Card.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
-
 import DeleteBtn from "../../components/DeleteBtn";
 
 import API from "../../utils/API";
 
-// import { Col, Row, Container } from "../components/Grid";
+// import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Col, Row } from "../../components/Grid";
-import { Input, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Form";
+import { TextInput, DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn } from "../../components/Form";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import AsyncCreatableSelect from 'react-select/async-creatable';
 
-import { horses } from '../../data';
-import { CreatableSelect } from '@atlaskit/select';
+import { horseOptions } from '../../data';
+import { AsyncSelect } from '@atlaskit/select';
 
 export default function Competitions() {
   interface State {
   inputValue: string;
 }
 
-class WithPromises extends Component<{}, State> {
-  state = { inputValue: '' };
-
-  handleInputChange = (newValue: string) => {
-    const inputValue = newValue.replace(/\W/g, '');
-    this.setState({ inputValue });
-    return inputValue;
-  };
-}
-
-  const filterHorses = (inputValue: string) =>
-  horses.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
-
-const promiseOptions = (inputValue: string) =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve(filterHorses(inputValue));
-    }, 500);
-  });
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})  
@@ -136,7 +117,7 @@ const promiseOptions = (inputValue: string) =>
         <CardBody>
         <GridContainer>
         <GridItem xs={12} sm={12} md={4}>
-        <Input
+        <TextInput
         labelText="Event Name"
         id="event-name"
         onChange={handleInputChange}
@@ -154,13 +135,15 @@ const promiseOptions = (inputValue: string) =>
         />  
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-        <CreatableSelect
-          labelText="Horse, Select or Create New"
-          id="horse" 
-          cacheOptions defaultOptions loadOptions={promiseOptions} 
-          name="horse"
-          placeholder="Horse (required)" 
-        />           
+        <Input  labelText="Horse"
+        id="horse"
+        onChange = {handleInputChange}
+        name = "horse"
+        placeholder = "horse"type='text' placeholder='Add Horse...' action>
+          <input />
+          <Button type='submit'>Add New Horse</Button>
+        <SelectHorse compact options={horseOptions} defaultValue='horseOptions' />
+        </Input>         
         </GridItem>
         </GridContainer>
         <GridContainer>
@@ -174,7 +157,7 @@ const promiseOptions = (inputValue: string) =>
         />
         </GridItem>
         <GridItem xs={12} sm={12} md={6}>
-        <Input
+        <TextInput
         labelText="Penalties"
         id="penalties"
         onChange={handleInputChange}
