@@ -1,13 +1,19 @@
 import API from "../../utils/API";
 import React, {useState, useEffect} from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+
+import MomentLocaleUtils, {
+  formatDate,
+  parseDate,
+} from 'react-day-picker/moment';
 
 export function DateSelector(props) {
   return (
-    <div className="form-group">
-      {/* <DayPickerInput onDayChange={day => console.log(day)} id="day" input className="form-control" {...props} /> */}
-    <input className="form-control" {...props} />
-  </div>
+   <div className="form-control" {...props}>
+      <p>Please select a day:</p>
+      <DayPickerInput />
+    </div>
   );
 }
   
@@ -22,7 +28,7 @@ export function TextInput(props) {
 export function SelectEvents(props) {
   return (
     <div className="form-group">
-        Event Types:
+             <p>Event Type:</p>
         <select id="eventTypeOptions" className="form-control" {...props}>
           <option value="Dressage">Dressage</option>
           <option value="Horse Trials">Horse Trials</option>
@@ -53,6 +59,7 @@ export function SelectHorse(props) {
 
   return (
     <div className="form-group">
+         <p>Select Horse:</p>
       <select id="horseOptions" classname="form-control" {...props}>
         {horses.map((horse) => (
           <option value={horse.uniqueName}>{horse.uniqueName}</option>
@@ -65,7 +72,8 @@ export function SelectHorse(props) {
 export function SelectPlacing(props) {
   return (
     <div className="form-group">
-       Placing (record to 10th, after that select NIL):
+         <p>Select Placing (1-10 /or 10+ = "NIL"):</p>
+       
         <select id="selectPlacingOptions" className="form-control" {...props}>
           <option value="1">1st</option>
           <option value="2">2nd</option>

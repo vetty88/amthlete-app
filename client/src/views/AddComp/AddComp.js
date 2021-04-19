@@ -75,6 +75,10 @@ export default function Competitions() {
 
   // When the form is submitted, use the API.saveCompetition method to save the competition data
   // Then reload competitions from the database
+
+  let dateString = "2014-01-22T14:56:59.301Z";
+$gte : new Date(dateString)
+
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
@@ -92,6 +96,7 @@ export default function Competitions() {
     }
   };
   const classes = useStyles();
+
   return (
   <div>
     <Row>
@@ -130,12 +135,12 @@ export default function Competitions() {
                 <TextArea labelText="Result Notes" id="result-notes" onChange={handleInputChange} name="resultNotes" placeholder="Result Notes (Optional)" />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <DateSelector labelText="Date" id="comp-date" onChange={handleInputChange} name="date" placeholder="Comp Date YYYY-M-DD default time to 13:00 to save correct date" />
+                <DateSelector labelText="Date" id="comp-date" onDayChange={handleInputChange}  name="date" placeholder="Comp Date" />
               </GridItem>
             </GridContainer>
           </CardBody>
           <CardFooter>
-            <FormBtn color="primary" disabled={!(formObject.eventName && formObject.eventType)} onClick={handleFormSubmit}>
+            <FormBtn color="primary" disabled={!(formObject.eventName && formObject.penalties)} onClick={handleFormSubmit}>
               Submit Competition
             </FormBtn>
           </CardFooter>
