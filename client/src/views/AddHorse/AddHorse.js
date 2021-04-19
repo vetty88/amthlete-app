@@ -102,11 +102,11 @@ export default function Horses() {
 
   return (
   <div>
-  <Row>
+    <Row>
     <GridContainer>
-      <Col size="md-12">
+    <Col size="md-12">
       <form>
-        <Card>
+      <Card>
           <CardHeader color="primary">
             <GridItem xs={12} sm={12} md={6}>
               <h4 className={classes.cardTitleWhite}>Add Horse</h4>
@@ -121,40 +121,38 @@ export default function Horses() {
               <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Horse's birth year (est)" id="birth-year" onChange={handleInputChange} name="birthYear" placeholder="BirthYear (required)" />
               </GridItem>
-			  <GridItem xs={12} sm={12} md={6}>
+			        <GridItem xs={12} sm={12} md={6}>
               <TextInput labelText="Height (HH)" id="height" onChange={handleInputChange} name="height" placeholder="Height (required)" />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Breed" id="breed" onChange={handleInputChange} name="breed" placeholder="Breed (required)" />
               </GridItem>
-            </GridContainer>
-            <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Colour" id="colour" onChange={handleInputChange} name="colour" placeholder="Colour" />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
-
               </GridItem>
             </GridContainer>
           </CardBody>
           <CardFooter>
-            <FormBtn color="primary" disabled={!(formObject.horse && formObject.uniqueName)} onClick={handleFormSubmit}>
+            <FormBtn color="primary" disabled={!(formObject.uniqueName && formObject.birthYear)} onClick={handleFormSubmit}>
               Submit Horse
             </FormBtn>
           </CardFooter>
         </Card>
       </form>
- 
-      <GridItem xs={12} sm={12} md={6}>
+    </Col>
+
+
+      <Col size="md-12">
+      <GridItem xs={12} sm={12} md={12}>
       <h3>Horses</h3>
         {horses.length ? (
         <List>
           {horses.map(horse => (
-          <ListItem key={horse._uniqueName}>
-            <Link to={"/horses/" + horse._uniqueName}>
+          <ListItem key={horse.uniqueName}>
+            <Link to={"/horses/" + horse.uniqueName}>
             <strong> {horse.uniqueName} </strong>
             </Link>
-            <DeleteBtn onClick={()=> deleteHorse(horse._uniqueName)} />
+            <DeleteBtn onClick={()=> deleteHorse(horse.uniqueName)} />
           </ListItem>
           ))}
         </List>
@@ -163,9 +161,9 @@ export default function Horses() {
         )}
       </GridItem>
 
-      </Col>
+    </Col>
     </GridContainer>
-  </Row>
-</div>
+    </Row>
+  </div>
 );
 }

@@ -198,6 +198,7 @@ export default function Competitions() {
 
     <Col size="md-12">
       <GridItem xs={12} sm={12} md={6}>
+          <h3>Competitions</h3>
       {competitions.length ? (
       <List>
       {competitions.map(competition => (
