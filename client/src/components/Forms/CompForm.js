@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-// import * as NumericInput from "./react-numeric-input";
-// import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
 import API from "../../utils/API";
+import React, {useState, useEffect} from 'react';
+import 'react-day-picker/lib/style.css';
 
 export function DateSelector(props) {
   return (
@@ -10,7 +8,6 @@ export function DateSelector(props) {
       {/* <DayPickerInput onDayChange={day => console.log(day)} id="day" input className="form-control" {...props} /> */}
     <input className="form-control" {...props} />
   </div>
-   
   );
 }
   
@@ -37,45 +34,33 @@ export function SelectEvents(props) {
 }
 
 export function SelectHorse(props) {
-const [competitions, setCompetitions] = useState([]);
-const [competition, setCompetition] = useState([]);
+  const [horses, setHorses] = useState([])
 
-// Load all competitions and store them with setCompetitions
-  useEffect(() => {
-  loadCompetitions()
-  getCompetition()
-}, [])
-
-// Loads all competitions and sets them to competitions
-function loadCompetitions() {
-  API.getCompetitions()
-    .then(res => 
-    setCompetitions(res.data)
-    )
-    .catch(err => console.log(err));
-    };
-
-function getCompetition(id) {
-  API.getCompetition(id)
-  .then(res => 
-  setCompetition(res.data)
-  )
-  .catch(err => console.log(err));
+   // Loads all horses and sets them to horses
+  function loadHorses() {
+    API.getHorses()
+      .then(res => 
+        setHorses(res.data)
+      )
+      .catch(err => console.log(err));
   };
 
-return (   
-  <div className="form-group">
-    Horses:
-  <select id="horseOptions" className="form-control" {...props}>
-    {competitions.map(competition => (
-      <option key={competition.horse}>
-      {competition.horse}
-       </option>
-    ))}
-  </select>
-  </div> 
+      // Load all horses and store them with setHorses
+  useEffect(() => {
+    loadHorses()
+  }, [])
 
-)};
+
+  return (
+    <div className="form-group">
+      <select id="horseOptions" classname="form-control" {...props}>
+        {horses.map((horse) => (
+          <option value={horse.uniqueName}>{horse.uniqueName}</option>
+      ))}
+          </select>
+        </div>
+  );
+}
 
 export function SelectPlacing(props) {
   return (

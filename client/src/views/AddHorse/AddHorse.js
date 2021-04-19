@@ -21,8 +21,6 @@ import { Col, Row } from "../../components/Grid/index";
 import { TextInput, FormBtn } from "../../components/Forms/HorseForm";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import AsyncCreatableSelect from 'react-select/async-creatable';
-
-import { horseOptions } from '../../data';
 import { AsyncSelect } from '@atlaskit/select';
 
 export default function Horses() {
