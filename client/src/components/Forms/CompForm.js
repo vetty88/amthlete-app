@@ -1,23 +1,22 @@
 import API from "../../utils/API";
 import React, {useState, useEffect} from 'react';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
+import DatePicker from "react-datepicker";
+import moment from 'moment'
+import "react-datepicker/dist/react-datepicker.css";
 
-import MomentLocaleUtils, {
-  formatDate,
-  parseDate,
-} from 'react-day-picker/moment';
 
 export function DateSelector(props) {
-  return (
+  const [startDate, setStartDate] = useState(new Date());
+   return (
    <div className="form-control" {...props}>
       <p>Please select a day:</p>
-      <DayPickerInput />
+      <DatePicker  dateFormat="dd/MM/yyyy" selected={moment(startDate)} onChange={date => setStartDate(date)} label="Date" id="comp-date" />
     </div>
   );
 }
   
 export function TextInput(props) {
+ 
   return (
     <div className="form-group">
       <input className="form-control" {...props} />
@@ -28,7 +27,7 @@ export function TextInput(props) {
 export function SelectEvents(props) {
   return (
     <div className="form-group">
-             <p>Event Type:</p>
+      <p>Event Type:</p>
         <select id="eventTypeOptions" className="form-control" {...props}>
           <option value="Dressage">Dressage</option>
           <option value="Horse Trials">Horse Trials</option>
@@ -60,9 +59,9 @@ export function SelectHorse(props) {
   return (
     <div className="form-group">
          <p>Select Horse:</p>
-      <select id="horseOptions" classname="form-control" {...props}>
+      <select id="horseOptions" className="form-control" {...props}>
         {horses.map((horse) => (
-          <option value={horse.uniqueName}>{horse.uniqueName}</option>
+          <option key={horse._id} value={horse.uniqueName}>{horse.uniqueName}</option>
       ))}
           </select>
         </div>

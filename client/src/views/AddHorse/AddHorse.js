@@ -106,7 +106,7 @@ export default function Horses() {
       <form>
       <Card>
           <CardHeader color="primary">
-            <GridItem xs={12} sm={12} md={6}>
+            <GridItem xs={12} sm={12} md={12}>
               <h4 className={classes.cardTitleWhite}>Add Horse</h4>
               <p className={classes.cardCategoryWhite}>Add a New Horse! </p>
             </GridItem>
