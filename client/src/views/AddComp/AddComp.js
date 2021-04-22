@@ -73,8 +73,10 @@ export default function Competitions() {
     setFormObject({ ...formObject,  [name]: value })
   };
 
-  // When the form is submitted, use the API.saveCompetition method to save the competition data
-  // Then reload competitions from the database
+  function handleDateChange(event) {
+    const { startDate, value } = event.target;
+    setFormObject({ ...formObject, [startDate]: value })
+  };
 
 
   function handleFormSubmit(event) {
@@ -117,7 +119,7 @@ export default function Competitions() {
              
               <GridItem xs={12} sm={12} md={6}>
               Event Date
-                <DateSelector type={Date} label="Competition Date" id="comp-date" onChange={handleInputChange} name="date" placeholder="Comp Date" />
+                <DateSelector type={Date} label="Competition Date" id="comp-date" onChange={handleDateChange} name="date" placeholder="Comp Date" />
               </GridItem>
 
               <GridItem xs={12} sm={12} md={6}>
