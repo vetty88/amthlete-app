@@ -12,14 +12,13 @@ import Card from "../../components/Card/Card.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import CardHeader from "../../components/Card/CardHeader.js";
-import format from "date-fns/format";
 import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import React, { useState, useEffect,  Component } from "react";
 
 export default function Competitions() {
-  interface State { inputValue: string; }
+  // interface State { inputValue: string; }
 
 
   // Setting our component's initial state
@@ -111,32 +110,45 @@ export default function Competitions() {
           </CardHeader>
           <CardBody>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={4}>
+              <GridItem xs={12} sm={12} md={6}>
+              Event Name
                 <TextInput label="Event Name" id="event-name" onChange={handleInputChange} name="eventName" placeholder="Event Name (required)"  />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <DateSelector onChange={handleInputChange} name="date" placeholder="Comp Date" />
+             
+              <GridItem xs={12} sm={12} md={6}>
+              Event Date
+                <DateSelector type={Date} label="Competition Date" id="comp-date" onChange={handleInputChange} name="date" placeholder="Comp Date" />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
+
+              <GridItem xs={12} sm={12} md={6}>
+               Event Type (Discipline)
                 <SelectEvents label="Competition Type (Discipline)" id="event-type" onChange={handleInputChange} name="eventType" placeholder="EventType (required)" />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
+              
+              <GridItem xs={12} sm={12} md={6}>
+              Horse
                 <SelectHorse onChange={handleInputChange} name="horse" />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <SelectPlacing label="Placing" id="placing" onChange={handleInputChange} name="placing" placeholder="Placing (required)" />
+
+              <GridItem xs={12} sm={12} md={6}>
+              Placing
+                <SelectPlacing pattern="[0-10]*" label="Placing" id="placing" onChange={handleInputChange} name="placing" placeholder="Placing (required)" />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
-                <TextInput label="Penalties" id="penalties" onChange={handleInputChange} name="penalties" placeholder="Penalties (required)" />
+
+              <GridItem xs={12} sm={12} md={6}>
+              Penalties
+                <TextInput pattern="[0-200]*" label="Penalties" id="penalties" onChange={handleInputChange} name="penalties" placeholder="Penalties (required)" />
               </GridItem>
-              <GridItem xs={12} sm={12} md={4}>
+ 
+              <GridItem xs={12} sm={12} md={8}>
+              Result Notes
                 <TextArea label="Result Notes" id="result-notes" onChange={handleInputChange} name="resultNotes" placeholder="Result Notes (Optional)" />
               </GridItem>
               
             </GridContainer>
           </CardBody>
           <CardFooter>
-            <FormBtn color="primary" disabled={!(formObject.eventName && formObject.date)} onClick={handleFormSubmit}>
+            <FormBtn color="primary" disabled={!(formObject.eventName && formObject.placing)} onClick={handleFormSubmit}>
               Submit Competition
             </FormBtn>
           </CardFooter>

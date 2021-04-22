@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Store from "@material-ui/icons/Store";
+import FormatListNumbered from "@material-ui/icons/FormatListNumbered";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
@@ -112,7 +113,6 @@ export default function Dashboard() {
 
       <GridItem xs={12} sm={6} md={4}>
           <Card>
-            
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
                 <Icon>content_copy</Icon>
@@ -135,9 +135,9 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={6} md={4}>
           <Card>
-            <CardHeader color="info" stats icon>
-              <CardIcon color="info">
-                <Accessibility />
+                <CardHeader color="warning" stats icon>
+              <CardIcon color="warning">
+                <Icon>content_copy</Icon>
               </CardIcon>
               <p className={classes.cardCategory}>Horses</p>
          

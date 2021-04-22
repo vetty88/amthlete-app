@@ -14,8 +14,8 @@ const competitionSeed = [
   eventName: "TTT CT Sale",
   eventType: "Combined Training",
   horse: "Tess",
-  penalties: "35",
-  placing: "5",
+  penalties: 35,
+  placing: 5,
   images: "",
   resultNotes: "Dressage penalties 35.17, %64.85, 5th placing",
   date: new Date("2019-03-30T06:01:17.171Z")
@@ -24,8 +24,8 @@ const competitionSeed = [
   eventName: "TTT HT Greenvale",
   eventType: "Horse Trials",
   horse: "Tess",
-  penalties: "46",
-  placing: "5",
+  penalties: 46,
+  placing: 5,
   images: "",
   resultNotes: "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th placing",
   date: new Date("2019-05-05T06:01:17.171Z")
@@ -34,8 +34,8 @@ const competitionSeed = [
   eventName: "Rosedale Horse Trials (HRCAV)",
   eventType: "Horse Trials",
   horse: "Squirrel",
-  penalties: "24",
-  placing: "6",
+  penalties: 24,
+  placing: 6,
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th placing",
@@ -45,8 +45,8 @@ const competitionSeed = [
   eventName: "Rosedale Horse Trials (PC)",
   eventType: "Horse Trials",
   horse: "Squirrel",
-  penalties: "28",
-  placing: "2",
+  penalties: 28,
+  placing: 2,
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
@@ -56,8 +56,8 @@ const competitionSeed = [
   eventName: "Stony Creek Show Jumping",
   eventType: "Show Jumping",
   horse: "Squirrel",
-  penalties: "100",
-  placing: "6",
+  penalties: 100,
+  placing: 6,
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th placing",
   date: new Date("2019-12-08T06:01:17.171Z")
@@ -66,30 +66,30 @@ const competitionSeed = [
   eventName: "Nicholson Dressage Jackpot 4.3",
   eventType: "Dressage",
   horse: "Squirrel",
-  penalties: "35",
-  placing: "NIL",
+  penalties: 35,
+  placing: 0,
   images: "",
   resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",
+  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, 0 placing",
   date: new Date("2020-02-02T06:01:17.171Z")
   },
   {
   eventName: "Nicholson Dressage Jackpot 4.4",
   eventType: "Dressage",
   horse: "Squirrel",
-  penalties: "35",
-  placing: "NIL",
+  penalties: 35,
+  placing: 0,
   images: "",
   resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, Nil placing",
+  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, 0 placing",
   date: new Date("2020-02-02T06:01:17.171Z")
   },
   {
   eventName: "Orbost Horse Trials (PC)",
   eventType: "Horse Trials",
   horse: "Squirrel",
-  penalties: "39",
-  placing: "5",
+  penalties: 39,
+  placing: 5,
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
@@ -99,8 +99,8 @@ const competitionSeed = [
   eventName: "AHAA Virtual Show",
   eventType: "Showing",
   horse: "Ardilla",
-  penalties: "0",
-  placing: "1",
+  penalties: 0,
+  placing: 1,
   images: "",
   resultNotes:
   "Champion partbred (led) Filly",
@@ -110,8 +110,8 @@ const competitionSeed = [
   eventName: "Eagle Point Riding Club Show (HRCAV)",
   eventType: "Showing",
   horse: "Squirrel",
-  penalties: "0",
-  placing: "1",
+  penalties: 0,
+  placing: 1,
   images: "",
   resultNotes:
   "Champion Mount Most Suitable",

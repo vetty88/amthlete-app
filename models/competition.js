@@ -7,12 +7,12 @@ $gte : new Date(dateString)
 
 const competitionSchema = new Schema({
   eventName: { type: String, required: true },
+  date: Date,
   eventType: { type: String, required: true },
   horse: { type: String, required: true },
-  placing: { type: String, required: true },
-  penalties: { type: String, required: true },
+  placing: { type: Number, required: true },
+  penalties: { type: Number, required: true },
   resultNotes: {type: String},
-  date: Date,
 });
 
 const Competition = mongoose.model("Competition", competitionSchema);

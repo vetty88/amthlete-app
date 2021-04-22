@@ -1,16 +1,27 @@
 import API from "../../utils/API";
-import React, {useState, useEffect} from 'react';
-import DatePicker from "react-datepicker";
-import moment from 'moment'
-import "react-datepicker/dist/react-datepicker.css";
-
+import React, {useState, Component, useEffect} from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+ 
+import 'react-datepicker/dist/react-datepicker.css';
 
 export function DateSelector(props) {
-  const [startDate, setStartDate] = useState(new Date());
+const [startDate, setStartDate] = useState(new Date());
+  const handleChange = value => {
+    setStartDate(value);
+  };
    return (
-   <div className="form-control" {...props}>
-      <p>Please select a day:</p>
-      <DatePicker  dateFormat="dd/MM/yyyy" selected={moment(startDate)} onChange={date => setStartDate(date)} label="Date" id="comp-date" />
+   <div className="form-group">
+    <DatePicker className="form-control" {...props} 
+      selected={startDate}
+      onChange={handleChange}
+      showTimeSelect
+      timeFormat="HH:mm"
+      timeIntervals={60}
+      timeCaption="time"
+      dateFormat="MMMM eeee d, yyyy h:mm aa"
+      
+    />
     </div>
   );
 }
@@ -27,7 +38,6 @@ export function TextInput(props) {
 export function SelectEvents(props) {
   return (
     <div className="form-group">
-      <p>Event Type:</p>
         <select id="eventTypeOptions" className="form-control" {...props}>
           <option value="Dressage">Dressage</option>
           <option value="Horse Trials">Horse Trials</option>
@@ -58,7 +68,6 @@ export function SelectHorse(props) {
 
   return (
     <div className="form-group">
-         <p>Select Horse:</p>
       <select id="horseOptions" className="form-control" {...props}>
         {horses.map((horse) => (
           <option key={horse._id} value={horse.uniqueName}>{horse.uniqueName}</option>
@@ -71,8 +80,6 @@ export function SelectHorse(props) {
 export function SelectPlacing(props) {
   return (
     <div className="form-group">
-         <p>Select Placing (1-10 /or 10+ = "NIL"):</p>
-       
         <select id="selectPlacingOptions" className="form-control" {...props}>
           <option value="1">1st</option>
           <option value="2">2nd</option>
@@ -84,7 +91,7 @@ export function SelectPlacing(props) {
           <option value="8">8th</option>
           <option value="9">9th</option>
           <option value="10">10th</option>
-          <option value="NIL">11th+</option>
+          <option value="0">11th+</option>
         </select>
       </div> 
   );
@@ -93,7 +100,7 @@ export function SelectPlacing(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="20" {...props} />
+      <textarea className="form-control" rows="8" {...props} />
     </div>
   );
 }
