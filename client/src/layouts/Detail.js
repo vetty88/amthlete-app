@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid/index";
+import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron/Jumbotron";
 import API from "../utils/API";
 

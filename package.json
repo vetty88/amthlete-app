@@ -105,7 +105,7 @@
     "react-data-grid": "^7.0.0-canary.38",
     "react-data-grid-addons": "^7.0.0-alpha.24",
     "react-data-table-component": "^6.11.7",
-    "react-date-picker": "^8.0.7",
+    "react-date-picker": "^8.1.1",
     "react-datepicker": "^3.8.0",
     "react-day-picker": "^7.4.8",
     "react-dev-utils": "^4.2.3",

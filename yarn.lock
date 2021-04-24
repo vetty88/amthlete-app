@@ -14529,7 +14529,7 @@ react-data-table-component@^6.11.7:
     lodash.orderby "^4.6.0"
     shortid "^2.2.16"
 
-react-date-picker@^8.0.7:
+react-date-picker@^8.1.1:
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/react-date-picker/-/react-date-picker-8.1.1.tgz#1959608cd042c9bfcf2faa6d63a56e9ef6b17e2b"
   integrity sha512-kFhn+uSJML+EuROvR6qLYU5G3wsxrdB2K1ugh1t6HjJCjphE6ot85jb8THWebqWEcQi07pLseU7ZFpzKDD3A6A==

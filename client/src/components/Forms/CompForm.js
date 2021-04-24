@@ -1,33 +1,20 @@
 import API from "../../utils/API";
-import React, {useState, Component, useEffect} from 'react';
-import DatePicker from 'react-datepicker';
-import moment from 'moment';
- 
-import 'react-datepicker/dist/react-datepicker.css';
+import React, {useState, useEffect} from 'react';
 
 export function DateSelector(props) {
-const [startDate, setStartDate] = useState(new Date());
-  const handleChange = value => {
-    setStartDate(value);
-  };
-   return (
-   <div className="form-group">
-    <DatePicker className="form-control" {...props} 
-      selected={startDate}
-      onChange={handleChange}
-      showTimeSelect
-      timeFormat="HH:mm"
-      timeIntervals={60}
-      timeCaption="time"
-      dateFormat="MMMM eeee d, yyyy h:mm aa"
-      
-    />
+
+ 
+  // const FORMAT = 'MM/dd/yyyy';
+  return (
+    <div className="form-group">
+    <input className="form-control" {...props}  /> 
     </div>
   );
 }
+            
+        
   
 export function TextInput(props) {
- 
   return (
     <div className="form-group">
       <input className="form-control" {...props} />

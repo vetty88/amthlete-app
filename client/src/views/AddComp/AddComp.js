@@ -15,7 +15,8 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-import React, { useState, useEffect,  Component } from "react";
+import moment from "moment";
+import React, { useState, useEffect } from "react";
 
 export default function Competitions() {
   // interface State { inputValue: string; }
@@ -24,6 +25,10 @@ export default function Competitions() {
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([]);
   const [formObject, setFormObject] = useState({});
+  // date = moment.utc( date );
+
+  // (new Date("2000-02-14T00:00:00.000Z")).toString()
+
   
   const styles = {
     cardCategoryWhite: {
@@ -73,12 +78,6 @@ export default function Competitions() {
     setFormObject({ ...formObject,  [name]: value })
   };
 
-  function handleDateChange(event) {
-    const { startDate, value } = event.target;
-    setFormObject({ ...formObject, [startDate]: value })
-  };
-
-
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
@@ -89,13 +88,26 @@ export default function Competitions() {
           placing: formObject.placing,
           penalties: formObject.penalties,
           resultNotes: formObject.resultNotes,
-          date: new Date(formObject.date),
+          date: new Date (formObject.date),
         })
         .then(res => loadCompetitions())
         .catch(err => console.log(err));
     }
   };
   const classes = useStyles();
+
+    // const [value, onChange] = useState(new Date());
+  
+    // const onDateChange=(newDate)=>{
+    //  //Your custom code here
+    //  props.handleOnclick(newDate);
+    //  onChange(newDate);
+    // };
+
+    var curr = new Date();
+curr.setDate(curr.getDate() + 3);
+var thisDate = curr.toISOString().substr(0,10);
+  
 
   return (
   <div>
@@ -119,7 +131,8 @@ export default function Competitions() {
              
               <GridItem xs={12} sm={12} md={6}>
               Event Date
-                <DateSelector type={Date} label="Competition Date" id="comp-date" onChange={handleDateChange} name="date" placeholder="Comp Date" />
+                <DateSelector label="Competition Date" id="comp-date" type="date" defaultValue={thisDate} onClick={handleInputChange}   name="date" placeholder="Comp Date" />
+                
               </GridItem>
 
               <GridItem xs={12} sm={12} md={6}>
