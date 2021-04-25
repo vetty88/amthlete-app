@@ -105,8 +105,11 @@ export default function Competitions() {
     // };
 
     var curr = new Date();
-curr.setDate(curr.getDate() + 3);
+curr.setDate(curr.getDate()+1);
 var thisDate = curr.toISOString().substr(0,10);
+
+// curr.setDate(curr.getDate() + 3);
+// var thisDate = curr.toISOString().substr(0,10);
   
 
   return (
@@ -126,7 +129,7 @@ var thisDate = curr.toISOString().substr(0,10);
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
               Event Name
-                <TextInput label="Event Name" id="event-name" onChange={handleInputChange} name="eventName" placeholder="Event Name (required)"  />
+                <TextInput label="Event Name" id="event-name" defaultValue="" onChange={handleInputChange} name="eventName" placeholder="Event Name (required)"  />
               </GridItem>
              
               <GridItem xs={12} sm={12} md={6}>
