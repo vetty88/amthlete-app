@@ -78,7 +78,7 @@ export default function Admin({
         setMobileOpen(!mobileOpen);
     };
     const getDashboardRoute = () => {
-        return window.location.pathname !== "/admin/maps";
+        return window.location.pathname !== "/admin";
     };
     const resizeFunction = () => {
         if (window.innerWidth >= 960) {

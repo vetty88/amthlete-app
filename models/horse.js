@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let dateString = "2014-01-22T14:56:59.301Z";
-$gte : new Date(dateString)
+// let dateString = "2014-01-22T14:56:59.301Z";
+// $gte : new Date(dateString)
 
 
 const horseSchema = new Schema({

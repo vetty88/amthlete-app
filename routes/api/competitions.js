@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const competitionsController = require("../../controllers/competitionsController");
+const competitionController = require("../../controllers/competitionController");
 
-// Matches with "/api/competitions"
+// Matches with "/api/admin/competitions"
 router.route("/")
-  .get(competitionsController.findAll)
-  .post(competitionsController.create);
+  .get(competitionController.findAll)
+  .post(competitionController.create);
 
-// Matches with "/api/competitions/:id"
+// Matches with "/api/admin/competitions/:id"
 router
   .route("/:id")
-  .get(competitionsController.findById)
-  .put(competitionsController.update)
-  .delete(competitionsController.remove);
+  .get(competitionController.findById)
+  .put(competitionController.update)
+  .delete(competitionController.remove);
 
 module.exports = router;

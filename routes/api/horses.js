@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const horsesController = require("../../controllers/horsesController");
+const horseController = require("../../controllers/horseController");
 
-// Matches with "/api/horses"
+// Matches with "/api/admin/horses"
 router.route("/")
-  .get(horsesController.findAll)
-  .post(horsesController.create);
+  .get(horseController.findAll)
+  .post(horseController.create);
 
-// Matches with "/api/horses/:uniqueName"
+// Matches with "/api/admin/horses/:uniqueName"
 router
   .route("/:uniqueName")
-  .get(horsesController.findByUniqueName)
-  .put(horsesController.update)
-  .delete(horsesController.remove);
+  .get(horseController.findByUniqueName)
+  .put(horseController.update)
+  .delete(horseController.remove);
 
 module.exports = router;

@@ -7,6 +7,8 @@ import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
+import CompDetail from "./layouts/CompDetail";
+import HorseDetail from "./layouts/HorseDetail";
 
 const dashboardRoutes = [
   {
@@ -48,7 +50,23 @@ const dashboardRoutes = [
     icon: "content_paste",
     component: CustomCompCharts,
     layout: "/admin"
-  }
+  },
+    {
+    path: "/competitions",
+    name: "Competition Details",
+    rtlName: "Competition Details",
+    icon: "content_paste",
+    component: CompDetail,
+    layout: "/admin"
+  },
+      {
+    path: "/horses",
+    name: "Horse Details",
+    rtlName: "Horse Details",
+    icon: "content_paste",
+    component: HorseDetail,
+    layout: "/admin"
+  },
 ];
 
 export default dashboardRoutes;

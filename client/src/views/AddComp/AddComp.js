@@ -181,7 +181,7 @@ var thisDate = curr.toISOString().substr(0,10);
         <List>
           {competitions.map(competition => (
           <ListItem key={competition._id}>
-            <Link to={"/competitions/" + competition._id}>
+            <Link to={"/admin/competitions/" + competition._id}>
             <strong> {competition.eventName} with {competition.horse} </strong>
             </Link>
             <DeleteBtn onClick={()=> deleteCompetition(competition._id)} />

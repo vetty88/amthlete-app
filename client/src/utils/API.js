@@ -7,7 +7,13 @@ export default {
   },
   // Gets the competition with the given id
   getCompetition: function(id) {
-    return axios.get("/api/competitions/" + id);
+    return axios.get('/api/competitions/' + id)
+    .then(response => response.data)
+       .catch(error => {
+        if (error.response) {
+          console.log("Competition Error" + error.response);
+       }
+      });
   },
   // Deletes the competition with the given id
   deleteCompetition: function(id) {

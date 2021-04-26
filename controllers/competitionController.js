@@ -1,35 +1,35 @@
 const db = require("../models");
 
-// Defining methods for the competitionsController
+// Defining methods for the competitionController
 module.exports = {
   findAll: function(req, res) {
-    db.Horse
+    db.Competition
       .find(req.query)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByUniqueName: function(req, res) {
-    db.Horse
-      .findByUniqueName(req.params.uniqueName)
+  findById: function(req, res) {
+    db.Competition
+      .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Horse
+    db.Competition
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Horse
-      .findOneAndUpdate({ _name: req.params.uniqueName }, req.body)
+    db.Competition
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
-    db.Horse
-      .findByUniqueName({ _uniqueName: req.params.uniqueName })
+    db.Competition
+      .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
