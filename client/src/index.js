@@ -4,7 +4,7 @@ import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 // core components
-import Admin from "../src/layouts/Admin.js";
+import App from "../src/App.js";
 // import Competitions from "../src/layouts/Competitions.js";
 import CompDetail from "../src/layouts/CompDetail.js";
 import HorseDetail from "../src/layouts/HorseDetail.js";
@@ -17,8 +17,8 @@ ReactDOM.render(
   // <Router history={hist}>
   <Router>
     <Switch>
-    <Route path="/" component={Admin} />
-    <Route path="/admin" component={Admin} />
+    <Route path="/" component={App} />
+    <Route path="/admin" component={App} />
     {/* <Route path="/admin/comp" component={Competitions} /> */}
     <Route path="/admin/competitions/:id" component={CompDetail}/>
     {CompDetail}

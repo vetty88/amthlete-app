@@ -1,15 +1,18 @@
-// @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
-// core components/views for Admin layout
-import DashboardPage from "./views/Dashboard/Dashboard";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
-import Login from "./views/Login/Login"
-import TableList from "./views/TableList/TableList";
-import CustomCompCharts from "./views/Charts/Charts";
 import CompDetail from "./layouts/CompDetail";
+import CustomCompCharts from "./views/Charts/Charts";
+import Dashboard from "@material-ui/icons/Dashboard";
+import DashboardPage from "./views/Dashboard/Dashboard";
 import HorseDetail from "./layouts/HorseDetail";
+import Login from "./views/Login/Login"
+import Person from "@material-ui/icons/Person";
+import React, { Component } from "react";
+import Register from "./views/Register/Register"
+import store from "./store";
+import TableList from "./views/TableList/TableList";
 
 const dashboardRoutes = [
   {
@@ -17,6 +20,13 @@ const dashboardRoutes = [
     name: "Login",
     icon: Person,
     component: Login,
+    layout: "/admin"
+  },
+    {
+    path: "/register",
+    name: "Register",
+    icon: Person,
+    component: Register,
     layout: "/admin"
   },
   {
