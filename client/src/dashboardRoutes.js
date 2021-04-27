@@ -5,12 +5,20 @@ import Person from "@material-ui/icons/Person";
 import DashboardPage from "./views/Dashboard/Dashboard";
 import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
+import Login from "./views/Login/Login"
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
 import CompDetail from "./layouts/CompDetail";
 import HorseDetail from "./layouts/HorseDetail";
 
 const dashboardRoutes = [
+  {
+    path: "/login",
+    name: "Login",
+    icon: Person,
+    component: Login,
+    layout: "/admin"
+  },
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -23,7 +31,7 @@ const dashboardRoutes = [
     path: "/comp",
     name: "Add Competition",
     rtlName: "Add Competition",
-    icon: Person,
+    icon: "add",
     component: AddComp,
     layout: "/admin"
   },
@@ -31,7 +39,7 @@ const dashboardRoutes = [
     path: "/horse",
     name: "Add Horse",
     rtlName: "Add Horse",
-    icon: Person,
+    icon: "add",
     component: AddHorse,
     layout: "/admin"
   },
@@ -39,7 +47,7 @@ const dashboardRoutes = [
     path: "/table",
     name: "Table List",
     rtlName: "Table List",
-    icon: "content_paste",
+    icon: "reorder",
     component: TableList,
     layout: "/admin"
   },
@@ -47,7 +55,7 @@ const dashboardRoutes = [
     path: "/charts",
     name: "Charts",
     rtlName: "Charts",
-    icon: "content_paste",
+    icon: "addchart",
     component: CustomCompCharts,
     layout: "/admin"
   },
@@ -55,7 +63,7 @@ const dashboardRoutes = [
     path: "/competitions",
     name: "Competition Details",
     rtlName: "Competition Details",
-    icon: "content_paste",
+    icon: "class",
     component: CompDetail,
     layout: "/admin"
   },

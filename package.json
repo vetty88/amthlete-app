@@ -158,10 +158,7 @@
     "window-resize-listener-react": "^1.1.0",
     "yarn": "^1.22.10"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vetty88/amthlete-app.git"
-  },
+  "repository": "git+https://github.com/vetty88/amthlete-app.git",
   "author": "Y Waller",
   "bugs": {
     "url": "https://github.com/vetty88/amthlete-app/issues"
