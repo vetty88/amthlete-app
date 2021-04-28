@@ -23,7 +23,7 @@ export default {
   },
   // Gets the horse with the unique name
   getHorse: function(uniqueName) {
-    return axios.get("/api/horses/" + uniqueName);
+    return axios.get("/api/horses" + uniqueName);
   },
   // Deletes the horse with the given name
   deleteHorse: function(uniqueName) {
@@ -32,5 +32,21 @@ export default {
   // Saves a horse to the database
   saveHorse: function(horseData) {
     return axios.post("/api/horses", horseData);
+  },
+   // Gets all users
+  getUsers: function() {
+    return axios.get("/api/users");
+  },
+  // Gets the user with the email
+  getUser: function(email) {
+    return axios.get("/api/users" + email);
+  },
+  // Deletes the user with the email
+  deleteUser: function(email) {
+    return axios.delete("/api/users/" + email);
+  },
+  // Saves a user to the database
+  saveUser: function(userData) {
+    return axios.post("/api/users", horseData);
   }
 };

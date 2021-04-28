@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
-import CompDetail from "./layouts/CompDetail";
+import CompDetail from "./views/CompDetail/CompDetail";
 import CustomCompCharts from "./views/Charts/Charts";
-import Dashboard from "@material-ui/icons/Dashboard";
-import Dashboard from "./views/Dashboard/Dashboard";
-import HorseDetail from "./layouts/HorseDetail";
+
+import { Dashboard } from "./views/Dashboard/Dashboard";
+import HorseDetail from "./views/HorseDetail/HorseDetail";
 import Login from "./views/Login/Login"
 import Person from "@material-ui/icons/Person";
 import React, { Component } from "react";

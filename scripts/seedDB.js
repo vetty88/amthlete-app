@@ -173,3 +173,23 @@ process.exit(0);
 console.error(err);
 process.exit(1);
 });
+
+const userSeed = [
+  {
+  username: "Yvette Waller",
+  password: "pass123",
+  },
+
+  ];
+
+db.User
+.remove({})
+.then(() => db.User.collection.insertMany(userSeed))
+.then(data => {
+console.log(data.result.n + " user records inserted!");
+process.exit(0);
+})
+.catch(err => {
+console.error(err);
+process.exit(1);
+});

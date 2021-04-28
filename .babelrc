@@ -1,13 +1,6 @@
 {
-  "presets": ["es2015"],
-  "plugins": [
-    "@babel/plugin-syntax-jsx",
-    "transform-class-properties",
-    "transform-react-jsx",
-    "transform-object-rest-spread",
-    ["module-resolver", {
-      "root": ["./src"]
-      }],
-      ["import-rename", {"^(.*)\\.jsx$": "$1"}]
-    ]
+  "presets": [
+  "@babel/preset-env",
+  "@babel/preset-react"
+  ]
   }

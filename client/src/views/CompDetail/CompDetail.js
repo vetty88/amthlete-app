@@ -1,4 +1,4 @@
-import { Col, Row} from "../components/Grid";
+import { Col, Row} from "../../components/Grid";
 import { faAward } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { faComments } from '@fortawesome/free-solid-svg-icons'
@@ -9,19 +9,19 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import API from "../utils/API";
-import Card from "../components/Card/Card.js";
-import CardFooter from "../components/Card/CardFooter.js";
-import CardHeader from "../components/Card/CardHeader.js";
-import CardIcon from "../components/Card/CardIcon.js";
+import API from "../../utils/API";
+import Card from "../../components/Card/Card.js";
+import CardFooter from "../../components/Card/CardFooter.js";
+import CardHeader from "../../components/Card/CardHeader.js";
+import CardIcon from "../../components/Card/CardIcon.js";
 import Container from "@material-ui/core/Container";
-import GridContainer from "../components/Grid/GridContainer.js";
-import GridItem from "../components/Grid/GridItem.js";
-import Jumbotron from "../components/Jumbotron/Jumbotron";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import Moment from "react-moment";
 import React, { useEffect, useState, Component } from "react";
 import ReactDOM from 'react-dom';
-import styles from "../assets/jss/material-dashboard-react/views/rtlStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Warning from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(styles);
