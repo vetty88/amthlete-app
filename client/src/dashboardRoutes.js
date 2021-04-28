@@ -5,7 +5,7 @@ import AddHorse from "./views/AddHorse/AddHorse";
 import CompDetail from "./layouts/CompDetail";
 import CustomCompCharts from "./views/Charts/Charts";
 import Dashboard from "@material-ui/icons/Dashboard";
-import DashboardPage from "./views/Dashboard/Dashboard";
+import Dashboard from "./views/Dashboard/Dashboard";
 import HorseDetail from "./layouts/HorseDetail";
 import Login from "./views/Login/Login"
 import Person from "@material-ui/icons/Person";
@@ -34,7 +34,7 @@ const dashboardRoutes = [
     name: "Dashboard",
     rtlName: "Dashboard",
     icon: Dashboard,
-    component: DashboardPage,
+    component: Dashboard,
     layout: "/admin"
   },
   {

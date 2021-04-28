@@ -10,7 +10,7 @@ import Card from "../../components/Card/Card.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import CardHeader from "../../components/Card/CardHeader.js";
-import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
+import DeleteBtn from "../../components/Buttons/DeleteBtn";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import moment from "moment";

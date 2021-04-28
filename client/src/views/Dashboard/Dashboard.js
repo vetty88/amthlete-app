@@ -1,9 +1,11 @@
 import { Col, Row, Container } from "../../components/Grid/";
+import { connect } from "react-redux";
 import { faHorseHead } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from "react-router-dom";
 import { List, ListItem } from "../../components/List/List";
+import { logoutUser } from "../../actions/authActions";
 import { makeStyles } from "@material-ui/core/styles";
 import Accessibility from "@material-ui/icons/Accessibility";
 import AccessTime from "@material-ui/icons/AccessTime";
@@ -21,7 +23,7 @@ import Code from "@material-ui/icons/Code";
 import CustomTabs from "../../components/CustomTabs/CustomTabs.js";
 import Danger from "../../components/Typography/Danger.js";
 import DateRange from "@material-ui/icons/DateRange";
-import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
+import DeleteBtn from "../../components/Buttons/DeleteBtn";
 import FormatListNumbered from "@material-ui/icons/FormatListNumbered";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -30,7 +32,7 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import Moment from "react-moment";
 import PropTypes from "prop-types";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, Component} from "react";
 import ReactDOM from 'react-dom';
 import Store from "@material-ui/icons/Store";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
@@ -41,7 +43,7 @@ import Warning from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(styles);
 
-export default function Dashboard() {
+function Dashboard() {
   const classes = useStyles();
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
@@ -241,4 +243,63 @@ export default function Dashboard() {
         </GridContainer>
     </div>
   );
+}
+
+
+
+class LoginDashboard extends Component {
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
+
+  render() {
+    const { user } = this.props.auth;
+
+    return (
+      <div style={{ height: "75vh" }} className="container valign-wrapper">
+        <div className="row">
+          <div className="landing-copy col s12 center-align">
+            <h4>
+              <b>Hey there,</b> {user.name.split(" ")[0]}
+              <p className="flow-text grey-text text-darken-1">
+                You are logged into a full-stack{" "}
+                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
+              </p>
+            </h4>
+            <button
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                marginTop: "1rem"
+              }}
+              onClick={this.onLogoutClick}
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+LoginDashboard.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+
+export {
+  Dashboard,
+  mapStateToProps,
+  logoutUser,
+  LoginDashboard,
+  connect,
 }

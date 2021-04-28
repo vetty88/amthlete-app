@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import DataGrid from "react-data-grid";
-// core components
-import GridItem from "../../components/Grid/GridItem.js";
-import GridContainer from "../../components/Grid/GridContainer.js";
-import Table from "../../components/Table/Table.js";
-import Card from "../../components/Card/Card.js";
-import CardHeader from "../../components/Card/CardHeader.js";
-import CardBody from "../../components/Card/CardBody.js";
-import DataTable from "react-data-table-component";
-
-
-import DeleteBtn from "../../components/DeleteBtn/DeleteBtn";
-
-import Jumbotron from "../../components/Jumbotron/Jumbotron";
-import API from "../../utils/API";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../../components/Grid/index";
-import { List, ListItem } from "../../components/List/List";
-import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../../components/Forms/CompForm";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { Col, Row, Container } from "../../components/Grid/index";
+import { Input, DateSelector, SelectEvents, TextArea, FormBtn } from "../../components/Forms/CompForm";
+import { Link } from "react-router-dom";
+import { List, ListItem } from "../../components/List/List";
+import { makeStyles } from "@material-ui/core/styles";
+import API from "../../utils/API";
+import Card from "../../components/Card/Card.js";
+import CardBody from "../../components/Card/CardBody.js";
+import CardHeader from "../../components/Card/CardHeader.js";
+import DataGrid from "react-data-grid";
+import DataTable from "react-data-table-component";
+import DeleteBtn from "../../components/Buttons/DeleteBtn.js";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Jumbotron from "../../components/Jumbotron/Jumbotron";
+import React, { useState, useEffect } from "react";
+import Table from "../../components/Table/Table.js";
+
 
 export default function TableList() {
   // Setting our component's initial state

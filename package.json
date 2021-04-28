@@ -154,6 +154,7 @@
     "superagent": "^6.1.0",
     "sw-precache-webpack-plugin": "0.11.5",
     "url-loader": "^4.1.1",
+    "validator": "^13.6.0",
     "webpack-manifest-plugin": "1.2.1",
     "webpack-split-chunks": "^0.2.1",
     "whatwg-fetch": "2.0.3",

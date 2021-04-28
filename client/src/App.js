@@ -1,43 +1,20 @@
-// import "perfect-scrollbar/css/perfect-scrollbar.css";
-// import { makeStyles } from "@material-ui/core/styles";
-// import { Switch, Redirect } from "react-router-dom";
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { Provider } from "react-redux";
-// import AddComp from "../views/AddComp/AddComp";
-// import AddHorse from "../views/AddHorse/AddHorse";
-// import bgImage from "../assets/img/Jumping.jpg";
-// import CompDetail from "../layouts/CompDetail";
-// import CustomCompCharts from "../views/Charts/Charts";
-// import Dashboard from "@material-ui/icons/Dashboard";
-// import DashboardPage from "../views/Dashboard/Dashboard";
-// import dashboardRoutes from "../dashboardRoutes";
-// import Footer from "../components/Footer/Footer.js";
-// import HorseDetail from "../layouts/HorseDetail";
-// import Login from "../views/Login/Login"
-// import logo from "../assets/img/reactlogo.png";
-// import Navbar from "../components/Navbars/Navbar.js";
-// import PerfectScrollbar from "perfect-scrollbar";
-// import Person from "@material-ui/icons/Person";
-// import React, { Component } from "react";
-// import Register from "../views/Register/Register"
-// import Sidebar from "../components/Sidebar/Sidebar"
-// import store from "../store";
-// import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
-// import TableList from "../views/TableList/TableList";
-
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
+
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
+
 import Navbar from "./components/Navbars/Navbar";
 import Landing from "./views/Landing/Landing";
 import Register from "./views/Register/Register";
 import Login from "./views/Login/Login";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import DashboardPage from "./views/Dashboard/Dashboard";
+import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
+import { Dashboard } from "./views/Dashboard/Dashboard";
+
+import "./App.css";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -48,11 +25,12 @@ if (localStorage.jwtToken) {
   const decoded = jwt_decode(token);
   // Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
-// Check for expired token
+  // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
+
     // Redirect to login
     window.location.href = "./login";
   }
@@ -68,7 +46,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
-              <PrivateRoute exact path="/dashboard" component={DashboardPage} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </div>
         </Router>
@@ -77,6 +55,35 @@ class App extends Component {
   }
 }
 export default App;
+
+
+// import "perfect-scrollbar/css/perfect-scrollbar.css";
+// import { makeStyles } from "@material-ui/core/styles";
+// import { Switch, Redirect } from "react-router-dom";
+// import { BrowserRouter as Router, Route } from "react-router-dom";
+// import { Provider } from "react-redux";
+// import AddComp from "../views/AddComp/AddComp";
+// import AddHorse from "../views/AddHorse/AddHorse";
+// import bgImage from "../assets/img/Jumping.jpg";
+// import CompDetail from "../layouts/CompDetail";
+// import CustomCompCharts from "../views/Charts/Charts";
+// import Dashboard from "@material-ui/icons/Dashboard";
+// import Dashboard from "../views/Dashboard/Dashboard";
+// import dashboardRoutes from "../dashboardRoutes";
+// import Footer from "../components/Footer/Footer.js";
+// import HorseDetail from "../layouts/HorseDetail";
+// import Login from "../views/Login/Login"
+// import logo from "../assets/img/reactlogo.png";
+// import Navbar from "../components/Navbars/Navbar.js";
+// import PerfectScrollbar from "perfect-scrollbar";
+// import Person from "@material-ui/icons/Person";
+// import React, { Component } from "react";
+// import Register from "../views/Register/Register"
+// import Sidebar from "../components/Sidebar/Sidebar"
+// import store from "../store";
+// import styles from "../assets/jss/material-dashboard-react/layouts/adminStyle.js";
+// import TableList from "../views/TableList/TableList";
+
 // let ps;
 // const switchDashboardRoutes = ( < Switch> {
 //     dashboardRoutes.map((prop, key) => {
