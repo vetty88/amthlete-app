@@ -9,7 +9,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import API from "../../utils/API";
+import API from "../../utils/API.js";
 import Card from "../../components/Card/Card.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import CardHeader from "../../components/Card/CardHeader.js";
@@ -31,9 +31,6 @@ function CompDetail(props) {
 
   const [competitions, setCompetitions] = useState([])
   const [formObject, setFormObject] = useState({})  
-  
-  // const useStyles = makeStyles(styles);
-  //   const classes = useStyles();
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -51,11 +48,13 @@ function CompDetail(props) {
 
   return (
     <div>
-     {competitions.length ? (
-      <GridContainer>
-     {competitions.map(competition => (
-      <GridItem xs={12} sm={6} md={3} key={competition.id}>
-      <Card >
+    
+    {competitions.length ? (
+        <GridContainer>
+          {competitions.map(competition => (
+    <GridItem xs={12} sm={6} md={3} key={competition.id}>
+      
+      <Card key={competition.id}>
       <CardHeader color="warning">
       <FontAwesomeIcon color="warning" icon={faStar} /> 
       <p className={classes.cardCategory}>Competition</p>
@@ -69,15 +68,13 @@ function CompDetail(props) {
         <h4> <FontAwesomeIcon icon={faComments} /> <p> {competition.resultNotes} </p> </h4>
       </Card>
       </GridItem>
-      ))}
-     
+         ))}
       </GridContainer>
        ) : (
-      <h3>No Results to Display</h3>
-      )}
+        <h3>No Results to Display</h3>
+        )}     
     </div>
   );
 }
-
 
 export default CompDetail;

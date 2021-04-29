@@ -5,7 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useParams } from "react-router-dom";
 import { List, ListItem } from "../../components/List/List";
-import { logoutUser } from "../../actions/authActions";
+// import { logoutUser } from "../../actions/authActions";
 import { makeStyles } from "@material-ui/core/styles";
 import Accessibility from "@material-ui/icons/Accessibility";
 import AccessTime from "@material-ui/icons/AccessTime";
@@ -43,7 +43,7 @@ import Warning from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(styles);
 
-function Dashboard() {
+ export default function Dashboard() {
   const classes = useStyles();
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
@@ -228,8 +228,8 @@ function Dashboard() {
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="warning">
-              <h4 className={classes.cardTitleWhite}>Competition Table</h4>
-              <p className={classes.cardCategoryWhite}>
+              <h4 className={classes.cardTitle}>Competition Table</h4>
+              <p className={classes.cardCategory}>
                 Competition List (All Horses)
               </p>
             </CardHeader>
@@ -243,63 +243,4 @@ function Dashboard() {
         </GridContainer>
     </div>
   );
-}
-
-
-
-class LoginDashboard extends Component {
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
-
-  render() {
-    const { user } = this.props.auth;
-
-    return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-        <div className="row">
-          <div className="landing-copy col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
-              </p>
-            </h4>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-LoginDashboard.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  auth: state.auth
-});
-
-
-export {
-  Dashboard,
-  mapStateToProps,
-  logoutUser,
-  LoginDashboard,
-  connect,
 }

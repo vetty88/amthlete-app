@@ -11,9 +11,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
-
-
-
 import styles from "../../assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -30,16 +27,10 @@ export default function Sidebar(props) {
       {dashboardRoutes.map((prop, key) => {
         var activePro = " ";
         var listItemClasses;
-        if (prop.path === "/upgrade-to-pro") {
-          activePro = classes.activePro + " ";
-          listItemClasses = classNames({
-            [" " + classes[color]]: true
-          });
-        } else {
           listItemClasses = classNames({
             [" " + classes[color]]: activeDashboardRoute(prop.layout + prop.path)
           });
-        }
+        
         const whiteFontClasses = classNames({
           [" " + classes.whiteFont]: activeDashboardRoute(prop.layout + prop.path)
         });
@@ -81,18 +72,10 @@ export default function Sidebar(props) {
   );
   var brand = (
     <div className={classes.logo}>
-      <a
-        href="https://www.creative-tim.com?ref=mdr-Sidebar"
-        className={classNames(classes.logoLink, {
-          [classes.logoLinkRTL]: props.rtlActive
-        })}
-        target="_blank"
-      >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
         {logoText}
-      </a>
     </div>
   );
   return (
@@ -134,7 +117,9 @@ export default function Sidebar(props) {
           }}
         >
           {brand}
-          <div className={classes.SidebarWrapper}>{links}</div>
+          <div className={classes.SidebarWrapper}>
+            {links}
+            </div>
           {image !== undefined ? (
             <div
               className={classes.background}

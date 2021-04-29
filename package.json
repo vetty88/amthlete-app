@@ -17,7 +17,6 @@
     "build": "cd client && yarn run build",
     "heroku-postbuild": "yarn run build"
   },
-
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.12.13",
@@ -44,7 +43,6 @@
     "axios": "^0.21.1",
     "babel-core": "6.25.0",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.0.0-beta.2",
     "babel-preset-react-app": "^3.0.2",
     "babel-runtime": "6.26.0",
     "bcrypt": "^5.0.1",
@@ -176,7 +174,6 @@
     "sw-precache-webpack-plugin": "0.11.5",
     "url-loader": "^4.1.1",
     "validator": "^13.6.0",
-    "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-dev-middleware": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2",

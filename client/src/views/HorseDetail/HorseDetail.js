@@ -61,7 +61,6 @@ function HorseDetail(props) {
               <h4> <FontAwesomeIcon icon={faHorseHead} /> {horse.breed}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.colour}</h4>
            </Card>
-        
           </GridItem>
      ))}
         </GridContainer>
@@ -72,6 +71,5 @@ function HorseDetail(props) {
   </div>
   );
 }
-
 
 export default HorseDetail;
