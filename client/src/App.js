@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Landing from './views/Landing/Landing';
+import LandingPage from './views/Landing/Landing';
 import Register from './views/Register/Register';
 import Login from './views/Login/Login'
+import "./styles.css"
 
-    class App extends Component {
+  class App extends Component {
   render() {
     return (
      
