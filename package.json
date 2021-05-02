@@ -20,7 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.12.13",
-    "concurrently": "^6.0.0"
+    "concurrently": "^6.0.0",
+    "nodemon": "2.0.7"
   },
   "dependencies": {
     "@atlaskit/analytics-next": "^8.1.2",
@@ -92,6 +93,7 @@
     "identicon.js": "^2.3.3",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
     "jw-react-pagination": "^1.0.7",
     "lorem-ipsum": "^1.0.6",
     "material-dashboard-react": "^1.9.0",
@@ -100,7 +102,6 @@
     "mongoose": "^5.12.5",
     "namor": "^1.1.1",
     "node-sass": "^4.7.2",
-    "nodemon": "^1.17.2",
     "npm": "^7.6.0",
     "object-assign": "4.1.1",
     "passport": "^0.4.1",
@@ -184,7 +185,10 @@
     "window-resize-listener-react": "^1.1.0",
     "yarn": "^1.22.10"
   },
-  "repository": "git+https://github.com/vetty88/amthlete-app.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vetty88/amthlete-app.git"
+  },
   "author": "Y Waller",
   "bugs": {
     "url": "https://github.com/vetty88/amthlete-app/issues"
