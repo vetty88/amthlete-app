@@ -176,8 +176,16 @@ process.exit(1);
 
 const userSeed = [
   {
-  username: "Yvette Waller",
+  username: "Travis Hammond",
+  email: "travh87@gmail.com",
   password: "pass123",
+  date: new Date("2021-05-12T06:01:17.171Z"),
+  },
+    {
+  username: "Yvette Waller",
+  email: "vetty88@gmail.com",
+  password: "pass123",
+  date: new Date("2021-05-12T06:01:17.171Z"),
   },
 
   ];

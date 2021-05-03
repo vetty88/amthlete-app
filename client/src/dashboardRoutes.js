@@ -7,28 +7,28 @@ import CustomCompCharts from "./views/Charts/Charts";
 
 import Dashboard from "./views/Dashboard/Dashboard";
 import HorseDetail from "./views/HorseDetail/HorseDetail";
-import Login from "./views/Login/Login"
+// import Login from "./views/Login/Login"
 import Person from "@material-ui/icons/Person";
 import React, { Component } from "react";
-import Register from "./views/Register/Register"
+// import Register from "./views/Register/Register"
 import store from "./store";
 import TableList from "./views/TableList/TableList";
 
 const dashboardRoutes = [
-  {
-    path: "/login",
-    name: "Login",
-    icon: Person,
-    component: Login,
-    layout: "/admin"
-  },
-    {
-    path: "/register",
-    name: "Register",
-    icon: Person,
-    component: Register,
-    layout: "/admin"
-  },
+  // {
+  //   path: "/login",
+  //   name: "Login",
+  //   icon: Person,
+  //   component: Login,
+  //   layout: "/admin"
+  // },
+  //   {
+  //   path: "/register",
+  //   name: "Register",
+  //   icon: Person,
+  //   component: Register,
+  //   layout: "/admin"
+  // },
   {
     path: "/dashboard",
     name: "Dashboard",

@@ -22,7 +22,7 @@ npm manifest:
     "version": "1.0.0",
     "description": "As a competitor, I should be able to record my equestrian competition results, so that I can reflect and improve each season",
     "main": "server.js",
-    "proxy": "http://localhost:3001",
+    "proxy": "http://localhost:5000",
     "engines": {
       "node": ">=6"
     },

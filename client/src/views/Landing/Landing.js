@@ -1,23 +1,32 @@
-import React from 'react';
-import auth from "../../actions/authActions";
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+class Landing extends Component {
+  render() {
+    return <Redirect to="/login" />;
+  }
+}
+export default Landing;
+
+// import React from 'react';
+// import setAuthToken from "../../utils/setAuthToken";
 
 
-export const LandingPage = props => {
-  return (
-    <div>
-      <h1>Landing Page</h1>
-      <button 
-        onClick={() => {
-          auth.login(() => {
-            props.history.push("/app");
-          });
-        }}
-        > 
-          Login 
-      </button>
-    </div>
-  );
-};
+// export const Landing = props => {
+// return (
+//   <div>
+//     <h1>Landing Page</h1>
+//     <button 
+//       onClick={() => {
+//         setAuthtoken.loginUser(() => {
+//           props.history.push("/app");
+//         });
+//       }}
+//       > 
+//         Login 
+//     </button>
+//   </div>
+// );
+// };
 
 // import React, { Component } from 'react';
 // import 'whatwg-fetch';
@@ -46,7 +55,7 @@ export const LandingPage = props => {
 //     this.onTextboxChangeLoginPassword = this.onTextboxChangeLoginPassword.bind(this);
 //     this.onTextboxChangeRegisterEmail = this.onTextboxChangeRegisterEmail.bind(this);
 //     this.onTextboxChangeRegisterPassword = this.onTextboxChangeRegisterPassword.bind(this);
-    
+  
 //     this.onLogin = this.onLogin.bind(this);
 //     this.onRegister = this.onRegister.bind(this);
 //     this.logout = this.logout.bind(this);

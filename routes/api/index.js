@@ -6,6 +6,6 @@ const userRoutes = require("./users");
 // Competition routes
 router.use("/competitions", competitionRoutes);
 router.use("/horses", horseRoutes);
-router.use("/horses", userRoutes);
+router.use("/users", userRoutes);
 
 module.exports = router;
