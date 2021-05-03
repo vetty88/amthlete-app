@@ -6,16 +6,16 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import jwt_decode from "jwt-decode";
-import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+// import jwt_decode from "jwt-decode";
+// import setAuthToken from "./utils/setAuthToken";
+// import { setCurrentUser, logoutUser } from "./actions/authActions";
 
-import { Provider } from "react-redux";
-import store from "./store";
+// import { Provider } from "react-redux";
+// import store from "./store";
 
 import Landing from "./layouts/Landing";
 import Register from "./views/Register/Register";
-import Login from "./views/Login/Login";
+// import Login from "./views/Login/Login";
 import PrivateRoute from "./views/PrivateRoute/PrivateRoute";
 import Dashboard from "./views/Dashboard/Dashboard";
 
@@ -43,12 +43,12 @@ import Horse from "./views/HorseDetail/HorseDetail";
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      // <Provider store={store}>
         <Router>
           <div className="App">
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
+            {/* <Route exact path="/login" component={Login} /> */}
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               {/* <PrivateRoute
@@ -64,7 +64,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </Provider>
+      // </Provider>
     );
   }
 }

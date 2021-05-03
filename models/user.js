@@ -3,11 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const userSchema = new Schema({
-  uniqueName: { type: String, unique: true, required: true },
-  birthYear: { type: String, required: true },
-  breed: { type: String, required: true },
-  height: { type: String, required: true },
-  colour: { type: String, required: true },
+  name: { type: String, required: true  },
+  email: { type: String, required: true },
+  password: { type: String, required: true  },
+  date: { type: Date, default: Date.now  }
 });
 
 const User = mongoose.model("User", userSchema);
@@ -20,10 +19,7 @@ module.exports = User;
 
 // // Create Schema
 // const userSchema = new Schema({
-//   name: { type: String, required: true  },
-//   email: { type: String, required: true },
-//   password: { type: String, required: true  },
-//   date: { type: Date, default: Date.now  }
+//  
 // });
 
 // // // Create Schema

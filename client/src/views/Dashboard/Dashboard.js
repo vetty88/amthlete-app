@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
+// import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import { logoutUser } from "../../actions/authActions";
 import HorseDetail from "../HorseDetail/HorseDetail";
 
 class Dashboard extends Component {
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
-  };
+  // onLogoutClick = e => {
+  //   e.preventDefault();
+  //   this.props.logoutUser();
+  // };
 
   render() {
-    const { user } = this.props.auth;
+    // const { user } = this.props.auth;
 
     return (
       <>
@@ -58,19 +58,21 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.string.isRequired
-};
+export default Dashboard;
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
+// Dashboard.propTypes = {
+//   logoutUser: PropTypes.func.isRequired,
+//   auth: PropTypes.object.isRequired
+// };
 
-export default connect(
-  mapStateToProps,
-  { logoutUser }
-)(Dashboard);
+// const mapStateToProps = state => ({
+//   auth: state.auth
+// });
+
+// export default connect(
+//   mapStateToProps,
+//   { logoutUser }
+// )(Dashboard);
 
 // import { Col, Row, Container } from "../../components/Grid/";
 // import { connect } from "react-redux";

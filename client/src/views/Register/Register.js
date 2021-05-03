@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
 import classnames from "classnames";
@@ -84,7 +84,7 @@ export default function Register() {
           name: formObject.name,
           email: formObject.email,
           password: formObject.password,
-          date: new Date (this.date),
+          // date: new Date (),
         })
         .then(res => loadUsers())
         .catch(err => console.log(err));
@@ -159,9 +159,9 @@ export default function Register() {
           {users.map(user => (
           <ListItem key={user.email}>
             <Link to={"/admin/users/" + user.email}>
-            <strong> {user.name} with {user.email} </strong>
+            <strong> {user.name} ({user.email}) </strong>
             </Link>
-            <DeleteBtn onClick={()=> deleteUser(user.emal)} />
+            <DeleteBtn onClick={()=> deleteUser(user.email)} />
           </ListItem>
           ))}
         </List>
