@@ -11,7 +11,7 @@ import Sidebar from "../../components/Sidebar/Sidebar"
 import Navbar from "../../components/Navbars/Navbar.js";
 import Footer from "../../components/Footer/Footer.js";
 
-import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle";
 import bgImage from "../../assets/img/Jumping.jpg";
 import logo from "../../assets/img/reactlogo.png";
 

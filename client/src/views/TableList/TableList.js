@@ -8,8 +8,6 @@ import API from "../../utils/API";
 import Card from "../../components/Card/Card.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardHeader from "../../components/Card/CardHeader.js";
-import DataGrid from "react-data-grid";
-import DataTable from "react-data-table-component";
 import DeleteBtn from "../../components/Buttons/DeleteBtn.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";

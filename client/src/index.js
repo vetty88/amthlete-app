@@ -1,59 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createBrowserHistory } from "history";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// core components
+import Admin from "./views/Admin/Admin";
+import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
+// import Competitions from "../src/layouts/Competitions.js";
+import CompDetail from "./views/CompDetail/CompDetail";
+import HorseDetail from "./views/HorseDetail/HorseDetail";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-// serviceWorker.unregister();
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-// // import { createBrowserHistory } from "history";
-
-// import { Landing } from "./views/Landing/Landing";
-// import { AppLayout } from "./layouts/layout";
-// import { ProtectedRoute } from "./views/PrivateRoute/PrivateRoute";
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-// // core components
-// // import Admin from "./views/Admin/Admin";
-// import "./styles.css";
-
-// import "./assets/css/material-dashboard-react.css";
-
-// function App() {
-//   return (
-//     <div className="App">
-//     <Switch>
-//       <Route exact path= "/" component = {Landing} />
-//       <ProtectedRoute exact path="/app" component = {AppLayout} />
-//       <Route path="*" component={() => "404 NOT FOUND"} />
-//     </Switch>
-//     </div>
-//   );
-// }
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(
-//   <BrowserRouter>
-//     <App />
-//   </BrowserRouter>, 
-//   rootElement
-//   );
+import "./assets/css/material-dashboard-react.css";
 
 // const hist = createBrowserHistory();
 
-// ReactDOM.render(
-//   <Router history={hist}>
-//     <Switch>
-//       <Route path="/admin" component={Admin} />
-//       <Redirect from="/" to="/admin/dashboard" />
-//     </Switch>
-//   </Router>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(
+  // <Router history={hist}>
+  <Router>
+    <Switch>
+    <Route path="/admin" component={Admin} />
+    <Route path="/admin/competitions" component={CompDetail}/>
+    {CompDetail}
+    <Route path="/admin/horses" component={HorseDetail}/>
+    {HorseDetail}
+  
+    <Redirect from="/" to="/admin/dashboard" />
+    </Switch>
+  </Router>,
+  document.getElementById("root")
+);
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import * as serviceWorker from './serviceWorker';
+
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+// // If you want your app to work offline and load faster, you can change
+// // unregister() to register() below. Note this comes with some pitfalls.
+// // Learn more about service workers: http://bit.ly/CRA-PWA
+// serviceWorker.unregister();

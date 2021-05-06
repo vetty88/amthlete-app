@@ -1,40 +1,24 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Provider } from "react-redux";
+// @material-ui/icons
+import Dashboard from "@material-ui/icons/Dashboard";
+import Person from "@material-ui/icons/Person";
+// core components/views for Admin layout
+import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
+
 import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
-import CompDetail from "./views/CompDetail/CompDetail";
-import CustomCompCharts from "./views/Charts/Charts";
-
-import Dashboard from "./views/Dashboard/Dashboard";
-import HorseDetail from "./views/HorseDetail/HorseDetail";
-// import Login from "./views/Login/Login"
-import Person from "@material-ui/icons/Person";
-import React, { Component } from "react";
-// import Register from "./views/Register/Register"
-import store from "./store";
 import TableList from "./views/TableList/TableList";
+import CustomCompCharts from "./views/Charts/Charts";
+import CompDetail from "./views/CompDetail/CompDetail";
+import HorseDetail from "./views/HorseDetail/HorseDetail";
 
 const dashboardRoutes = [
-  // {
-  //   path: "/login",
-  //   name: "Login",
-  //   icon: Person,
-  //   component: Login,
-  //   layout: "/admin"
-  // },
-  //   {
-  //   path: "/register",
-  //   name: "Register",
-  //   icon: Person,
-  //   component: Register,
-  //   layout: "/admin"
-  // },
+
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    rtlName: "Dashboard",
-    icon: "dashboard",
-    component: Dashboard,
+    path: "/adminDashboard",
+    name: "AdminDashboard",
+    rtlName: "AdminDashboard",
+    icon: Dashboard,
+    component: AdminDashboard,
     layout: "/admin"
   },
   {

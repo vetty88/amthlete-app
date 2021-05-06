@@ -1,74 +1,42 @@
-Summary: As a {competitor}, I should be able to {record my sporting results}, so that I can {reflect and improve each season}
-Acceptance Criteria:
-* GIVEN: A {competitor} is {recording their sporting results} in the {A[m]thlete Tracker app}
-* WHEN: The app hits the {app interface entry} endpoint with a valid request, containing {sports results, images, recounts}
-* THEN: The app should receive a status {entry added!}
-* AND: In the response, the following information should be returned: {refresh page, display information input}
+# mern-auth
 
-Use
-MongoDB
-Express
-React
-Node JS
+![Final App](https://i.postimg.cc/tybZb8dL/final-MERNAuth.gif)
+Minimal full-stack MERN app with authentication using passport and JWTs.
 
+This project uses the following technologies:
 
-FEATURES
-Recording: Record your sporting activities
-Photos and Markers: mark sporting sites and add media such as photos and videos to your record/event
-Export Data: Export your results
-No Internet Access: Accessible without Internet
-No Advertising: No ads
-Privacy: user  privacy settings/ sharing of results with community
+- [React](https://reactjs.org) and [React Router](https://reacttraining.com/react-router/) for frontend
+- [Express](http://expressjs.com/) and [Node](https://nodejs.org/en/) for the backend
+- [MongoDB](https://www.mongodb.com/) for the database
+- [Redux](https://redux.js.org/basics/usagewithreact) for state management between React components
 
-PILOT MODULES
-                Solo/Team       Team
-    FLAGSHIP    Equestrian - HRCAV and PC
-    SECOND REL                  Basketball
+## Medium Series
 
-TO COME
-                Solo/Team
-                                Team
-    THIRD REL                   Netball [API Integration - Netball Victoria]
-    FOURTH REL                  Soccer
-    FIFTH REL                   AFL
-    SIXTH REL   SWIMMING
-    SEVENTH REL   TENNIS
-      EIGHT REL   ATHLETICS
-      9th           GYMNASTICS
+- [Build a Login/Auth App with the MERN Stack — Part 1 (Backend)](https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669)
+- [Build a Login/Auth App with the MERN Stack — Part 2 (Frontend & Redux Setup)](https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-2-frontend-6eac4e38ee82)
+- [Build a Login/Auth App with the MERN Stack — Part 3 (Linking Redux with React Components)](https://blog.bitsrc.io/build-a-login-auth-app-with-the-mern-stack-part-3-react-components-88190f8db718)
 
-  
-  DEV NOTES
+## Configuration
 
-  As an amateur athlete I want to track my results from playing numerous sports so that I can reflect on my season. I would also like to have a central area to share results with my team and have a chat about the game.  I would appreciate a community contributed calendar and results so that we can work together to record accurate events plans and outcomes
+Make sure to add your own `MONGOURI` from your [mLab](http://mlab.com) database in `config/keys.js`.
 
-  TESTING NOTES
+```javascript
+module.exports = {
+  mongoURI: "YOUR_MONGO_URI_HERE",
+  secretOrKey: "secret"
+};
+```
 
-  CUSTOMER FEEDBACK
-  ARCHITECTUR DIAGRAMS
+## Quick Start
 
+```javascript
+// Install dependencies for server & client
+npm install && npm run client-install
 
-  ERROR HANDLING
-    RESPONSE MATRICES
+// Run client & server with concurrently
+npm run dev
 
-CRUD
+// Server runs on http://localhost:5000 and client on http://localhost:3000
+```
 
-WEESLD
-
-MERN STACK
-CSS Framework other than Bootstrap
-
-PSEUDOCODE
-Keywords
-IF
-WHILE
-AND
-EVEN
-VARIABLES
-AMOUNT
-
-Indentation (Nesting)
-End - END IF/ FINISH
-
-
-
-
+For deploying to Heroku, please refer to [this](https://www.youtube.com/watch?v=71wSzpLyW9k) helpful video by TraversyMedia.

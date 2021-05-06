@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import * as NumericInput from "./react-numeric-input";
-// import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
 import API from "../../utils/API";
 
 export function TextInput(props) {
