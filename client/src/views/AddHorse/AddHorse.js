@@ -145,7 +145,7 @@ export default function Horses() {
         <List>
           {horses.map(horse => (
           <ListItem key={horse.uniqueName}>
-            <Link to={"/horses/" + horse.uniqueName}>
+            <Link to={"/admin/horses"}>
             <strong> {horse.uniqueName} </strong>
             </Link>
             <DeleteBtn onClick={()=> deleteHorse(horse.uniqueName)} />

@@ -19,6 +19,7 @@
     "chartist": "^0.11.4",
     "classnames": "^2.2.6",
     "jwt-decode": "^2.2.0",
+    "loopback": "^3.28.0",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^16.6.3",
@@ -33,6 +34,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^2.0.3",
+    "socket-io": "^1.0.0",
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.2"
   },
