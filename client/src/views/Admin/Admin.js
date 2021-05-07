@@ -10,10 +10,14 @@ import dashboardRoutes from "../../dashboardRoutes";
 import Sidebar from "../../components/Sidebar/Sidebar"
 import Navbar from "../../components/Navbars/Navbar.js";
 import Footer from "../../components/Footer/Footer.js";
-
 import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle";
 import bgImage from "../../assets/img/Jumping.jpg";
 import logo from "../../assets/img/reactlogo.png";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import props from "prop-types";
+import { logoutUser } from "../../actions/authActions";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 
 let ps;
@@ -51,6 +55,8 @@ export default function Admin({ ...rest }) {
     setImage(image);
   };
 
+
+
   const handleFixedClick = () => {
     if (fixedClasses === "dropdown") {
       setFixedClasses("dropdown show");
@@ -87,8 +93,18 @@ export default function Admin({ ...rest }) {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
+
+  
+  // const AdminLogout = ({logoutUser}) => { 
+  //   var onLogoutClick = e => {
+  //   e.preventDefault();
+  //   logoutUser();
+  // }
+  // }
+// var { user } = this.props.auth;
+
   return (
-    <div className={classes.wrapper}>
+    <div>
       <Sidebar
         dashboardRoutes={dashboardRoutes}
         logoText={"REACT EQUESTRIAN"}
@@ -99,6 +115,7 @@ export default function Admin({ ...rest }) {
 
         {...rest}
       />
+      <Dashboard/>
       <div className={classes.mainPanel} ref={mainPanel}>
         <Navbar
           dashboardRoutes={dashboardRoutes}
@@ -113,6 +130,7 @@ export default function Admin({ ...rest }) {
           <div className={classes.map}>{switchDashboardRoutes}</div>
         )}
         {getDashboardRoute() ? <Footer /> : null}
+    
 
       </div>
     </div>

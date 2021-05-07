@@ -13,6 +13,7 @@ import HorseDetail from "./views/HorseDetail/HorseDetail";
 
 const dashboardRoutes = [
 
+
   {
     path: "/adminDashboard",
     name: "AdminDashboard",

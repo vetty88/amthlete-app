@@ -30,7 +30,7 @@ const dashboardRoutes = [
   //   layout: "/admin"
   // },
   {
-    path: "/dashboard",
+    path: "/admin/adminDashboard",
     name: "Dashboard",
     rtlName: "Dashboard",
     icon: "dashboard",

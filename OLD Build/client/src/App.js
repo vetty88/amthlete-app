@@ -64,7 +64,7 @@ export default App
 //             <Route exact path="/register" component={Register} />
 //             <Route exact path="/login" component={Login} />
 //             <Switch>
-//               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+//               <PrivateRoute exact path="/admin/adminDashboard" component={Dashboard} />
 //               {/* <PrivateRoute
 //                 exact
 //                 path="/horse/:horseIndex"
@@ -73,7 +73,7 @@ export default App
 //               <PrivateRoute
 //                 exact
 //                 path="/horse"
-//                 component={() => <Redirect to="/dashboard" />}
+//                 component={() => <Redirect to="/admin/adminDashboard" />}
 //               /> */}
 //             </Switch>
 //           </div>
@@ -162,7 +162,7 @@ export default App
 // // 						<Route exact path="/landingPage" component={ Landing } />
 // // 						{/* <Route exact path="/resend-verification-email" component={ResendVerificationEmail} /> */}
 // // 						{/*Private Routes*/}
-// // 						<Switch><PrivateRoute exact path="/dashboard" component={ Dashboard } /></Switch>
+// // 						<Switch><PrivateRoute exact path="/admin/adminDashboard" component={ Dashboard } /></Switch>
 // // 						<Switch><PrivateRoute exact path="/privateRoute" component={ PrivateRoute } /></Switch>
 // // 					</div>
 // // 				</Router>
@@ -194,7 +194,7 @@ export default App
 // // //             <Route exact path="/register" component={Register} />
 // // //             <Route exact path="/login" component={Login} />
 // // //             <Switch>
-// // //               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+// // //               <PrivateRoute exact path="/admin/adminDashboard" component={Dashboard} />
 // // //             </Switch>
 // // //             {/* <Footer /> */}
 // // //           </div>
