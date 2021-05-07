@@ -5,13 +5,13 @@ module.exports = {
   findAll: function(req, res) {
     db.Horse
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ id: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findByUniqueName: function(req, res) {
     db.Horse
-      .findById(req.params.uniqueName)
+      .findByUniqueName(req.params.uniqueName)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -29,7 +29,7 @@ module.exports = {
   },
   remove: function(req, res) {
     db.Horse
-      .findById({ _uniqueName: req.params.uniqueName })
+      .findByUniqueName({ _uniqueName: req.params.uniqueName })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

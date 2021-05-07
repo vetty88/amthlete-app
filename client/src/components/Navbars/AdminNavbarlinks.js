@@ -19,7 +19,7 @@ import Search from "@material-ui/icons/Search";
 import CustomInput from "../Forms/CustomInput";
 import Button from "../Buttons/Button";
 
-import styles from "../../assets/jss/material-dashboard-react/components/headerLinksStyle.js";
+import styles from "../../assets/jss/material-dashboard-react/components/headerLinksStyle";
 
 const useStyles = makeStyles(styles);
 

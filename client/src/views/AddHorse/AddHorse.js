@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Horseonent } from "react";
+import React, { useState, useEffect, Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, Select, Input } from 'semantic-ui-react'
 // @material-ui/core components
@@ -22,13 +22,12 @@ import { TextInput, FormBtn } from "../../components/Forms/HorseForm";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 export default function Horses() {
-  interface State {
-  inputValue: string;
-}
+  // interface State { inputValue: string;}
 
   // Setting our component's initial state
-  const [horses, setHorses] = useState([])
-  const [formObject, setFormObject] = useState({})  
+  const [horses, setHorses] = useState([]);
+  const [formObject, setFormObject] = useState({}); 
+  
   const styles = {
     cardCategoryWhite: {
       color: "rgba(255,255,255,.62)",
@@ -54,7 +53,7 @@ export default function Horses() {
   // Load all horses and store them with setHorses
   useEffect(() => {
     loadHorses()
-  }, [])
+  }, []);
 
   // Loads all horses and sets them to horses
   function loadHorses() {
@@ -65,7 +64,7 @@ export default function Horses() {
       .catch(err => console.log(err));
   };
 
-  // Deletes a horse from the database with a given id, then reloads horses from the db
+  // Deletes a horse from the database with a given uniqueName, then reloads horses from the db
   function deleteHorse(uniqueName) {
     API.deleteHorse(uniqueName)
       .then(res => loadHorses())
@@ -75,7 +74,7 @@ export default function Horses() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject({...formObject, [name]: value});
   };
 
   // When the form is submitted, use the API.saveHorse method to save the horse data
@@ -105,7 +104,7 @@ export default function Horses() {
       <Card>
           <CardHeader color="primary">
             <GridItem xs={12} sm={12} md={12}>
-              <h4 className={classes.cardTitleWhite}>Add Horse</h4>
+              <h4 className={classes.cardTitleWhite}>Add/Delete Horse</h4>
               <p className={classes.cardCategoryWhite}>Add a New Horse! </p>
             </GridItem>
           </CardHeader>
@@ -144,11 +143,11 @@ export default function Horses() {
         {horses.length ? (
         <List>
           {horses.map(horse => (
-          <ListItem key={horse.uniqueName}>
-            <Link to={"/admin/horses"}>
+          <ListItem key={horse._uniqueName}>
+            <Link to={"/admin/horses/"}>
             <strong> {horse.uniqueName} </strong>
             </Link>
-            <DeleteBtn onClick={()=> deleteHorse(horse.uniqueName)} />
+            <DeleteBtn onClick={()=> deleteHorse(horse._uniqueName)} />
           </ListItem>
           ))}
         </List>

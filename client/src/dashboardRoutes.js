@@ -1,9 +1,5 @@
-// @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
 // core components/views for Admin layout
 import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
-
 import AddComp from "./views/AddComp/AddComp";
 import AddHorse from "./views/AddHorse/AddHorse";
 import TableList from "./views/TableList/TableList";
@@ -11,8 +7,11 @@ import CustomCompCharts from "./views/Charts/Charts";
 import CompDetail from "./views/CompDetail/CompDetail";
 import HorseDetail from "./views/HorseDetail/HorseDetail";
 
-const dashboardRoutes = [
+// @material-ui/icons
+import Dashboard from "@material-ui/icons/Dashboard";
+import Person from "@material-ui/icons/Person";
 
+const dashboardRoutes = [
 
   {
     path: "/adminDashboard",
@@ -24,16 +23,16 @@ const dashboardRoutes = [
   },
   {
     path: "/comp",
-    name: "Add Competition",
-    rtlName: "Add Competition",
+    name: "Add/Delete Competition",
+    rtlName: "Add/Delete Competition",
     icon: "add",
     component: AddComp,
     layout: "/admin"
   },
    {
     path: "/horse",
-    name: "Add Horse",
-    rtlName: "Add Horse",
+    name: "Add/Delete Horse",
+    rtlName: "Add/Delete Horse",
     icon: "add",
     component: AddHorse,
     layout: "/admin"

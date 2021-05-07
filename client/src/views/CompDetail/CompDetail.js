@@ -29,13 +29,13 @@ const useStyles = makeStyles(styles);
 function CompDetail(props) {
   const classes = useStyles();
 
-  const [competitions, setCompetitions] = useState([])
-  const [formObject, setFormObject] = useState({})  
+  const [competitions, setCompetitions] = useState([]);
+  const [formObject, setFormObject] = useState({});
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
     loadCompetitions()
-  }, [])
+  }, []);
 
   // Loads all competitions and sets them to competitions
   function loadCompetitions() {
@@ -48,7 +48,6 @@ function CompDetail(props) {
 
   return (
     <div>
-    
     {competitions.length ? (
         <GridContainer>
           {competitions.map(competition => (

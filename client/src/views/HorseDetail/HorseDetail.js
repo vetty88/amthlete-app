@@ -15,7 +15,7 @@ import Container from "@material-ui/core/Container";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
-import React, { useEffect, useState, Horseonent } from "react";
+import React, { useEffect, useState, Component } from "react";
 import ReactDOM from 'react-dom';
 import styles from "../../assets/jss/material-dashboard-react/views/rtlStyle.js";
 import Warning from "@material-ui/icons/Warning";
@@ -25,14 +25,14 @@ const useStyles = makeStyles(styles);
 function HorseDetail(props) {
   const classes = useStyles();
 
-  const [horses, setHorses] = useState([])
-  const [formObject, setFormObject] = useState({})  
+  const [horses, setHorses] = useState([]);
+  const [formObject, setFormObject] = useState({})  ;
 
   
   // Load all horses and store them with setHorses
   useEffect(() => {
     loadHorses()
-  }, [])
+  }, []);
 
   // Loads all horses and sets them to horses
   function loadHorses() {
@@ -45,11 +45,10 @@ function HorseDetail(props) {
 
   return (
   <div>
-    
     {horses.length ? (
       <GridContainer>
         {horses.map(horse => (
-          <GridItem xs={12} sm={6} md={3} key={horse.id}>
+          <GridItem xs={12} sm={6} md={3} key={horse.uniqueName}>
            <Card >
             <CardHeader color="warning">
               <FontAwesomeIcon color="warning" icon={faHorse} /> 

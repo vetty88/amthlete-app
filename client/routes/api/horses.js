@@ -9,8 +9,8 @@ router.route("/")
 // Matches with "/api/admin/horses/:uniqueName"
 router
   .route("/:uniqueName")
-  .get(horseController.findByUniqueName)
-  .put(horseController.update)
-  .delete(horseController.remove);
+  .get(competitionController.findByUniqueName)
+  .put(competitionController.update)
+  .delete(competitionController.remove);
 
 module.exports = router;

@@ -23,7 +23,12 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a href="/admin/comp" className={classes.block}>
-                Add a Comp
+                Add/Delete a Comp
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a href="/admin/horses" className={classes.block}>
+                Add/Delete a Horse
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>

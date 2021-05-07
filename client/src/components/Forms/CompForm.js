@@ -36,7 +36,7 @@ export function SelectEvents(props) {
 }
 
 export function SelectHorse(props) {
-  const [horses, setHorses] = useState([])
+  const [horses, setHorses] = useState([]);
 
    // Loads all horses and sets them to horses
   function loadHorses() {
@@ -50,7 +50,7 @@ export function SelectHorse(props) {
       // Load all horses and store them with setHorses
   useEffect(() => {
     loadHorses()
-  }, [])
+  }, []);
 
 
   return (

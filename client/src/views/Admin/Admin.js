@@ -6,23 +6,23 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import dashboardRoutes from "../../dashboardRoutes";
-import Sidebar from "../../components/Sidebar/Sidebar"
 import Navbar from "../../components/Navbars/Navbar.js";
+import Header from "../../components/Header/Header.js";
 import Footer from "../../components/Footer/Footer.js";
-import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle";
+import Sidebar from "../../components/Sidebar/Sidebar.js";
+import Dashboard from "../../components/Dashboard/Dashboard";
+// import FixedPlugin from "../../components/FixedPlugin/FixedPlugin.js";
+
+import dashboardRoutes from "../../dashboardRoutes.js";
+
+import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle.js";
+
 import bgImage from "../../assets/img/Jumping.jpg";
 import logo from "../../assets/img/reactlogo.png";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import props from "prop-types";
-import { logoutUser } from "../../actions/authActions";
-import Dashboard from "../../components/Dashboard/Dashboard";
-
 
 let ps;
 
-const switchDashboardRoutes = (
+const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
       if (prop.layout === "/admin") {
@@ -49,14 +49,15 @@ export default function Admin({ ...rest }) {
   const mainPanel = React.createRef();
   // states and functions
   const [image, setImage] = React.useState(bgImage);
+  const [color, setColor] = React.useState("blue");
   const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleImageClick = image => {
     setImage(image);
   };
-
-
-
+  const handleColorClick = color => {
+    setColor(color);
+  };
   const handleFixedClick = () => {
     if (fixedClasses === "dropdown") {
       setFixedClasses("dropdown show");
@@ -67,8 +68,8 @@ export default function Admin({ ...rest }) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const getDashboardRoute = () => {
-    return window.location.pathname !== "/admin/maps";
+  const getRoute = () => {
+    return window.location.pathname !== "/admin/dashboard";
   };
   const resizeFunction = () => {
     if (window.innerWidth >= 960) {
@@ -93,46 +94,178 @@ export default function Admin({ ...rest }) {
       window.removeEventListener("resize", resizeFunction);
     };
   }, [mainPanel]);
-
-  
-  // const AdminLogout = ({logoutUser}) => { 
-  //   var onLogoutClick = e => {
-  //   e.preventDefault();
-  //   logoutUser();
-  // }
-  // }
-// var { user } = this.props.auth;
-
   return (
-    <div>
+    <div className={classes.wrapper}>
+    {/* <Header/> */}
       <Sidebar
         dashboardRoutes={dashboardRoutes}
-        logoText={"REACT EQUESTRIAN"}
+        logoText={"Equestrian Comps"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
-
+        color={color}
         {...rest}
       />
-      <Dashboard/>
       <div className={classes.mainPanel} ref={mainPanel}>
         <Navbar
           dashboardRoutes={dashboardRoutes}
           handleDrawerToggle={handleDrawerToggle}
           {...rest}
         />
-          {getDashboardRoute() ? (
+        {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
+        {getRoute() ? (
           <div className={classes.content}>
-            <div className={classes.container}>{switchDashboardRoutes}</div>
+            <div className={classes.container}>{switchRoutes}</div>
           </div>
         ) : (
-          <div className={classes.map}>{switchDashboardRoutes}</div>
+          <div className={classes.map}>{switchRoutes}</div>
         )}
-        {getDashboardRoute() ? <Footer /> : null}
-    
-
+        {getRoute() ? <Footer /> : null}
+        <Dashboard/>
       </div>
+      
     </div>
   );
 }
+
+// import React from "react";
+// import { Switch, Route, Redirect } from "react-router-dom";
+// // creates a beautiful scrollbar
+// import PerfectScrollbar from "perfect-scrollbar";
+// import "perfect-scrollbar/css/perfect-scrollbar.css";
+// // @material-ui/core components
+// import { makeStyles } from "@material-ui/core/styles";
+// // core components
+// import dashboardRoutes from "../../dashboardRoutes";
+// import Sidebar from "../../components/Sidebar/Sidebar"
+// import Navbar from "../../components/Navbars/Navbar.js";
+// import Footer from "../../components/Footer/Footer.js";
+// import styles from "../../assets/jss/material-dashboard-react/layouts/adminStyle";
+// import bgImage from "../../assets/img/Jumping.jpg";
+// import logo from "../../assets/img/reactlogo.png";
+// import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import props from "prop-types";
+// import { logoutUser } from "../../actions/authActions";
+
+
+
+// let ps;
+
+// const switchDashboardRoutes = (
+//   <Switch>
+//     {dashboardRoutes.map((prop, key) => {
+//       if (prop.layout === "/admin") {
+//         return (
+//           <Route
+//             path={prop.layout + prop.path}
+//             component={prop.component}
+//             key={key}
+//           />
+//         );
+//       }
+//       return null;
+//     })}
+//     <Redirect from="/admin" to="/admin/dashboard" />
+//   </Switch>
+// );
+
+// const useStyles = makeStyles(styles);
+
+// export default function Admin({ ...rest }) {
+//   // styles
+//   const classes = useStyles();
+//   // ref to help us initialize PerfectScrollbar on windows devices
+//   const mainPanel = React.createRef();
+//   // states and functions
+//   const [image, setImage] = React.useState(bgImage);
+//   const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
+//   const [mobileOpen, setMobileOpen] = React.useState(false);
+//   const handleImageClick = image => {
+//     setImage(image);
+//   };
+
+
+
+//   const handleFixedClick = () => {
+//     if (fixedClasses === "dropdown") {
+//       setFixedClasses("dropdown show");
+//     } else {
+//       setFixedClasses("dropdown");
+//     }
+//   };
+//   const handleDrawerToggle = () => {
+//     setMobileOpen(!mobileOpen);
+//   };
+//   const getDashboardRoute = () => {
+//     return window.location.pathname !== "/admin/maps";
+//   };
+//   const resizeFunction = () => {
+//     if (window.innerWidth >= 960) {
+//       setMobileOpen(false);
+//     }
+//   };
+//   // initialize and destroy the PerfectScrollbar plugin
+//   React.useEffect(() => {
+//     if (navigator.platform.indexOf("Win") > -1) {
+//       ps = new PerfectScrollbar(mainPanel.current, {
+//         suppressScrollX: true,
+//         suppressScrollY: false
+//       });
+//       document.body.style.overflow = "hidden";
+//     }
+//     window.addEventListener("resize", resizeFunction);
+//     // Specify how to clean up after this effect:
+//     return function cleanup() {
+//       if (navigator.platform.indexOf("Win") > -1) {
+//         ps.destroy();
+//       }
+//       window.removeEventListener("resize", resizeFunction);
+//     };
+//   }, [mainPanel]);
+
+  
+//   // const AdminLogout = ({logoutUser}) => { 
+//   //   var onLogoutClick = e => {
+//   //   e.preventDefault();
+//   //   logoutUser();
+//   // }
+//   // }
+// // var { user } = this.props.auth;
+
+//   return (
+//     <div>
+//       <Sidebar
+//         dashboardRoutes={dashboardRoutes}
+//         logoText={"REACT EQUESTRIAN"}
+//         logo={logo}
+//         image={image}
+//         handleDrawerToggle={handleDrawerToggle}
+//         open={mobileOpen}
+
+//         {...rest}
+//       />
+      
+//       <div className={classes.mainPanel} ref={mainPanel}>
+      
+//         <Navbar
+//           dashboardRoutes={dashboardRoutes}
+//           handleDrawerToggle={handleDrawerToggle}
+//           {...rest}
+//         />
+        
+//           {getDashboardRoute() ? (
+//           <div className={classes.content}>
+//             <div className={classes.container}>{switchDashboardRoutes}</div>
+//           </div>
+//         ) : (
+//           <div className={classes.map}>{switchDashboardRoutes}</div>
+//         )}
+//         {getDashboardRoute() ?  <Footer /> : null}
+    
+
+//       </div>
+//     </div>
+//   );
+// }

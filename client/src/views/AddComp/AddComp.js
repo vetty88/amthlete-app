@@ -119,7 +119,7 @@ var thisDate = curr.toISOString().substr(0,10);
         <Card>
           <CardHeader color="primary">
             <GridItem xs={12} sm={12} md={12}>
-              <h4 className={classes.cardTitleWhite}>Add Competition</h4>
+              <h4 className={classes.cardTitleWhite}>Add/Delete Competition</h4>
               <p className={classes.cardCategoryWhite}>Add a New Comp! </p>
             </GridItem>
           </CardHeader>
