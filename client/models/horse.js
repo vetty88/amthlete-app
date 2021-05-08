@@ -8,6 +8,7 @@ const horseSchema = new Schema({
   breed: { type: String, required: true },
   height: { type: String, required: true },
   colour: { type: String, required: true },
+  createdBy: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
 });
 
 const Horse = mongoose.model("Horse", horseSchema);
