@@ -49,7 +49,6 @@ export default function Horses() {
   
   const useStyles = makeStyles(styles);
   
-
   // Load all horses and store them with setHorses
   useEffect(() => {
     loadHorses()
@@ -88,6 +87,7 @@ export default function Horses() {
         height: formObject.height,
         breed: formObject.breed,
         colour: formObject.colour,
+        createdBy: formObject.createdBy,
       })
         .then(res => loadHorses())
         .catch(err => console.log(err));
@@ -95,11 +95,14 @@ export default function Horses() {
   };
   const classes = useStyles();
 
+  const loggedInUser = localStorage.getItem('loggedIn')
+
   return (
   <div>
     <Row>
     <GridContainer>
     <Col size="md-12">
+    <h1> Welcome {loggedInUser}</h1>
       <form>
       <Card>
           <CardHeader color="primary">
@@ -124,6 +127,9 @@ export default function Horses() {
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Colour" id="colour" onChange={handleInputChange} name="colour" placeholder="Colour" />
+              </GridItem>
+               <GridItem xs={12} sm={12} md={6}>
+                <TextInput labelText="Creator" id="colour" value={loggedInUser} name="createdBy" placeholder="createdBy" />
               </GridItem>
             </GridContainer>
           </CardBody>

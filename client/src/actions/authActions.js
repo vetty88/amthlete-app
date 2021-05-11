@@ -33,6 +33,7 @@ export const loginUser = userData => dispatch => {
       setAuthToken(token);
       // Decode token to get user data
       const decoded = jwt_decode(token);
+      localStorage.setItem("loggedIn", decoded.name);
       // Set current user
       dispatch(setCurrentUser(decoded));
     })
@@ -44,6 +45,12 @@ export const loginUser = userData => dispatch => {
     );
 };
 
+// export function getAuthToken () {
+
+// const { decodedToken } = res.data;
+// localStorage.setItem("decodedToken", decodedToken)
+// }
+// getAuthToken();
 
 // Set logged in user
 export const setCurrentUser = decoded => {
