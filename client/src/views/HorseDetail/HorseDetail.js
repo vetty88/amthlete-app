@@ -48,17 +48,19 @@ function HorseDetail(props) {
     {horses.length ? (
       <GridContainer>
         {horses.map(horse => (
-          <GridItem xs={12} sm={6} md={3} key={horse.uniqueName}>
+          <GridItem xs={12} sm={6} md={3} key={horse.id}>
            <Card >
             <CardHeader color="warning">
               <FontAwesomeIcon color="warning" icon={faHorse} /> 
               <p className={classes.cardCategory}>Horse</p>
-              <h3 className={classes.cardTitle}>{horse.uniqueName}</h3>
+              <h3 className={classes.cardTitle}>{horse.id}</h3>
             </CardHeader>            
               <h4> <FontAwesomeIcon icon={faBaby} /> {horse.birthYear}</h4>
               <h4> <FontAwesomeIcon icon={faRuler} /> {horse.height}</h4>
               <h4> <FontAwesomeIcon icon={faHorseHead} /> {horse.breed}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.colour}</h4>
+              <h4> <FontAwesomeIcon icon={faPalette} /> {horse.createdBy}</h4>
+              <h4> <FontAwesomeIcon icon={faPalette} /> {horse.testing}</h4>
            </Card>
           </GridItem>
      ))}

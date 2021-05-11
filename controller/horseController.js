@@ -5,13 +5,12 @@ module.exports = {
   findAll: function(req, res) {
     db.Horse
       .find(req.query)
-      .sort({ id: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByUniqueName: function(req, res) {
+  findById: function(req, res) {
     db.Horse
-      .findByUniqueName(req.params.uniqueName)
+      .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -23,13 +22,13 @@ module.exports = {
   },
   update: function(req, res) {
     db.Horse
-      .findOneAndUpdate({ _uniqueName: req.params.uniqueName }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.Horse
-      .findByUniqueName({ _uniqueName: req.params.uniqueName })
+      .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

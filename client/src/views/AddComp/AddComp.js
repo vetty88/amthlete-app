@@ -1,9 +1,12 @@
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import {  Button, Select, Input } from 'semantic-ui-react'
-import {  Col,  Row } from "../../components/Grid/index";
-import {  Link  } from "react-router-dom";
-import {  List, ListItem  } from "../../components/List/List";
-import {  makeStyles } from "@material-ui/core/styles";
+// node modules
+import { Button, Select, Input } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
+import moment from "moment";
+import React, { useState, useEffect, } from "react";
+
+// core components
+import { Col, Row } from "../../components/Grid/index";
+import { List, ListItem } from "../../components/List/List";
 import {  TextInput,  DateSelector, SelectEvents, SelectHorse, SelectPlacing, TextArea, FormBtn   } from "../../components/Forms/CompForm";
 import API from "../../utils/API";
 import Card from "../../components/Card/Card.js";
@@ -13,21 +16,19 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import DeleteBtn from "../../components/Buttons/DeleteBtn";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-import moment from "moment";
-import React, { useState, useEffect } from "react";
+
+// @material-ui
+import { makeStyles } from "@material-ui/core/styles";
+
+// CSS
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 export default function Competitions() {
-  // interface State { inputValue: string; }
-
 
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([]);
   const [formObject, setFormObject] = useState({});
-  // date = moment.utc( date );
-
-  // (new Date("2000-02-14T00:00:00.000Z")).toString()
-
-  
+ 
   const styles = {
     cardCategoryWhite: {
       color: "rgba(255,255,255,.62)",
@@ -76,6 +77,8 @@ export default function Competitions() {
     setFormObject({ ...formObject,  [name]: value })
   };
 
+  // When the form is submitted, use the API.saveCompetition method to save the competition data
+  // Then reload competitions from the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.eventName && formObject.horse) {
@@ -94,21 +97,10 @@ export default function Competitions() {
   };
   const classes = useStyles();
 
-    // const [value, onChange] = useState(new Date());
-  
-    // const onDateChange=(newDate)=>{
-    //  //Your custom code here
-    //  props.handleOnclick(newDate);
-    //  onChange(newDate);
-    // };
+  var curr = new Date();
+  curr.setDate(curr.getDate()+1);
+  var thisDate = curr.toISOString().substr(0,10);
 
-    var curr = new Date();
-curr.setDate(curr.getDate()+1);
-var thisDate = curr.toISOString().substr(0,10);
-
-// curr.setDate(curr.getDate() + 3);
-// var thisDate = curr.toISOString().substr(0,10);
-  
 
   return (
   <div>

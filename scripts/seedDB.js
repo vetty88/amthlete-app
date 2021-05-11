@@ -144,6 +144,8 @@ const horseSeed = [
   breed: "Clydie x Australian Stock Horse",
   height: "15HH",
   colour: "Brown",
+  createdBy: "Yvette Waller",
+  testing: "testing1",
   },
    {
   uniqueName: "Tess",
@@ -151,6 +153,8 @@ const horseSeed = [
   breed: "Australian Stock Horse",
   height: "16HH",
   colour: "Bay",
+  createdBy: "Yvette Waller",
+  testing: "testing2",
   },
    {
   uniqueName: "Ardilla",
@@ -158,6 +162,8 @@ const horseSeed = [
   breed: "Andalusian x Clydiex",
   height: "15.1HH",
   colour: "Brown",
+  createdBy: "Yvette Waller",
+  testing: "testing3",
   },
 
   ];

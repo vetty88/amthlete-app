@@ -57,7 +57,7 @@ export function SelectHorse(props) {
     <div className="form-group">
       <select id="horseOptions" className="form-control" {...props}>
         {horses.map((horse) => (
-          <option key={horse.uniqueName} value={horse.uniqueName}>{horse.uniqueName}</option>
+          <option key={horse.id} value={horse.id}>{horse.id}</option>
       ))}
           </select>
         </div>

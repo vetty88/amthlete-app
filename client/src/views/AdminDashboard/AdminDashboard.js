@@ -148,8 +148,8 @@ const useStyles = makeStyles(styles);
       .catch(err => console.log(err));
   };
 
-  function getHorse(uniqueName) {
-    API.getHorse(uniqueName)
+  function getHorse(id) {
+    API.getHorse(id)
     .then(res => 
       setHorse(res.data)
     )
@@ -195,8 +195,8 @@ const useStyles = makeStyles(styles);
           {horses.length ? (
               <List>
             {horses.map(horse => (
-                  <ListItem key={horse.uniqueName}>
-                          {horse.uniqueName}
+                  <ListItem key={horse.id}>
+                          {horse.id}
                   </ListItem>
                 ))}
               </List>

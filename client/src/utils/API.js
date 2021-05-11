@@ -7,7 +7,7 @@ export default {
   },
   // Gets the competition with the given id
   getCompetition: function(id) {
-    return axios.get("/api/competitions" + id);
+    return axios.get("/api/competitions/" + id);
   },
   // Deletes the competition with the given id
   deleteCompetition: function(id) {
@@ -22,12 +22,12 @@ export default {
     return axios.get("/api/horses");
   },
   // Gets the horse with the unique name
-  getHorse: function(uniqueName) {
-    return axios.get("/api/horses" + uniqueName);
+  getHorse: function(id) {
+    return axios.get("/api/horses/" + id);
   },
   // Deletes the horse with the given name
-  deleteHorse: function(uniqueName) {
-    return axios.delete("/api/horses/" + uniqueName);
+  deleteHorse: function(id) {
+    return axios.delete("/api/horses/" + id);
   },
   // Saves a horse to the database
   saveHorse: function(horseData) {
@@ -39,7 +39,7 @@ export default {
   },
   // Gets the user with the email
   getUser: function(email) {
-    return axios.get("/api/users" + email);
+    return axios.get("/api/users/" + email);
   },
   // Deletes the user with the email
   deleteUser: function(email) {

@@ -13,6 +13,7 @@ const competitionSchema = new Schema({
   placing: { type: Number, required: true },
   penalties: { type: Number, required: true },
   resultNotes: {type: String},
+  createdBy: { type: String },
 });
 
 const Competition = mongoose.model("Competition", competitionSchema);

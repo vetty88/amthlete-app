@@ -1,28 +1,29 @@
-import React, { useState, useEffect, Component } from "react";
-import { Link } from "react-router-dom";
+// node modules
 import { Button, Select, Input } from 'semantic-ui-react'
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
+import React, { useState, useEffect, } from "react";
 
 // core components
-import GridItem from "../../components/Grid/GridItem.js";
-import GridContainer from "../../components/Grid/GridContainer.js";
+import { Col, Row } from "../../components/Grid/index";
+import { List, ListItem } from "../../components/List/List";
+import { TextInput, FormBtn } from "../../components/Forms/HorseForm";
+import API from "../../utils/API";
 import Card from "../../components/Card/Card.js";
-import CardHeader from "../../components/Card/CardHeader.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
+import CardHeader from "../../components/Card/CardHeader.js";
 import DeleteBtn from "../../components/Buttons/DeleteBtn";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
 
-import API from "../../utils/API";
 
-// import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List/List";
-import { Col, Row } from "../../components/Grid/index";
-import { TextInput, FormBtn } from "../../components/Forms/HorseForm";
+// @material-ui
+import { makeStyles } from "@material-ui/core/styles";
+
+// CSS
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 
 export default function Horses() {
-  // interface State { inputValue: string;}
 
   // Setting our component's initial state
   const [horses, setHorses] = useState([]);
@@ -64,8 +65,8 @@ export default function Horses() {
   };
 
   // Deletes a horse from the database with a given uniqueName, then reloads horses from the db
-  function deleteHorse(uniqueName) {
-    API.deleteHorse(uniqueName)
+  function deleteHorse(id) {
+    API.deleteHorse(id)
       .then(res => loadHorses())
       .catch(err => console.log(err));
   }
@@ -76,6 +77,8 @@ export default function Horses() {
     setFormObject({...formObject, [name]: value});
   };
 
+   const loggedInUser = localStorage.getItem('loggedIn')
+
   // When the form is submitted, use the API.saveHorse method to save the horse data
   // Then reload horses from the database
   function handleFormSubmit(event) {
@@ -84,10 +87,11 @@ export default function Horses() {
       API.saveHorse({
         uniqueName: formObject.uniqueName,
         birthYear: formObject.birthYear,
-        height: formObject.height,
         breed: formObject.breed,
+        height: formObject.height,
         colour: formObject.colour,
-        createdBy: formObject.createdBy,
+        createdBy: new Object (loggedInUser),
+        testing: formObject.testing,
       })
         .then(res => loadHorses())
         .catch(err => console.log(err));
@@ -95,14 +99,12 @@ export default function Horses() {
   };
   const classes = useStyles();
 
-  const loggedInUser = localStorage.getItem('loggedIn')
-
   return (
   <div>
     <Row>
     <GridContainer>
     <Col size="md-12">
-    <h1> Welcome {loggedInUser}</h1>
+    {/* <h1> Welcome {loggedInUser}</h1> */}
       <form>
       <Card>
           <CardHeader color="primary">
@@ -119,18 +121,22 @@ export default function Horses() {
               <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Horse's birth year (est)" id="birth-year" onChange={handleInputChange} name="birthYear" placeholder="BirthYear (required)" />
               </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
+                <TextInput labelText="Breed" id="breed" onChange={handleInputChange} name="breed" placeholder="Breed (required)" />
+              </GridItem>
 			        <GridItem xs={12} sm={12} md={6}>
               <TextInput labelText="Height (HH)" id="height" onChange={handleInputChange} name="height" placeholder="Height (required)" />
               </GridItem>
               <GridItem xs={12} sm={12} md={6}>
-                <TextInput labelText="Breed" id="breed" onChange={handleInputChange} name="breed" placeholder="Breed (required)" />
-              </GridItem>
-              <GridItem xs={12} sm={12} md={6}>
                 <TextInput labelText="Colour" id="colour" onChange={handleInputChange} name="colour" placeholder="Colour" />
               </GridItem>
-               <GridItem xs={12} sm={12} md={6}>
-                <TextInput labelText="Creator" id="colour" value={loggedInUser} name="createdBy" placeholder="createdBy" />
+              {/* <GridItem xs={12} sm={12} md={6}>
+                <TextInput labelText="Testing" id="testing" onChange={handleInputChange} name="testing" placeholder="Testing" />
+              </GridItem> */}
+              <GridItem xs={12} sm={12} md={6}>
+                <TextInput labelText="Testing" id="testing" onChange={handleInputChange} name="testing" placeholder="Testing" />
               </GridItem>
+  
             </GridContainer>
           </CardBody>
           <CardFooter>
@@ -142,29 +148,28 @@ export default function Horses() {
       </form>
     </Col>
 
+    <Col size="md-12">
+    <GridItem xs={12} sm={12} md={12}>
+    <h3>Horses</h3>
+      {horses.length ? (
+      <List>
+        {horses.map(horse => (
+        <ListItem key={horse._id}>
+          <Link to={"/admin/horses/"}>
+          <strong> {horse.uniqueName} ({horse.createdBy}) </strong>
+          </Link>
+          <DeleteBtn onClick={()=> deleteHorse(horse._id)} />
+        </ListItem>
+        ))}
+      </List>
+      ) : (
+      <h3>No Results to Display</h3>
+      )}
+    </GridItem>
 
-      <Col size="md-12">
-      <GridItem xs={12} sm={12} md={12}>
-      <h3>Horses</h3>
-        {horses.length ? (
-        <List>
-          {horses.map(horse => (
-          <ListItem key={horse._uniqueName}>
-            <Link to={"/admin/horses/"}>
-            <strong> {horse.uniqueName} </strong>
-            </Link>
-            <DeleteBtn onClick={()=> deleteHorse(horse._uniqueName)} />
-          </ListItem>
-          ))}
-        </List>
-        ) : (
-        <h3>No Results to Display</h3>
-        )}
-      </GridItem>
-
-    </Col>
-    </GridContainer>
-    </Row>
+  </Col>
+  </GridContainer>
+  </Row>
   </div>
 );
 }

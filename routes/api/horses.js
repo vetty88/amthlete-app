@@ -6,10 +6,10 @@ router.route("/")
   .get(horseController.findAll)
   .post(horseController.create);
 
-// Matches with "/api/admin/horses/:uniqueName"
+// Matches with "/api/admin/horses/:id"
 router
-  .route("/:uniqueName")
-  .get(horseController.findByUniqueName)
+  .route("/:id")
+  .get(horseController.findById)
   .put(horseController.update)
   .delete(horseController.remove);
 
