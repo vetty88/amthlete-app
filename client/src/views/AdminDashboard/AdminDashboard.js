@@ -196,7 +196,7 @@ const useStyles = makeStyles(styles);
               <List>
             {horses.map(horse => (
                   <ListItem key={horse.id}>
-                          {horse.id}
+                          {horse.uniqueName}
                   </ListItem>
                 ))}
               </List>

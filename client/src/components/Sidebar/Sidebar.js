@@ -28,25 +28,18 @@ export default function Sidebar(props) {
   var links = (
     <List className={classes.list}>
       {dashboardRoutes.map((prop, key) => {
-        var activePro = " ";
         var listItemClasses;
-        if (prop.path === "/upgrade-to-pro") {
-          activePro = classes.activePro + " ";
-          listItemClasses = classNames({
-            [" " + classes[color]]: true
-          });
-        } else {
           listItemClasses = classNames({
             [" " + classes[color]]: activeDashboardRoute(prop.layout + prop.path)
           });
-        }
+        
         const whiteFontClasses = classNames({
           [" " + classes.whiteFont]: activeDashboardRoute(prop.layout + prop.path)
         });
         return (
           <NavLink
             to={prop.layout + prop.path}
-            className={activePro + classes.item}
+            className={classes.item}
             activeClassName="active"
             key={key}
           >
@@ -90,7 +83,8 @@ export default function Sidebar(props) {
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
-        {logoText}
+        <h4
+        style={{ color: "white" }}> {logoText} </h4>
       </a>
     </div>
   );
