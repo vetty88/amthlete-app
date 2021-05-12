@@ -9,8 +9,8 @@ router.route("/")
 // Matches with "/api/admin/horses/:id"
 router
   .route("/:id")
-  .get(competitionController.findById)
-  .put(competitionController.update)
-  .delete(competitionController.remove);
+  .get(horseController.findById)
+  .put(horseController.update)
+  .delete(horseController.remove);
 
 module.exports = router;
