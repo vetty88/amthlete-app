@@ -10,11 +10,9 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-    findByUser: function(req, res) {
+    findById: function(req, res) {
     db.Competition
-      .find({ _id: userId})
-      // .populate("createdBy","_id name")
-      // .populate("competitions.createdBy","_id name")
+      .findById(req.params.author)
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

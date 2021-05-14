@@ -8,7 +8,7 @@ const horseSchema = new Schema({
   breed: { type: String, required: true },
   height: { type: String, required: true },
   colour: { type: String, required: true },
-  createdBy: { type: String, required: true },
+  author: { type: String, required: true },
   testing: { type: String },
 });
 

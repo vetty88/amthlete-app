@@ -16,7 +16,7 @@ router
 
 router
   .route("competitions/:user")
-  .get(competitionController.findByUser)
+  .get(competitionController.findById)
   .put(competitionController.update)
   .delete(competitionController.remove);
 

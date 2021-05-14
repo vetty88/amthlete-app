@@ -51,6 +51,20 @@ const classes = useStyles();
       .catch(err => console.log(err));
   };
 
+// router.get('/users/:id',(req,res) => {
+//      User.findById(req.params.id).populate('competitions').exec((err,foundUser)=>{
+//         if (err) {
+//             req.flash('error_msg',"Something went wrong");
+//             res.redirect('/');
+//         } else {
+//             Competition.find({'author.id':foundUser.id},(err,foundUser_competitions)=>{
+//                 res.render('users/show', {userProfile:foundUser, userCompetitions:foundUser_competitions});
+//             });
+//         }
+
+//     });
+// });
+
     let competitionsContent;
 
     if (loading) {

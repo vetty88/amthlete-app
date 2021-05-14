@@ -59,7 +59,7 @@ function HorseDetail(props) {
               <h4> <FontAwesomeIcon icon={faRuler} /> {horse.height}</h4>
               <h4> <FontAwesomeIcon icon={faHorseHead} /> {horse.breed}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.colour}</h4>
-              <h4> <FontAwesomeIcon icon={faPalette} /> {horse.createdBy}</h4>
+              <h4> <FontAwesomeIcon icon={faPalette} /> {horse.author}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.testing}</h4>
            </Card>
           </GridItem>

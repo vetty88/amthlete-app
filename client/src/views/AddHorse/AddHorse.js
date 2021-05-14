@@ -90,7 +90,7 @@ export default function Horses() {
         breed: formObject.breed,
         height: formObject.height,
         colour: formObject.colour,
-        createdBy: new Object (loggedInUser),
+        author: new Object (loggedInUser),
         testing: formObject.testing,
       })
         .then(res => loadHorses())
@@ -156,7 +156,7 @@ export default function Horses() {
         {horses.map(horse => (
         <ListItem key={horse._id}>
           <Link to={"/admin/horses/"}>
-          <strong> {horse.uniqueName} ({horse.createdBy}) </strong>
+          <strong> {horse.uniqueName} ({horse.author}) </strong>
           </Link>
           <DeleteBtn onClick={()=> deleteHorse(horse._id)} />
         </ListItem>

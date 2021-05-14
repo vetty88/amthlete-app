@@ -19,7 +19,7 @@ const competitionSeed = [
   images: "",
   resultNotes: "Dressage penalties 35.17, %64.85, 5th placing",
   date: new Date("2019-03-30T06:01:17.171Z"),
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   },
   {
   eventName: "TTT HT Greenvale",
@@ -30,7 +30,7 @@ const competitionSeed = [
   images: "",
   resultNotes: "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th placing",
   date: new Date("2019-05-05T06:01:17.171Z"),
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   },
   {
   eventName: "Rosedale Horse Trials (HRCAV)",
@@ -42,7 +42,7 @@ const competitionSeed = [
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th placing",
   date: new Date("2019-10-20T06:01:17.171Z"),
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   },
   {
   eventName: "Rosedale Horse Trials (PC)",
@@ -54,7 +54,7 @@ const competitionSeed = [
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
   date: new Date("2019-10-13T06:01:17.171Z"),
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   },
   
   {
@@ -67,7 +67,7 @@ const competitionSeed = [
   resultNotes:
   "Champion partbred (led) Filly",
   date: new Date("2020-08-01T06:01:17.171Z"),
-  createdBy: "Travis Hammond",
+  author: "Travis Hammond",
   },
 
 ];
@@ -91,7 +91,7 @@ const horseSeed = [
   breed: "Clydie x Australian Stock Horse",
   height: "15HH",
   colour: "Brown",
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   testing: "testing1",
   },
    {
@@ -100,7 +100,7 @@ const horseSeed = [
   breed: "Australian Stock Horse",
   height: "16HH",
   colour: "Bay",
-  createdBy: "Yvette Waller",
+  author: "Yvette Waller",
   testing: "testing2",
   },
    {
@@ -109,7 +109,7 @@ const horseSeed = [
   breed: "Andalusian x Clydiex",
   height: "15.1HH",
   colour: "Brown",
-  createdBy: "Travis Hammond",
+  author: "Travis Hammond",
   testing: "testing3",
   },
 
