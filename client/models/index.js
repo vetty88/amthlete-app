@@ -1,5 +1,5 @@
 module.exports = {
   Competition: require("./competition"),
   Horse: require("./horse"),
-  User: require("./User")
+  User: require("./user")
 };

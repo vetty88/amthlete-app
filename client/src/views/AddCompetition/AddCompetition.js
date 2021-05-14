@@ -124,7 +124,7 @@ export default function Competitions() {
              
               <GridItem xs={12} sm={12} md={6}>
               Event Date
-                <DateSelector label="Competition Date" id="comp-date" type="date" defaultValue={thisDate} onClick={handleInputChange}   name="date" placeholder="Comp Date" />
+                <DateSelector label="Competition Date" id="comp-date" type="date" defaultValue={thisDate} onClick={handleInputChange}   name="date" placeholder="Competition Date" />
                 
               </GridItem>
 

@@ -6,7 +6,7 @@ $gte : new Date(dateString)
 // This file empties the Competitions collection and inserts the competitions below
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/equestriancompsdb"
+  "mongodb://localhost/equestriancompetitionsdb"
 );
 
 const competitionSeed = [
@@ -18,7 +18,8 @@ const competitionSeed = [
   placing: 5,
   images: "",
   resultNotes: "Dressage penalties 35.17, %64.85, 5th placing",
-  date: new Date("2019-03-30T06:01:17.171Z")
+  date: new Date("2019-03-30T06:01:17.171Z"),
+  createdBy: "Yvette Waller",
   },
   {
   eventName: "TTT HT Greenvale",
@@ -28,7 +29,8 @@ const competitionSeed = [
   placing: 5,
   images: "",
   resultNotes: "Dressage penalties 46, %54, SJ penalties: 0, XC Penalties: 0, 5th placing",
-  date: new Date("2019-05-05T06:01:17.171Z")
+  date: new Date("2019-05-05T06:01:17.171Z"),
+  createdBy: "Yvette Waller",
   },
   {
   eventName: "Rosedale Horse Trials (HRCAV)",
@@ -39,7 +41,8 @@ const competitionSeed = [
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 4, XC Penalties: 20, 6th placing",
-  date: new Date("2019-10-20T06:01:17.171Z")
+  date: new Date("2019-10-20T06:01:17.171Z"),
+  createdBy: "Yvette Waller",
   },
   {
   eventName: "Rosedale Horse Trials (PC)",
@@ -50,51 +53,10 @@ const competitionSeed = [
   images: "",
   resultNotes:
   "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
-  date: new Date("2019-10-13T06:01:17.171Z")
+  date: new Date("2019-10-13T06:01:17.171Z"),
+  createdBy: "Yvette Waller",
   },
-  {
-  eventName: "Stony Creek Show Jumping",
-  eventType: "Show Jumping",
-  horse: "Squirrel",
-  penalties: 100,
-  placing: 6,
-  resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: N/A, XC Penalties: N/A, 6th placing",
-  date: new Date("2019-12-08T06:01:17.171Z")
-  },
-  {
-  eventName: "Nicholson Dressage Jackpot 4.3",
-  eventType: "Dressage",
-  horse: "Squirrel",
-  penalties: 35,
-  placing: 0,
-  images: "",
-  resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, 0 placing",
-  date: new Date("2020-02-02T06:01:17.171Z")
-  },
-  {
-  eventName: "Nicholson Dressage Jackpot 4.4",
-  eventType: "Dressage",
-  horse: "Squirrel",
-  penalties: 35,
-  placing: 0,
-  images: "",
-  resultNotes:
-  "Dressage penalties 36, %64, SJ Penalties: N/A, XC Penalties: N/A, 0 placing",
-  date: new Date("2020-02-02T06:01:17.171Z")
-  },
-  {
-  eventName: "Orbost Horse Trials (PC)",
-  eventType: "Horse Trials",
-  horse: "Squirrel",
-  penalties: 39,
-  placing: 5,
-  images: "",
-  resultNotes:
-  "Dressage penalties N/A, %N/A, SJ Penalties: 28, XC Penalties: 0, 2nd placing",
-  date: new Date("2020-03-10T06:01:17.171Z")
-  },
+  
   {
   eventName: "AHAA Virtual Show",
   eventType: "Showing",
@@ -104,18 +66,8 @@ const competitionSeed = [
   images: "",
   resultNotes:
   "Champion partbred (led) Filly",
-  date: new Date("2020-08-01T06:01:17.171Z")
-  },
-  {
-  eventName: "Eagle Point Riding Club Show (HRCAV)",
-  eventType: "Showing",
-  horse: "Squirrel",
-  penalties: 0,
-  placing: 1,
-  images: "",
-  resultNotes:
-  "Champion Mount Most Suitable",
-  date: new Date("2020-11-05T06:01:17.171Z")
+  date: new Date("2020-08-01T06:01:17.171Z"),
+  createdBy: "Travis Hammond",
   },
 
 ];
@@ -131,11 +83,6 @@ process.exit(0);
 console.error(err);
 process.exit(1);
 });
-
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/equestriancompsdb"
-);
 
 const horseSeed = [
   {
@@ -162,7 +109,7 @@ const horseSeed = [
   breed: "Andalusian x Clydiex",
   height: "15.1HH",
   colour: "Brown",
-  createdBy: "Yvette Waller",
+  createdBy: "Travis Hammond",
   testing: "testing3",
   },
 

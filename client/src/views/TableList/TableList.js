@@ -99,9 +99,9 @@ export default function TableList() {
     }
   };
 
-  function displayCompsTable (competitions) {
+  function displayCompetitionsTable (competitions) {
       if (!competitions.length) return null; {
-      API.displayCompsTable()
+      API.displayCompetitionsTable()
       {return competitions.map((competition) => (
       <div key={competition._id} className="comp-post__display">
         <h3>{competition.eventName}</h3>

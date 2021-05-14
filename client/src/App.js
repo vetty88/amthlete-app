@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import Admin from "./views/Admin/Admin";
 import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
-import CompDetail from "./views/CompDetail/CompDetail";
+import CompetitionDetail from "./views/CompetitionDetail/CompetitionDetail";
 import Dashboard from "./components/Dashboard/Dashboard";
 import HorseDetail from "./views/HorseDetail/HorseDetail";
 import Landing from "./components/layout/Landing";

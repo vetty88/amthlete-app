@@ -124,7 +124,7 @@ export default Landing;
 
 //     // Post request to backend
 //     fetch('/api/account/register', {
-//       method: 'POST',
+//       method: 'COMP',
 //       headers: {
 //         'Content-Type': 'application/json'
 //       },
@@ -164,7 +164,7 @@ export default Landing;
 
 //     // Post request to backend
 //     fetch('/api/account/login', {
-//       method: 'POST',
+//       method: 'COMP',
 //       headers: {
 //         'Content-Type': 'application/json'
 //       },

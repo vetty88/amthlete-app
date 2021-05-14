@@ -1,61 +1,3 @@
-// import React, { Component } from "react";
-// import PropTypes from "prop-types";
-// import { connect } from "react-redux";
-// import { logoutUser } from "../../actions/authActions";
-
-// class Dashboard extends Component {
-//   onLogoutClick = e => {
-//     e.preventDefault();
-//     this.props.logoutUser();
-//   };
-
-//   render() {
-//     const { user } = this.props.auth;
-
-//     return (
-//       <div style={{ height: "75vh" }} className="container valign-wrapper">
-//         <div className="row">
-//           <div className="landing-copy col s12 center-align">
-//             <h4>
-//               <b>Hey there,</b> {user.name.split(" ")[0]}
-//               <p className="flow-text grey-text text-darken-1">
-//                 You are logged into a full-stack{" "}
-//                 <span style={{ fontFamily: "monospace" }}>EQUESTRIAN COMP</span> app 👏
-//               </p>
-//             </h4>
-//             <button
-//               style={{
-//                 width: "150px",
-//                 borderRadius: "3px",
-//                 letterSpacing: "1.5px",
-//                 marginTop: "1rem"
-//               }}
-//               onClick={this.onLogoutClick}
-//               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-//             >
-//               Logout
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// Dashboard.propTypes = {
-//   logoutUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired
-// };
-
-// const mapStateToProps = state => ({
-//   auth: state.auth
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   { logoutUser }
-// )(Dashboard);
-
 import { Col, Row, Container } from "../../components/Grid/";
 import { connect } from "react-redux";
 import { faHorseHead } from '@fortawesome/free-solid-svg-icons'
@@ -90,13 +32,15 @@ import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import Moment from "react-moment";
 import PropTypes from "prop-types";
-import React, {useEffect, useState, Component} from "react";
+import React, {useEffect, useState, Component, useContext} from "react";
 import ReactDOM from 'react-dom';
 import Store from "@material-ui/icons/Store";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import Table from "../../components/Table/Table.js";
 import Update from "@material-ui/icons/Update";
 import Warning from "@material-ui/icons/Warning";
+import {UserContext} from '../../App'
+  
 
 const useStyles = makeStyles(styles);
 
@@ -105,6 +49,7 @@ const useStyles = makeStyles(styles);
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
   const [competition, setCompetition] = useState([])
+  const [myCompetitions, setMyCompetitions] = useState([])
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -128,6 +73,16 @@ const useStyles = makeStyles(styles);
     )
     .catch(err => console.log(err));
 };
+
+  // Loads all competitions and sets them to competitions
+  function loadMyCompetitions(user) {
+    API.getCompetitions(user)
+      .then(res => 
+        setMyCompetitions(res.data)
+      )
+      .catch(err => console.log(err));
+  };
+
 
 // Setting our component's initial state
   const [horses, setHorses] = useState([])
@@ -156,9 +111,11 @@ const useStyles = makeStyles(styles);
     .catch(err => console.log(err));
 };
 
+
     return (
       <div>
         <GridContainer>
+        {/* <h6>{myCompetitions.length} my competitions</h6> */} 
 
       <GridItem xs={12} sm={6} md={4}>
           <Card>
@@ -166,7 +123,7 @@ const useStyles = makeStyles(styles);
               <CardIcon color="warning">
                 <FontAwesomeIcon icon={faStar} />
               </CardIcon>
-              <p className={classes.cardCategory}>Total Comps</p>
+              <p className={classes.cardCategory}>Total Competitions</p>
               <h3 className={classes.cardTitle}>
               {competitions.length} <small>competitions</small>
               </h3>

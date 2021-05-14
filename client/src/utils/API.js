@@ -1,9 +1,16 @@
 import axios from "axios";
 
+  const loggedInUser = localStorage.getItem('loggedIn')
+
 export default {
   // Gets all competitions
   getCompetitions: function() {
     return axios.get("/api/competitions");
+  },
+
+    // Gets all competitions
+  getUsersCompetitions: function() {
+    return axios.get("/api/" + loggedInUser + "/competitions" );
   },
   // Gets the competition with the given id
   getCompetition: function(id) {

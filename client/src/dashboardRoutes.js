@@ -1,10 +1,11 @@
 // core components/views for Admin layout
 import AdminDashboard from "./views/AdminDashboard/AdminDashboard";
-import AddComp from "./views/AddComp/AddComp";
+import AddCompetition from "./views/AddCompetition/AddCompetition";
 import AddHorse from "./views/AddHorse/AddHorse";
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
-import CompDetail from "./views/CompDetail/CompDetail";
+import CompetitionDetail from "./views/CompetitionDetail/CompetitionDetail";
+import UserCompetitionDetail from "./views/UserCompetitionDetail/UserCompetitionDetail";
 import HorseDetail from "./views/HorseDetail/HorseDetail";
 
 // @material-ui/icons
@@ -26,7 +27,7 @@ const dashboardRoutes = [
     name: "Add/Delete Competition",
     rtlName: "Add/Delete Competition",
     icon: "add",
-    component: AddComp,
+    component: AddCompetition,
     layout: "/admin"
   },
    {
@@ -53,14 +54,14 @@ const dashboardRoutes = [
     component: CustomCompCharts,
     layout: "/admin"
   },
-    {
-    path: "/competitions",
-    name: "Competition Details",
-    rtlName: "Competition Details",
-    icon: "class",
-    component: CompDetail,
-    layout: "/admin"
-  },
+  //   {
+  //   path: "/competitions",
+  //   name: "Competition Details",
+  //   rtlName: "Competition Details",
+  //   icon: "class",
+  //   component: CompetitionDetail,
+  //   layout: "/admin"
+  // },
       {
     path: "/horses",
     name: "Horse Details",
@@ -69,6 +70,15 @@ const dashboardRoutes = [
     component: HorseDetail,
     layout: "/admin"
   },
+  {
+  path: "/competitions/:userId",
+  name: "User Competitions",
+  rtlName: "User Competitions",
+  icon: "content_paste",
+  component: UserCompetitionDetail,
+  layout: "/admin"
+  },
 ];
+
 
 export default dashboardRoutes;

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const competitionController = require("../../controller/competitionController");
+// const userID = req.user.id
 
 // Matches with "/api/admin/competitions"
 router.route("/")
@@ -12,5 +13,12 @@ router
   .get(competitionController.findById)
   .put(competitionController.update)
   .delete(competitionController.remove);
+
+router
+  .route("competitions/:user")
+  .get(competitionController.findByUser)
+  .put(competitionController.update)
+  .delete(competitionController.remove);
+
 
 module.exports = router;

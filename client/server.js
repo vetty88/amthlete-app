@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/equestriancompsdb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/equestriancompetitionsdb");
 // mongoose
 //   .connect(
 //     db,

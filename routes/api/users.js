@@ -10,9 +10,9 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
+const User = require("../../models/user");
 
-// @route POST api/users/register
+// @route COMPETITION api/users/register
 // @desc Register user
 // @access Public
 router.post("/register", (req, res) => {
@@ -50,7 +50,7 @@ router.post("/register", (req, res) => {
   });
 });
 
-// @route POST api/users/login
+// @route COMPETITION api/users/login
 // @desc Login user and return JWT token
 // @access Public
 router.post("/login", (req, res) => {

@@ -26,7 +26,7 @@ import Warning from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(styles);
 
-function CompDetail(props) {
+function CompetitionDetail(props) {
   const classes = useStyles();
 
   const [competitions, setCompetitions] = useState([]);
@@ -76,4 +76,4 @@ function CompDetail(props) {
   );
 }
 
-export default CompDetail;
+export default CompetitionDetail;

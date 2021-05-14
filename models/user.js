@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema
-const UserSchema = new Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -21,4 +21,11 @@ const UserSchema = new Schema({
   }
 });
 
-module.exports = User = mongoose.model("users", UserSchema);
+userSchema.virtual("competitions", {
+  ref: "Competition",
+  foreignField: "userId",
+  localField: "_id"
+});
+
+
+module.exports = User = mongoose.model("users", userSchema);
