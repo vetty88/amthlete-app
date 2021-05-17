@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+import conn from "../server"
+
 
 // Create Schema
 const userSchema = new Schema({
@@ -28,4 +29,4 @@ userSchema.virtual("competitions", {
 });
 
 
-module.exports = User = mongoose.model("users", userSchema);
+module.exports = User = conn.model("users", userSchema);

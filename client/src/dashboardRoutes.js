@@ -54,14 +54,14 @@ const dashboardRoutes = [
     component: CustomCompCharts,
     layout: "/admin"
   },
-  //   {
-  //   path: "/competitions",
-  //   name: "Competition Details",
-  //   rtlName: "Competition Details",
-  //   icon: "class",
-  //   component: CompetitionDetail,
-  //   layout: "/admin"
-  // },
+    {
+    path: "/competitions",
+    name: "Competition Details",
+    rtlName: "Competition Details",
+    icon: "class",
+    component: CompetitionDetail,
+    layout: "/admin"
+  },
       {
     path: "/horses",
     name: "Horse Details",
@@ -69,14 +69,6 @@ const dashboardRoutes = [
     icon: "content_paste",
     component: HorseDetail,
     layout: "/admin"
-  },
-  {
-  path: "/competitions/:userId",
-  name: "User Competitions",
-  rtlName: "User Competitions",
-  icon: "content_paste",
-  component: UserCompetitionDetail,
-  layout: "/admin"
   },
 ];
 

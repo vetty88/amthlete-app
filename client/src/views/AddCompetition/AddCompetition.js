@@ -77,6 +77,8 @@ export default function Competitions() {
     setFormObject({ ...formObject,  [name]: value })
   };
 
+  const loggedInUser = localStorage.getItem('loggedIn')
+
   // When the form is submitted, use the API.saveCompetition method to save the competition data
   // Then reload competitions from the database
   function handleFormSubmit(event) {
@@ -88,6 +90,7 @@ export default function Competitions() {
           eventType: formObject.eventType,
           placing: formObject.placing,
           penalties: formObject.penalties,
+          author: new Object (loggedInUser),
           resultNotes: formObject.resultNotes,
           date: new Date (formObject.date),
         })

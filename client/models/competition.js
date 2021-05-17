@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+import conn from "../server"
 
 let dateString = "2014-01-22T14:56:59.301Z";
 $gte : new Date(dateString)
@@ -18,6 +18,6 @@ const competitionSchema = new Schema({
 });
 
 
-const Competition = mongoose.model("Competition", competitionSchema);
+const Competition = conn.model("Competition", competitionSchema);
 
 module.exports = Competition;

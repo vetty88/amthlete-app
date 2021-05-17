@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+import conn from "../server"
+
 
 // Create Schema
 const horseSchema = new Schema({
@@ -12,6 +13,6 @@ const horseSchema = new Schema({
   testing: { type: String },
 });
 
-const Horse = mongoose.model("Horse", horseSchema);
+const Horse = conn.model("Horse", horseSchema);
 
 module.exports = Horse;

@@ -106,19 +106,19 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.get('/users/:id',(req,res) => {
-     User.findById(req.params.id).populate('competitions').exec((err,foundUser)=>{
-        if (err) {
-            req.flash('error_msg',"Something went wrong");
-            res.redirect('/');
-        } else {
-            Competition.find({'author.id':foundUser.id},(err,foundUser_campgrounds)=>{
-                res.render('users/show', {userProfile:foundUser, userCompetitions:foundUser_competitions});
-            });
-        }
+// router.get('/users/:id',(req,res) => {
+//      User.findById(req.params.id).populate('competitions').exec((err,foundUser)=>{
+//         if (err) {
+//             req.flash('error_msg',"Something went wrong");
+//             res.redirect('/');
+//         } else {
+//             Competition.find({'author.id':foundUser.id},(err,foundUser_campgrounds)=>{
+//                 res.render('users/show', {userProfile:foundUser, userCompetitions:foundUser_competitions});
+//             });
+//         }
 
-    });
-});
+//     });
+// });
 
 
 module.exports = router;

@@ -1,5 +1,5 @@
 const db = require("../models");
-const userId = req.params.user;
+
 
 // Defining methods for the competitionController
 module.exports = {
@@ -13,13 +13,18 @@ module.exports = {
     findById: function(req, res) {
     db.Competition
       .findById(req.params.author)
+      .populate('author', '_id name')
+      // .populate("author","_id name")
+      // .populate("competitions.author","_id name")
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  
   findById: function(req, res) {
     db.Competition
-      .findById(req.params.id)
+    
+      .findById(req.params.user)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
