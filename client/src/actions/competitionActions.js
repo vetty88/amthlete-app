@@ -66,10 +66,10 @@ export const getCompetition = id => dispatch => {
 };
 
 // Get Competitions by userId
-export const getUserCompetitions = user => dispatch => {
+export const getUserCompetitions = author => dispatch => {
   dispatch(setCompetitionLoading());
   axios
-    .get(`/api/competitions/competitions/${user}`)
+    .get(`/api/competitions/competitions/${author}`)
     .then(res =>
       dispatch({
         type: GET_COMPETITIONS,

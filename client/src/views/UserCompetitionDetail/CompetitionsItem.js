@@ -28,9 +28,12 @@ class CompetitionsItem extends Component {
                   </li>              
                 </ul>
                
-                <Link to={`/competition/${competition._id}`} className="btn btn-info ml-auto">
+                {/* <Link to={`/competition/${competition._id}`} className="btn btn-info ml-auto">
                   View Details
                 </Link>
+                 <Link to={`/competition/${competition.author}`} className="btn btn-info ml-auto">
+                  View Owner
+                </Link> */}
               </div>
             </div>
           </div>
