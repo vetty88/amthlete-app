@@ -55,14 +55,14 @@ function HorseDetail(props) {
             <CardHeader color="warning">
               <FontAwesomeIcon color="warning" icon={faHorse} /> 
               <p className={classes.cardCategory}>Horse</p>
-              <h3 className={classes.cardTitle}>{horse.id}</h3>
+              <h3 className={classes.cardTitle}>{horse.uniqueName}</h3>
             </CardHeader>            
               <h4> <FontAwesomeIcon icon={faBaby} /> {horse.birthYear}</h4>
               <h4> <FontAwesomeIcon icon={faRuler} /> {horse.height}</h4>
               <h4> <FontAwesomeIcon icon={faHorseHead} /> {horse.breed}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.colour}</h4>
               <h4> <FontAwesomeIcon icon={faPalette} /> {horse.author}</h4>
-              <h4> <FontAwesomeIcon icon={faPalette} /> {horse.testing}</h4>
+              {/* <h4> <FontAwesomeIcon icon={faPalette} /> {horse.testing}</h4> */}
            </Card>
           </GridItem>
      ))}
