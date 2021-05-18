@@ -75,7 +75,7 @@ const dashboardRoutes = [
     name: "User Competition Details",
     rtlName: "User Competition Details",
     icon: "content_paste",
-    class: UserCompetitionDetail,
+    component: UserCompetitionDetail,
     layout: "/admin"
   },
 ];
