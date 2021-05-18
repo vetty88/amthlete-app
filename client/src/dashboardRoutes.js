@@ -5,12 +5,11 @@ import AddHorse from "./views/AddHorse/AddHorse";
 import TableList from "./views/TableList/TableList";
 import CustomCompCharts from "./views/Charts/Charts";
 import CompetitionDetail from "./views/CompetitionDetail/CompetitionDetail";
-import UserCompetitionDetail from "./views/UserCompetitionDetail/UserCompetitionDetail";
+// import UserCompetitionDetail from "./views/UserCompetitionDetail/UserCompetitionDetail";
 import HorseDetail from "./views/HorseDetail/HorseDetail";
 
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
 
 const dashboardRoutes = [
 

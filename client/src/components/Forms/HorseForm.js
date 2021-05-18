@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from "react";
-import API from "../../utils/API";
-
 export function TextInput(props) {
   return (
     <div className="form-group">

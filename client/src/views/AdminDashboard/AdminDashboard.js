@@ -1,45 +1,21 @@
-import { Col, Row, Container } from "../../components/Grid/";
-import { connect } from "react-redux";
 import { faHorseHead } from '@fortawesome/free-solid-svg-icons'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, useParams } from "react-router-dom";
 import { List, ListItem } from "../../components/List/List";
-import { logoutUser } from "../../actions/authActions";
 import { makeStyles } from "@material-ui/core/styles";
-import Accessibility from "@material-ui/icons/Accessibility";
-import AccessTime from "@material-ui/icons/AccessTime";
 import API from "../../utils/API";
-import ArrowUpward from "@material-ui/icons/ArrowUpward";
-import BugReport from "@material-ui/icons/BugReport";
 import Card from "../../components/Card/Card.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
 import CardHeader from "../../components/Card/CardHeader.js";
 import CardIcon from "../../components/Card/CardIcon.js";
-import ChartistGraph from "react-chartist";
-import Cloud from "@material-ui/icons/Cloud";
-import Code from "@material-ui/icons/Code";
-import CustomTabs from "../../components/CustomTabs/CustomTabs.js";
-import Danger from "../../components/Typography/Danger.js";
-import DateRange from "@material-ui/icons/DateRange";
-import DeleteBtn from "../../components/Buttons/DeleteBtn";
-import FormatListNumbered from "@material-ui/icons/FormatListNumbered";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 import Icon from "@material-ui/core/Icon";
-import Jumbotron from "../../components/Jumbotron/Jumbotron";
-import LocalOffer from "@material-ui/icons/LocalOffer";
-import Moment from "react-moment";
-import PropTypes from "prop-types";
-import React, {useEffect, useState, Component, useContext} from "react";
-import ReactDOM from 'react-dom';
-import Store from "@material-ui/icons/Store";
+import React, {useEffect, useState, useContext} from "react";
 import styles from "../../assets/jss/material-dashboard-react/views/dashboardStyle.js";
 import Table from "../../components/Table/Table.js";
 import Update from "@material-ui/icons/Update";
-import Warning from "@material-ui/icons/Warning";
-import {UserContext} from '../../App'
   
 
 const useStyles = makeStyles(styles);
@@ -48,8 +24,7 @@ const useStyles = makeStyles(styles);
   const classes = useStyles();
   // Setting our component's initial state
   const [competitions, setCompetitions] = useState([])
-  const [competition, setCompetition] = useState([])
-  const [myCompetitions, setMyCompetitions] = useState([])
+  const [setCompetition] = useState([])
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
@@ -74,19 +49,10 @@ const useStyles = makeStyles(styles);
     .catch(err => console.log(err));
 };
 
-  // Loads all competitions and sets them to competitions
-  function loadMyCompetitions(user) {
-    API.getCompetitions(user)
-      .then(res => 
-        setMyCompetitions(res.data)
-      )
-      .catch(err => console.log(err));
-  };
-
 
 // Setting our component's initial state
   const [horses, setHorses] = useState([])
-  const [horse, setHorse] = useState([])
+  const [setHorse] = useState([])
 
   // Load all competitions and store them with setCompetitions
   useEffect(() => {
