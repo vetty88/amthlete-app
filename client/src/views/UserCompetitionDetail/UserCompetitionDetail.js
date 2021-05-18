@@ -40,7 +40,7 @@
 //   }
 
 //   parseJwt () {
-//     let token = localStorage.getItem('TOKEN_KEY')
+//     let token = localStorage.getCompetition('TOKEN_KEY')
 //     var base64Url = token.split('.')[1]
 //     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
 //     var jsonPayload = decodeURIComponent(
@@ -265,7 +265,7 @@
 // import CardIcon from "../../components/Card/CardIcon.js";
 // import Container from "@material-ui/core/Container";
 // import GridContainer from "../../components/Grid/GridContainer.js";
-// import GridItem from "../../components/Grid/GridItem.js";
+// import GridCompetition from "../../components/Grid/GridCompetition.js";
 // import Jumbotron from "../../components/Jumbotron/Jumbotron";
 // import Moment from "react-moment";
 // import React, { useEffect, useState, Component } from "react";
@@ -284,6 +284,50 @@
 // // import { getCompetitions, filterCompetition } from ".././actions/competitionActions";
 // import PropTypes from "prop-types";
 // import AddCompetition from "../AddCompetition/AddCompetition";
+
+import React, { useEffect } from 'react';
+import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { connect } from 'react-redux';
+import { getCompetitions, filterCompetition } from "../../actions/competitionActions";
+import { ICompetitionReduxProps, IUserCompetitionDetail } from '../../types/interfaces.ts';
+
+const UserCompetitionDetail = ({
+  getCompetitions,
+  competition,
+  isAuthenticated
+}: IUserCompetitionDetail) => {
+  useEffect(() => {
+    getCompetitions();
+  }, [getCompetitions]);
+
+
+  const { competitions } = competition;
+  return (
+    <Container>
+      <ListGroup>
+        <TransitionGroup className="shopping-list">
+          {competitions.map(({ _id, name }) => (
+            <CSSTransition key={_id} timeout={500} classNames="fade">
+              <ListGroupItem>
+                {name}
+              </ListGroupItem>
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+      </ListGroup>
+    </Container>
+  );
+};
+
+const mapStateToProps = (state: ICompetitionReduxProps) => ({
+  competition: state.competition,
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { getCompetitions })(UserCompetitionDetail);
+
+
 
 
 
@@ -408,7 +452,7 @@
 // //     });
 // // });
 
-//   const loggedInUser = localStorage.getItem('loggedIn')
+//   const loggedInUser = localStorage.getCompetition('loggedIn')
 //   alert(loggedInUser);
 //   // const author= competition.author;
 
@@ -719,7 +763,7 @@
 //     {competitions.length ? (
 //         <GridContainer>
 //           {competitions.map(competition => (
-//     <GridItem xs={12} sm={6} md={3} key={competition.id}>
+//     <GridCompetition xs={12} sm={6} md={3} key={competition.id}>
       
 //       <Card key={competition.id}>
 //       <CardHeader color="warning">
@@ -735,7 +779,7 @@
 //         <h4> <FontAwesomeIcon icon={faComments} /> <p> {competition.resultNotes} </p> </h4>
 //           <h4> <FontAwesomeIcon icon={faComments} /> <p> {competition.createdBy} </p> </h4>
 //       </Card>
-//       </GridItem>
+//       </GridCompetition>
 //          ))}
 //       </GridContainer>
 //        ) : (
@@ -746,3 +790,4 @@
 // }
 
 // export default CompetitionDetail;
+

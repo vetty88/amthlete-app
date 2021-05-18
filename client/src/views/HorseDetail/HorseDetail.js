@@ -22,6 +22,8 @@ import Warning from "@material-ui/icons/Warning";
 
 const useStyles = makeStyles(styles);
 
+const loggedInUser = localStorage.getItem('loggedIn')
+
 function HorseDetail(props) {
   const classes = useStyles();
 
