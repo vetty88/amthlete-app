@@ -2,7 +2,7 @@
   "name": "mern-auth",
   "version": "1.0.0",
   "description": "amthlete app",
-  "main": "server.js",
+  "main": "server/server.js",
   "engines": {
     "node": "14.15.2",
     "npm": "6.14.9"
