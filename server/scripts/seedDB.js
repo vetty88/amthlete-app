@@ -6,7 +6,7 @@ $gte : new Date(dateString)
 // This file empties the Competitions collection and inserts the competitions below
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/equestriancompetitionsdb"
+  "mongodb://localhost/equestriancompsdb"
 );
 
 const competitionSeed = [
