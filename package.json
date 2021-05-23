@@ -8,11 +8,12 @@
     "npm": "6.14.9"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "npm install --prefix react-ui",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client": "npm start --prefix react-ui",
+    "dev": "concurrently \"npm run server\" \"npm run react-ui\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-ui && npm run build --prefix frontend"
   },
   "author": "",
   "license": "MIT",
