@@ -13,7 +13,7 @@
     "server": "nodemon server/server.js",
     "client": "yarn run start --prefix react-ui",
     "dev": "concurrently \"yarn run server\" \"yarn run react-ui\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix react-ui && yarn run build --prefix react-ui"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix react-ui && yarn build --prefix react-ui"
   },
   "author": "Yvette Waller <vetty88@gmail.com>",
   "license": "MIT",
