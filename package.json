@@ -22,6 +22,8 @@
     "@material-ui/icons": "^4.11.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "concurrently": "^6.1.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "formik": "^2.2.6",
     "heroku": "^7.2.0",
@@ -37,11 +39,7 @@
     "react-redux": "^7.2.4",
     "react-transition-group": "^4.4.1",
     "reactstrap": "^8.9.0",
-    "validator": "^10.9.0"
-  },
-  "devDependencies": {
-    "concurrently": "^6.1.0",
-    "cors": "^2.8.5"
+    "validator": "^10.9.0"   
   },
   "repository": "https://github.com/vetty88/amthlete-app.git"
 }
