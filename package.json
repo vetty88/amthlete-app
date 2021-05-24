@@ -1,44 +1,31 @@
 {
-  "name": "mern-auth",
-  "version": "1.0.0",
-  "description": "amthlete app",
-  "main": "server/server.js",
+  "name": "heroku-cra-node",
+  "version": "3.0.0",
+  "description": "How to use create-react-app with a custom Node API on Heroku",
   "engines": {
-    "node": "14.15.2",
-    "npm": "6.14.9"
+    "node": "10.x"
   },
   "scripts": {
-    "client-install": "yarn install --prefix react-ui",
-    "start": "node server/server.js",
-    "server": "node server/server.js",
-    "client": "yarn run start --prefix react-ui",
-    "dev": "concurrently \"yarn run server\" \"yarn run react-ui\""
+    "start": "node server",
+    "build": "cd react-ui/ && npm install && npm run build"
   },
-  "author": "Yvette Waller <vetty88@gmail.com>",
-  "license": "MIT",
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
   "dependencies": {
-    "@material-ui/core": "^4.11.4",
-    "@material-ui/icons": "^4.11.2",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.18.3",
-    "concurrently": "^6.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.16.4",
-    "formik": "^2.2.6",
-    "heroku": "^7.2.0",
-    "is-empty": "^1.2.0",
-    "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.3.11",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "perfect-scrollbar": "^1.5.0",
-    "react": "^17.0.2",
-    "react-data-grid": "^7.0.0-canary.44",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.4",
-    "react-transition-group": "^4.4.1",
-    "reactstrap": "^8.9.0",
-    "validator": "^10.9.0"
+    "express": "^4.16.4"
   },
-  "repository": "https://github.com/vetty88/amthlete-app.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mars/heroku-cra-node.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
 }
