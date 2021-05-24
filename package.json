@@ -8,12 +8,12 @@
     "npm": "6.14.9"
   },
   "scripts": {
-    "client-install": "npm install --prefix react-ui",
+    "client-install": "yarn install --prefix react-ui",
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
-    "client": "npm run start --prefix react-ui",
-    "dev": "concurrently \"npm run server\" \"npm run react-ui\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix react-ui && npm run build --prefix react-ui"
+    "client": "yarn run start --prefix react-ui",
+    "dev": "concurrently \"yarn run server\" \"yarn run react-ui\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix react-ui && yarn run build --prefix react-ui"
   },
   "author": "Yvette Waller <vetty88@gmail.com>",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "react-redux": "^7.2.4",
     "react-transition-group": "^4.4.1",
     "reactstrap": "^8.9.0",
-    "validator": "^10.9.0"   
+    "validator": "^10.9.0"
   },
   "repository": "https://github.com/vetty88/amthlete-app.git"
 }
