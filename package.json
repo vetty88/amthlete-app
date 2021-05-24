@@ -10,7 +10,7 @@
   "scripts": {
     "client-install": "yarn install --prefix react-ui",
     "start": "node server/server.js",
-    "server": "nodemon server/server.js",
+    "server": "node server/server.js",
     "client": "yarn run start --prefix react-ui",
     "dev": "concurrently \"yarn run server\" \"yarn run react-ui\""
   },
