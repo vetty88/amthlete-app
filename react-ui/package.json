@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@babel/core": "^7.14.3",
     "@babel/helper-builder-react-jsx": "^7.12.13",
     "@babel/preset-react": "^7.13.13",
@@ -46,6 +47,11 @@
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
+=======
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "^2.1.8"
+>>>>>>> 0175a98564dae3c98033aece393f8a2589e57a2e
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,31 +59,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3000",
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
-  "main": "index.js",
-  "author": "Y Waller",
-  "license": "MIT"
+  "proxy": "http://localhost:5000"
 }

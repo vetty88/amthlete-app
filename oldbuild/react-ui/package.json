@@ -1,0 +1,83 @@
+{
+  "name": "react-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/helper-builder-react-jsx": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "@types/chartist": "^0.11.0",
+    "@types/react-router": "^5.1.14",
+    "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
+    "chartist": "^0.11.4",
+    "classnames": "^2.2.6",
+    "concurrently": "^6.1.0",
+    "cors": "^2.8.5",
+    "formik": "^2.2.8",
+    "fs": "^0.0.1-security",
+    "jwt-decode": "^2.2.0",
+    "loopback": "^3.28.0",
+    "moment": "^2.29.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.6.3",
+    "react-chartist": "^0.14.4",
+    "react-data-grid": "^7.0.0-canary.48",
+    "react-dom": "^17.0.2",
+    "react-modern-calendar-datepicker": "^3.1.6",
+    "react-moment": "^1.1.1",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^4.0.3",
+    "reactstrap": "^8.9.0",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^2.0.3",
+    "socket-io": "^1.0.0",
+    "sweetalert": "^2.1.2",
+    "typescript": "^4.2.4",
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:3000",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "main": "index.js",
+  "author": "Y Waller",
+  "license": "MIT"
+}
