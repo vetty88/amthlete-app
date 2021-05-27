@@ -25,7 +25,7 @@
     "formik": "^2.2.8",
     "fs": "^0.0.1-security",
     "jwt-decode": "^2.2.0",
-    "loopback": "^3.28.0",
+    "loopback": "^3.19.3",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^16.6.3",
